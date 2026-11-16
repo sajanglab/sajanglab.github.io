@@ -1,0 +1,3739 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f294a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="사장랩">
+<meta name="application-name" content="사장랩">
+<title>사장랩 - 무료 견적서·거래명세서·공사내역서 양식</title>
+<meta name="description" content="회원가입·설치 없이 브라우저에서 바로 쓰는 무료 견적서 만들기. 견적서, 거래명세서, 공사내역서를 한 번 입력으로 3가지 양식으로 만들고 A4 PNG·PDF로 저장하거나 메일로 보내세요. 부가세 포함·별도·일반 3가지 계산과 부가세 계산기(합계 역산), 사업자 여러 개 저장, 내 도장·계좌까지 무료입니다.">
+<meta name="keywords" content="무료 견적서 만들기, 견적서 양식, 거래명세서 양식, 공사내역서 양식, 부가세 계산기, 부가세 역산, 부가세 포함 계산, 회원가입 없는 무료 양식, 견적서 프로그램, 프리랜서 견적서, 견적서 PDF, 견적서 엑셀 대신">
+<meta name="author" content="사장랩">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="사장랩">
+<meta property="og:title" content="사장랩 — 무료 견적서·거래명세서·공사내역서·부가세 계산기">
+<meta property="og:description" content="회원가입 없이 브라우저에서 바로. 견적서·거래명세서·공사내역서를 한 번 입력으로 3종 양식, 부가세 계산기(합계 역산), A4 PNG·PDF 저장과 메일 보내기까지 무료.">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:url" content="https://sajanglab.github.io/">
+<meta property="og:image" content="https://sajanglab.github.io/icons/og-1200x630.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="사장랩 병아리 마스코트">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="사장랩 — 무료 견적서·거래명세서·부가세 계산기">
+<meta name="twitter:description" content="회원가입 없이 브라우저에서 바로 쓰는 무료 견적서 앱. 부가세 계산기(역산 포함), A4 PNG·PDF 저장, 메일 보내기, 부가세 3가지 계산.">
+<meta name="twitter:image" content="https://sajanglab.github.io/icons/og-1200x630.png">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://sajanglab.github.io/">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="192x192" href="./icons/icon-192.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "사장랩 — 무료 견적서·거래명세서·공사내역서",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web, iOS, Android",
+  "inLanguage": "ko",
+  "description": "회원가입 없이 브라우저에서 쓰는 무료 견적서 앱. 견적서·거래명세서·공사내역서를 한 번 입력으로 3가지 양식으로 만들고 A4 PNG·PDF로 저장하거나 메일로 보냅니다. 부가세 계산기로 합계금액에서 공급가액을 역산할 수 있습니다.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" },
+  "featureList": [
+    "견적서·거래명세서·공사내역서 3종 양식",
+    "부가세 포함·별도·일반 3가지 계산",
+    "부가세 계산기(합계금액에서 공급가액 역산)",
+    "A4 고해상도 PNG 저장, PDF·인쇄",
+    "메일 앱 연동(mailto)",
+    "사업자 여러 개 저장, 도장·계좌 저장",
+    "인터넷 없이도 열리는 홈화면 앱(PWA)"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --bg:#F1F3F7; --card:#FFFFFF; --ink:#0F1B2D; --ink2:#344054; --muted:#6B7789;
+  --line:#E6E9F0; --line2:#D8DEE8; --navy:#12294A; --navy2:#1B3A67; --blue:#2B5FE0;
+  --blue-soft:#EDF2FE; --ok:#0E7A5F; --danger:#C0392B;
+  --r:16px; --shadow:0 1px 2px rgba(16,24,40,.05), 0 1px 3px rgba(16,24,40,.05);
+  --font:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none !important}
+html,body{margin:0;padding:0}
+body{
+  font-family:var(--font);background:var(--bg);color:var(--ink);font-size:15px;line-height:1.45;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  padding-bottom:calc(84px + env(safe-area-inset-bottom));
+}
+button,input,select,textarea{font-family:inherit;font-size:16px;color:inherit}
+button{cursor:pointer;border:0;background:none}
+h1,h2,h3,h4,p{margin:0}
+::selection{background:#CFDDFB}
+
+/* ---------- App bar ---------- */
+.appbar{
+  position:sticky;top:0;z-index:40;
+  display:flex;align-items:center;gap:12px;
+  padding:calc(10px + env(safe-area-inset-top)) 16px 12px;
+  background:linear-gradient(135deg,#0E1B2E 0%,#173154 62%,#1D3E6B 100%);
+  color:#fff;
+}
+.brand{display:flex;align-items:center;gap:11px;min-width:0;flex:1}
+.mark{
+  width:36px;height:36px;border-radius:11px;flex:none;overflow:hidden;
+  display:grid;place-items:center;background:#0B2041;
+  border:1px solid rgba(255,255,255,.22);box-shadow:0 1px 3px rgba(0,0,0,.28);
+}
+.mark img{width:100%;height:100%;object-fit:cover;display:block}
+.brand h1{font-size:15.5px;font-weight:700;letter-spacing:-.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand p{font-size:11px;color:#A9BCD8;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.appbar-actions{display:flex;gap:8px;flex:none}
+.icon-btn{
+  width:38px;height:38px;border-radius:11px;display:grid;place-items:center;color:#DCE6F5;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+}
+.icon-btn:active{background:rgba(255,255,255,.18)}
+.icon-btn svg{width:19px;height:19px}
+
+/* ---------- Mobile view switch ---------- */
+.viewswitch{
+  position:sticky;top:calc(56px + env(safe-area-inset-top));z-index:35;
+  display:flex;gap:4px;padding:6px;margin:10px 16px 0;
+  background:#E4E8F0;border-radius:13px;
+}
+.viewswitch::before{content:"";position:absolute;inset:-12px -16px -10px;background:var(--bg);z-index:-1}
+.viewswitch button{
+  flex:1;height:38px;border-radius:9px;font-size:14px;font-weight:600;color:#5A6779;
+  transition:background .15s,color .15s,box-shadow .15s;
+}
+.viewswitch button.active{background:#fff;color:var(--navy);box-shadow:0 1px 3px rgba(16,24,40,.14)}
+.viewswitch button .cnt{font-size:11px;font-weight:600;color:var(--muted);margin-left:4px}
+
+/* ---------- Layout ---------- */
+.workspace{display:block;padding:14px 16px 8px}
+.editor{display:flex;flex-direction:column;gap:12px;min-width:0}
+.preview-pane{display:none;min-width:0}
+body[data-view="preview"] .editor{display:none}
+body[data-view="preview"] .preview-pane{display:block}
+
+@media (min-width:980px){
+  body{padding-bottom:24px}
+  .viewswitch{display:none}
+  .workspace{display:grid;grid-template-columns:minmax(420px,510px) minmax(0,1fr);gap:22px;
+    max-width:1520px;margin:0 auto;padding:22px 26px 30px;align-items:start}
+  .editor{display:flex !important}
+  .preview-pane{display:block !important}
+  .preview-pane{position:sticky;top:96px}
+  .appbar{padding:14px 26px}
+  .brand h1{font-size:17px}
+  .page-stage{max-height:calc(100vh - 200px);overflow:auto}
+}
+
+/* ---------- Cards / form ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:15px 15px 16px}
+.card-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.card-head h2{font-size:14.5px;font-weight:700;letter-spacing:-.2px;display:flex;align-items:center;gap:8px}
+.idx{
+  font-size:10.5px;font-weight:700;color:var(--blue);background:var(--blue-soft);
+  border-radius:6px;padding:2px 6px;letter-spacing:.4px;
+}
+.text-btn{font-size:12.5px;font-weight:600;color:var(--blue);padding:7px 8px;border-radius:8px;margin:-7px -4px -7px 0}
+.text-btn:active{background:var(--blue-soft)}
+
+/* doc type tabs */
+.types{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.type-btn{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  padding:11px 4px 10px;border-radius:13px;background:#fff;border:1px solid var(--line);
+  box-shadow:var(--shadow);transition:.15s;min-height:58px;
+}
+.type-btn b{font-size:13.5px;font-weight:700;letter-spacing:-.3px;color:var(--ink2);white-space:nowrap}
+.type-btn span{font-size:10.5px;color:var(--muted);letter-spacing:-.1px}
+.type-btn.active{background:var(--navy);border-color:var(--navy);box-shadow:0 4px 12px rgba(18,41,74,.22)}
+.type-btn.active b{color:#fff}
+.type-btn.active span{color:#A9BCD8}
+.type-hint{
+  display:flex;align-items:flex-start;gap:6px;margin:-2px 2px 12px;
+  font-size:11.5px;line-height:1.5;color:#7C8899;letter-spacing:-.1px;word-break:keep-all;
+}
+.type-hint b{color:#4B5768;font-weight:700}
+.type-hint svg{width:14px;height:14px;flex:none;margin-top:1px;color:#98A2B3}
+
+/* fields */
+.field{display:flex;flex-direction:column;gap:5px;min-width:0}
+.field > label{font-size:11.5px;font-weight:600;color:var(--muted);letter-spacing:-.1px;padding-left:1px}
+.field .sub{font-size:10.5px;color:#98A2B3;font-weight:500}
+input[type=text],input[type=date],input[type=tel],input[type=email],input[type=number],select,textarea{
+  width:100%;height:44px;padding:0 12px;border:1px solid var(--line2);border-radius:11px;
+  background:#fff;color:var(--ink);font-size:16px;outline:none;transition:border-color .15s,box-shadow .15s;
+  appearance:none;-webkit-appearance:none;
+}
+textarea{height:auto;min-height:78px;padding:11px 12px;line-height:1.55;resize:vertical;font-size:15.5px}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(43,95,224,.12)}
+input::placeholder,textarea::placeholder{color:#B0B8C5}
+input[type=number]{-moz-appearance:textfield;text-align:right}
+input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.select-wrap{position:relative}
+.select-wrap::after{
+  content:"";position:absolute;right:14px;top:50%;width:8px;height:8px;margin-top:-6px;
+  border-right:1.6px solid #8794A7;border-bottom:1.6px solid #8794A7;transform:rotate(45deg);pointer-events:none;
+}
+.select-wrap select{padding-right:34px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stack{display:flex;flex-direction:column;gap:11px}
+.biz-summary{font-size:11.5px;color:var(--muted);line-height:1.62;margin-top:9px;padding:9px 11px;background:#F7F9FC;border-radius:9px;border:1px solid #EDF1F7;word-break:keep-all}
+.biz-summary b{color:var(--ink2);font-weight:600}
+.link-row{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+.link-btn{
+  display:inline-flex;align-items:center;gap:5px;padding:8px 12px;border-radius:9px;
+  font-size:12.5px;font-weight:600;color:var(--blue);background:var(--blue-soft);
+}
+.link-btn.alt{color:var(--ink2);background:#F1F4F9}
+.quick-biz{display:flex;flex-direction:column;gap:10px;margin-top:11px;padding-top:11px;border-top:1px dashed var(--line)}
+.mail-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.mail-chip{
+  padding:6px 10px;border-radius:999px;border:1px solid var(--line2);background:#fff;
+  font-size:11.5px;font-weight:600;color:var(--ink2);letter-spacing:-.1px;
+  transition:.12s;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis;
+}
+.mail-chip:hover{border-color:#B9C6E4;background:#F7F9FD}
+.mail-chip.on{background:var(--blue-soft);border-color:#BBD0FA;color:var(--blue)}
+.seg{display:flex;gap:4px;padding:4px;background:#EDF0F5;border-radius:11px}
+.seg button{flex:1;height:36px;border-radius:8px;font-size:12.8px;font-weight:600;color:#5A6779;white-space:nowrap}
+.seg button.active{background:#fff;color:var(--navy);box-shadow:0 1px 3px rgba(16,24,40,.14)}
+
+/* doc no row */
+.inline-field{display:flex;gap:7px}
+.inline-field input{flex:1;min-width:0;font-variant-numeric:tabular-nums;letter-spacing:.2px}
+.icon-inline{
+  width:44px;height:44px;flex:none;border-radius:11px;border:1px solid var(--line2);background:#fff;
+  display:grid;place-items:center;color:#5A6779;
+}
+.icon-inline:active{background:#F2F4F8}
+.icon-inline svg{width:17px;height:17px}
+
+/* items */
+.items{display:flex;flex-direction:column;gap:9px}
+.item{
+  border:1px solid #E7EBF2;background:#FBFCFE;border-radius:13px;padding:11px 11px 10px;
+}
+.item-top{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.item-no{
+  width:22px;height:22px;flex:none;border-radius:7px;background:#E8EEF9;color:#3E5C8C;
+  font-size:11px;font-weight:700;display:grid;place-items:center;
+}
+.item-del{
+  margin-left:auto;width:32px;height:32px;border-radius:8px;display:grid;place-items:center;color:#94A0B2;
+}
+.item-del:active{background:#FBEAEA;color:var(--danger)}
+.item-del svg{width:15px;height:15px}
+.item .row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.item .amount{
+  display:flex;align-items:baseline;justify-content:flex-end;gap:6px;margin-top:9px;
+  padding-top:8px;border-top:1px dashed #E1E6EF;
+}
+.item .amount span{font-size:11px;color:var(--muted)}
+.item .amount b{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.2px}
+.item .amount.full{margin-top:8px;justify-content:space-between}
+.item .amount.full b{font-size:13.5px;color:#2C4470}
+.item input{height:41px;font-size:15.5px;background:#fff}
+.add-item{
+  width:100%;height:44px;margin-top:10px;border-radius:11px;border:1px dashed #C8D2E2;
+  font-size:13.5px;font-weight:600;color:var(--navy2);background:#F8FAFD;
+  display:flex;align-items:center;justify-content:center;gap:7px;
+}
+.add-item:active{background:#EFF3FA}
+
+/* totals */
+.calc{background:#F7F9FC;border:1px solid #EDF1F7;border-radius:12px;padding:12px 13px;margin-top:11px}
+.calc-row{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;color:var(--ink2);padding:3px 0;gap:12px}
+.calc-row b{font-variant-numeric:tabular-nums;font-weight:600}
+.calc-row.total{border-top:1px solid #E1E6EF;margin-top:6px;padding-top:9px;font-size:14px;color:var(--navy)}
+.calc-row.total b{font-size:17px;font-weight:800;letter-spacing:-.3px}
+.calc .ko{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:-.1px;word-break:keep-all}
+
+/* stamp */
+.stamp-box{display:flex;align-items:center;gap:13px}
+.stamp-prev{
+  width:74px;height:74px;flex:none;border-radius:11px;border:1px solid var(--line2);background:#fff;
+  display:grid;place-items:center;overflow:hidden;color:#B6BFCC;
+}
+.stamp-prev img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.stamp-prev svg{width:26px;height:26px}
+.stamp-actions{display:flex;flex-direction:column;gap:7px;min-width:0}
+.mini-btn{
+  display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:9px;
+  font-size:12.5px;font-weight:600;color:var(--ink2);background:#F1F4F9;border:1px solid #E3E8F1;
+}
+.mini-btn.ghost{background:#fff;color:var(--muted)}
+.mini-btn.danger{color:var(--danger);background:#FCF1F0;border-color:#F5DAD7}
+.check{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--ink2);font-weight:500;cursor:pointer}
+.check input{width:18px;height:18px;accent-color:var(--blue)}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.chip{
+  font-size:11.5px;font-weight:600;color:#3E5C8C;background:#EEF3FC;border:1px solid #DFE8F8;
+  border-radius:20px;padding:6px 11px;
+}
+.chip:active{background:#E1EAFB}
+
+/* editor bottom actions */
+.editor-actions{display:flex;gap:8px;margin-top:2px}
+.editor-actions button{
+  flex:1;height:46px;border-radius:12px;font-size:13.5px;font-weight:600;
+  background:#fff;border:1px solid var(--line2);color:var(--ink2);
+}
+.editor-actions button.primary{background:var(--navy);border-color:var(--navy);color:#fff}
+
+/* ---------- Preview ---------- */
+.preview-toolbar{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  background:#fff;border:1px solid var(--line);border-radius:13px;padding:9px 11px;box-shadow:var(--shadow);
+  margin-bottom:12px;position:sticky;top:calc(112px + env(safe-area-inset-top));z-index:20;
+}
+@media (min-width:980px){.preview-toolbar{top:0}}
+.page-nav{display:flex;align-items:center;gap:2px;margin-right:auto}
+.page-nav button{
+  width:32px;height:32px;border-radius:8px;display:grid;place-items:center;color:var(--ink2);
+  font-size:18px;font-weight:600;line-height:1;
+}
+.page-nav button:disabled{color:#CBD2DD}
+.page-nav button:active:not(:disabled){background:#F1F4F9}
+.page-nav .lbl{font-size:12.5px;font-weight:600;color:var(--ink2);min-width:48px;text-align:center;font-variant-numeric:tabular-nums}
+.pv-zoom{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;color:#5A6779;margin-left:2px}
+.pv-zoom svg{width:16px;height:16px}
+.pv-zoom.on{background:#E8EEFA;color:var(--blue)}
+.page-stage.zoom{justify-content:flex-start}
+.page-stage.zoom .frame{max-width:none;width:900px;flex:none}
+.pv-actions{display:flex;gap:6px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;padding:0 13px;
+  border-radius:10px;font-size:12.5px;font-weight:700;letter-spacing:-.2px;white-space:nowrap;
+  border:1px solid var(--line2);background:#fff;color:var(--ink2);transition:.12s;
+}
+.btn svg{width:15px;height:15px;flex:none}
+.btn.primary{background:var(--navy);border-color:var(--navy);color:#fff}
+.btn.blue{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn.mail{background:#EEF3FC;border-color:#DFE8F8;color:#2B5FE0}
+.btn.mail:active{background:#E1EAFB}
+.btn:active{transform:translateY(1px)}
+.page-stage{
+  background:
+    radial-gradient(120% 90% at 50% 0%,rgba(255,255,255,.9),rgba(255,255,255,0) 60%),
+    linear-gradient(160deg,#E9EDF4,#DFE5EF);
+  border:1px solid #DDE2EB;border-radius:14px;padding:14px;
+  display:flex;justify-content:center;overflow:auto;
+}
+.page-stage .frame{
+  width:100%;max-width:620px;background:#fff;border-radius:3px;overflow:hidden;
+  box-shadow:0 8px 26px rgba(16,24,40,.16),0 1px 2px rgba(16,24,40,.1);
+}
+.page-stage canvas{display:block;width:100%;height:auto}
+.preview-hint{font-size:11.5px;color:var(--muted);text-align:center;margin-top:9px;line-height:1.6;word-break:keep-all}
+.preview-hint b{color:var(--ink2);font-weight:600}
+
+/* ---------- bottom bar ---------- */
+.bottombar{
+  position:fixed;left:0;right:0;bottom:0;z-index:45;
+  display:flex;align-items:center;gap:7px;
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(255,255,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-top:1px solid var(--line);
+}
+.bb-total{display:flex;flex-direction:column;min-width:0;margin-right:auto}
+.bb-total span{font-size:10px;color:var(--muted);font-weight:600}
+.bb-total b{font-size:15px;font-weight:800;letter-spacing:-.4px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.bottombar .btn{height:42px;padding:0 11px;font-size:12.5px}
+.bottombar .btn.primary{padding:0 14px}
+@media (min-width:980px){.bottombar{display:none}}
+
+/* ---------- modal ---------- */
+.modal{
+  position:fixed;inset:0;z-index:80;display:none;align-items:flex-end;justify-content:center;
+  background:rgba(10,18,32,.45);
+}
+.modal.open{display:flex}
+.modal-card{
+  width:100%;max-width:560px;max-height:92vh;background:#fff;border-radius:20px 20px 0 0;
+  display:flex;flex-direction:column;overflow:hidden;
+  animation:sheet .22s cubic-bezier(.2,.8,.3,1);
+}
+@keyframes sheet{from{transform:translateY(18px);opacity:.6}to{transform:none;opacity:1}}
+@media (min-width:980px){
+  .modal{align-items:center;padding:24px}
+  .modal-card{border-radius:18px;max-height:86vh}
+}
+.modal-head{display:flex;align-items:center;gap:10px;padding:16px 18px 12px;border-bottom:1px solid var(--line)}
+.modal-head h3{font-size:15.5px;font-weight:700;flex:1}
+.modal-head .x{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;color:var(--muted);font-size:20px;line-height:1}
+.modal-body{padding:16px 18px;overflow:auto;-webkit-overflow-scrolling:touch;display:flex;flex-direction:column;gap:12px}
+.modal-foot{padding:12px 18px calc(14px + env(safe-area-inset-bottom));border-top:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap}
+.modal-foot .btn{flex:1;height:46px;font-size:14px;min-width:110px}
+.modal-foot .btn.primary{flex:2}
+
+/* history */
+.hsearch{position:relative}
+.hsearch input{padding-left:38px}
+.hsearch svg{position:absolute;left:12px;top:13px;width:17px;height:17px;color:#98A2B3}
+.hlist{display:flex;flex-direction:column;gap:9px}
+.hitem{border:1px solid var(--line);border-radius:12px;padding:11px 12px;background:#fff}
+.hitem-top{display:flex;align-items:center;gap:7px;margin-bottom:4px}
+.badge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:6px;background:#EEF3FC;color:#3E5C8C;flex:none}
+.badge.invoice{background:#EAF6F0;color:#0E7A5F}
+.badge.detail{background:#FBF2E6;color:#9A6A22}
+.hitem h4{font-size:13.5px;font-weight:700;letter-spacing:-.2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.hitem .meta{font-size:11.5px;color:var(--muted);margin-bottom:8px;font-variant-numeric:tabular-nums}
+.hitem .hact{display:flex;gap:6px;flex-wrap:wrap}
+.hitem .hact button{
+  font-size:11.5px;font-weight:600;padding:6px 10px;border-radius:8px;background:#F2F5FA;color:var(--ink2);
+  border:1px solid #E6EBF3;
+}
+.hitem .hact button.blue{background:#EEF3FC;color:#2B5FE0;border-color:#DFE8F8}
+.hitem .hact button.red{color:#C0392B;background:#FCF3F2;border-color:#F6DFDC}
+.empty{text-align:center;padding:34px 16px;color:var(--muted);font-size:13px;line-height:1.7}
+.empty svg{width:38px;height:38px;color:#C4CDDA;margin-bottom:8px}
+.help-list{display:flex;flex-direction:column;gap:14px;font-size:13px;line-height:1.65;color:var(--ink2)}
+.help-list h4{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;display:flex;gap:7px;align-items:center}
+.help-list p{color:#4B5768}
+.help-list .num{width:19px;height:19px;border-radius:6px;background:var(--blue-soft);color:var(--blue);font-size:11px;display:grid;place-items:center;font-weight:700;flex:none}
+.note-box{background:#F7F9FC;border:1px solid #E9EEF6;border-radius:11px;padding:11px 12px;font-size:12.5px;color:#4B5768;line-height:1.65;word-break:keep-all}
+.kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;background:#EFF2F7;border:1px solid #E1E6EF;border-radius:5px;padding:1px 5px}
+
+/* toast */
+#toastWrap{position:fixed;left:0;right:0;bottom:calc(96px + env(safe-area-inset-bottom));z-index:95;display:flex;justify-content:center;pointer-events:none}
+.toast{
+  background:rgba(15,27,45,.94);color:#fff;font-size:13px;font-weight:600;padding:11px 16px;border-radius:12px;
+  max-width:88vw;text-align:center;box-shadow:0 8px 22px rgba(10,18,32,.28);
+  animation:tin .2s ease-out;
+}
+@keyframes tin{from{transform:translateY(8px);opacity:0}to{transform:none;opacity:1}}
+@media (min-width:980px){#toastWrap{bottom:28px}}
+
+/* print */
+#printRoot{display:none}
+@media print{
+  @page{size:A4 portrait;margin:0}
+  html,body{background:#fff !important;padding:0 !important;margin:0 !important}
+  body > *:not(#printRoot){display:none !important}
+  #printRoot{display:block !important}
+  .print-page{width:210mm;height:297mm;overflow:hidden;page-break-after:always;break-after:page;display:block}
+  .print-page:last-child{page-break-after:auto;break-after:auto}
+  .print-page img{display:block;width:210mm;height:297mm;object-fit:contain}
+  .print-page canvas{display:block;width:210mm;height:297mm}
+}
+
+/* ---------- 광고 슬롯 (퍼블리셔 ID 승인 전에는 display:none) ---------- */
+.ad-slot{
+  display:none;              /* ADS_ENABLED = true 가 되면 .on 이 붙어 보입니다 */
+  margin:12px 0;
+  padding:10px;
+  background:#fff;
+  border:1px dashed var(--line2);
+  border-radius:12px;
+  min-height:100px;
+  text-align:center;
+}
+.ad-slot.on{display:block}
+.ad-slot .ad-tag{font-size:10.5px;letter-spacing:.08em;color:#B6BECC;text-transform:uppercase}
+
+/* ---------- 첫 실행 안내 ---------- */
+.onboard{
+  margin:12px 0 14px;padding:16px 16px 15px;border-radius:16px;
+  background:linear-gradient(135deg,#12294A 0%,#1B3A67 100%);
+  color:#fff;box-shadow:var(--shadow);
+}
+.onboard h3{font-size:15px;font-weight:700;letter-spacing:-.2px}
+.onboard p{margin-top:7px;font-size:12.5px;line-height:1.65;color:#C7D6EC;word-break:keep-all}
+.onboard .btn{margin-top:12px;background:#fff;color:#12294A;font-weight:700;border-color:#fff;width:100%}
+
+/* ---------- 소개·안내(검색용 본문) ---------- */
+.about{margin:6px 0 4px;padding:14px;background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.about h2{font-size:14.5px;font-weight:700;letter-spacing:-.2px}
+.about h3{font-size:13px;font-weight:700;margin-top:14px;color:var(--navy)}
+.about p{margin-top:6px;font-size:12.5px;line-height:1.75;color:var(--ink2);word-break:keep-all}
+.about details{margin-top:10px;border-top:1px solid var(--line);padding-top:9px}
+.about summary{cursor:pointer;font-size:12.5px;font-weight:700;color:var(--navy)}
+.about details p{margin-top:5px;color:#4B5768}
+.site-foot{margin:18px 0 6px;text-align:center;font-size:11.5px;line-height:1.9;color:#98A2B3}
+.site-foot b{color:#6B7789}
+.site-foot a{color:#6B7789;text-decoration:underline;text-underline-offset:2px}
+.about-link{
+  display:inline-flex;align-items:center;gap:6px;margin-top:9px;height:36px;padding:0 13px;
+  border:1px solid var(--line2);border-radius:10px;background:#fff;color:var(--navy);
+  font-size:12.5px;font-weight:700;
+}
+.about-link:active{background:#F1F4F9}
+
+/* ---------- 앱바 부가세 계산기 칩 ---------- */
+.chip-btn{
+  display:flex;align-items:center;gap:5px;height:38px;padding:0 11px;border-radius:11px;
+  color:#fff;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.26);
+  font-size:12.5px;font-weight:700;letter-spacing:-.2px;white-space:nowrap;
+}
+.chip-btn:active{background:rgba(255,255,255,.26)}
+.chip-btn svg{width:16px;height:16px}
+@media (max-width:359px){
+  .chip-btn{padding:0;width:38px;justify-content:center}
+  .chip-btn span{display:none}
+}
+
+/* ---------- 부가세 계산기 ---------- */
+.vat-switch{display:flex;gap:4px;padding:4px;background:#EEF1F6;border-radius:12px}
+.vat-switch button{flex:1;height:38px;border-radius:9px;font-size:12.5px;font-weight:700;color:#5A6779;letter-spacing:-.2px}
+.vat-switch button.active{background:#fff;color:var(--navy);box-shadow:0 1px 3px rgba(16,24,40,.14)}
+.vat-label{font-size:12.5px;font-weight:700;color:var(--ink2);margin-bottom:-4px}
+.vat-input-row{display:flex;align-items:center;gap:8px;border:1px solid var(--line2);border-radius:12px;padding:0 14px;background:#fff}
+.vat-input-row input{flex:1;min-width:0;height:52px;border:0;padding:0;font-size:20px;font-weight:700;text-align:right;letter-spacing:-.5px;background:transparent;color:var(--ink)}
+.vat-input-row span{font-size:13px;font-weight:700;color:var(--muted);flex:none}
+.vat-quick{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.vat-quick button{height:36px;border-radius:9px;background:#F1F4F9;border:1px solid var(--line);font-size:12.5px;font-weight:700;color:var(--ink2)}
+.vat-quick button.alt{background:#fff;color:var(--muted)}
+.vat-quick button:active{background:#E4EAF4}
+.vat-out{border:1px solid var(--line);border-radius:14px;padding:11px 14px 12px;background:#F8FAFD}
+.vat-out > div{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:4px 0;font-size:13px;color:#4B5768}
+.vat-out > div b{font-size:15px;font-weight:700;color:var(--ink);letter-spacing:-.2px}
+.vat-out > div.total{border-top:1px dashed var(--line2);margin-top:3px;padding-top:9px}
+.vat-out > div.total b{font-size:17.5px;color:var(--blue)}
+.vat-ko{margin-top:7px;font-size:11.5px;color:var(--muted);text-align:right}
+.vat-row{display:flex;align-items:center;gap:8px}
+.vat-row select{flex:1;min-width:0;height:42px;border:1px solid var(--line2);border-radius:10px;padding:0 10px;font-size:13px;background:#fff;color:var(--ink2)}
+.vat-note{font-size:11.5px;line-height:1.65;color:var(--muted);word-break:keep-all}
+/* ================= 홈(메뉴판) · 하단 탭 · 계산기 ================= */
+.home{display:none;padding:14px 16px 4px}
+body[data-view="home"] .home{display:block}
+body[data-view="home"] .editor,
+body[data-view="home"] .preview-pane,
+body[data-view="home"] .viewswitch,
+body[data-view="home"] .subbar,
+body[data-view="home"] .bottombar{display:none !important}
+.home-inner{max-width:820px;margin:0 auto}
+
+/* 상단: 내 사업자 요약 배너 */
+.home-hero{
+  position:relative;overflow:hidden;border-radius:18px;padding:15px 16px 16px;color:#fff;
+  background:linear-gradient(135deg,#12294A 0%,#1B3A67 58%,#24549B 100%);
+  box-shadow:0 8px 22px rgba(18,41,74,.20);
+}
+.home-hero-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.home-hero .kicker{font-size:10.5px;font-weight:800;letter-spacing:.06em;color:#9FB6D8}
+.home-hero .manage{
+  height:29px;padding:0 11px;border-radius:9px;font-size:11.5px;font-weight:700;white-space:nowrap;
+  color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26);
+}
+.home-hero .manage:active{background:rgba(255,255,255,.28)}
+.home-hero h2{font-size:17.5px;font-weight:800;letter-spacing:-.5px;margin-top:7px;word-break:keep-all;line-height:1.3}
+.home-hero p{margin-top:6px;font-size:12px;line-height:1.6;color:#C2D3EA;word-break:keep-all}
+.home-hero-cta{
+  display:block;width:100%;margin-top:12px;height:44px;border-radius:12px;
+  background:#fff;color:#12294A;font-size:14px;font-weight:800;letter-spacing:-.2px;
+}
+.home-hero-cta:active{background:#E8EFFA}
+
+/* 메뉴 그리드 */
+.home-sec{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:18px 2px 10px}
+.home-sec h2{font-size:14px;font-weight:800;letter-spacing:-.3px}
+.home-sec span{font-size:11px;font-weight:600;color:var(--muted)}
+.menu-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.menu-tile{
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px;
+  min-width:0;padding:11px 3px 10px;background:#fff;border:1px solid var(--line);
+  border-radius:14px;box-shadow:var(--shadow);min-height:92px;
+}
+.menu-tile:active{background:#F5F8FD;transform:scale(.98)}
+.menu-tile .mi{width:32px;height:32px;border-radius:11px;display:grid;place-items:center;flex:none}
+.menu-tile .mi svg{width:17px;height:17px}
+.menu-tile b{font-size:11.5px;font-weight:700;letter-spacing:-.4px;color:var(--ink);line-height:1.2;text-align:center;word-break:keep-all}
+.menu-tile span.sub{font-size:9.5px;color:var(--muted);line-height:1.15;text-align:center;letter-spacing:-.2px}
+.t-quote{background:#EDF2FE;color:#2B5FE0}
+.t-invoice{background:#E7F6F1;color:#0E7A5F}
+.t-detail{background:#FFF3E3;color:#B26A00}
+.t-vat{background:#F0EEFE;color:#5B4BD6}
+.t-margin{background:#E9F7EC;color:#1E7C3A}
+.t-labor{background:#FEEFEA;color:#B84C2A}
+.t-biz{background:#E8EEF9;color:#1B3A67}
+.t-docs{background:#EFF1F5;color:#4B5768}
+
+/* 보조 줄 */
+.home-row{display:flex;gap:8px;margin-top:10px}
+.home-row-btn{
+  flex:1;min-width:0;display:flex;align-items:center;justify-content:center;gap:6px;height:44px;
+  background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);
+  font-size:12px;font-weight:700;color:var(--ink2);letter-spacing:-.2px;
+}
+.home-row-btn svg{width:16px;height:16px;flex:none;color:var(--navy)}
+.home-row-btn b{color:var(--blue)}
+.home-row-btn:active{background:#F5F8FD}
+.home-note{
+  margin-top:12px;padding:13px 14px;background:#fff;border:1px solid var(--line);border-radius:14px;
+  box-shadow:var(--shadow);font-size:12px;line-height:1.7;color:#4B5768;word-break:keep-all;
+}
+.home-note b{color:var(--navy)}
+
+/* 상단 ← 홈으로 (문서작성 화면) */
+.subbar{display:flex;align-items:center;gap:9px;padding:10px 16px 0}
+.subbar .back{
+  display:inline-flex;align-items:center;gap:4px;height:34px;padding:0 11px 0 8px;flex:none;
+  background:#fff;border:1px solid var(--line2);border-radius:10px;
+  font-size:12.5px;font-weight:700;color:var(--navy);letter-spacing:-.2px;
+}
+.subbar .back:active{background:#F1F4F9}
+.subbar .back svg{width:15px;height:15px}
+.subbar .where{font-size:12px;font-weight:600;color:var(--muted);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* 하단 탭 바 (키즈노트 스타일) */
+.tabbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:46;display:none;align-items:stretch;gap:2px;
+  padding:7px 8px calc(6px + env(safe-area-inset-bottom));
+  background:rgba(255,255,255,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-top:1px solid var(--line);box-shadow:0 -2px 12px rgba(16,24,40,.05);
+}
+body[data-view="home"] .tabbar{display:flex}
+.tabbar button{
+  flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  height:47px;border-radius:12px;color:#8792A4;font-size:10.5px;font-weight:700;letter-spacing:-.3px;
+}
+.tabbar button svg{width:21px;height:21px;stroke-width:1.9}
+.tabbar button.active{color:var(--navy);background:#EEF3FB}
+.tabbar button.active svg{stroke-width:2.3}
+
+/* 계산기 모음 · 계산기 폼 */
+.calc-hint{font-size:11px;font-weight:600;color:var(--muted);margin:-2px 0 -3px}
+.calc-pick{
+  display:flex;align-items:center;gap:11px;width:100%;padding:12px;text-align:left;
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+}
+.calc-pick:active{background:#F5F8FD}
+.calc-pick .mi{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;flex:none}
+.calc-pick .mi svg{width:18px;height:18px}
+.calc-pick .txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.calc-pick .txt b{font-size:13.5px;font-weight:800;letter-spacing:-.3px}
+.calc-pick .txt span{font-size:11.5px;color:var(--muted);letter-spacing:-.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.calc-pick .chev{font-size:18px;color:#B6BECC;flex:none}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.calc-field{display:flex;flex-direction:column;gap:5px;min-width:0}
+.calc-field > span{font-size:11.5px;font-weight:700;color:var(--ink2)}
+.calc-field .box{display:flex;align-items:center;gap:5px;border:1px solid var(--line2);border-radius:11px;padding:0 11px;background:#fff}
+.calc-field input{flex:1;min-width:0;height:46px;border:0;padding:0;background:transparent;font-size:15.5px;font-weight:700;text-align:right;letter-spacing:-.3px}
+.calc-field .box i{font-style:normal;font-size:11.5px;font-weight:700;color:var(--muted);flex:none}
+.vat-out > div.sub{font-size:12px;color:#5A6779}
+.vat-out > div.sub b{font-size:14px}
+.vat-out > div b.neg{color:var(--danger)}
+/* 홈에서는 부가세 칩을 숨겨 상단을 깔끔하게 (탭 바에 부가세·계산이 있음) */
+body[data-view="home"] #btnVat{display:none}
+@media (max-width:400px){
+  .chip-btn{padding:0;width:38px;justify-content:center}
+  .chip-btn span{display:none}
+}
+@media (max-width:430px){
+  .appbar{gap:8px;padding-left:14px;padding-right:14px}
+  .appbar-actions{gap:6px}
+  .brand h1{font-size:15px}
+}
+.brand > div{min-width:0}
+.brand{overflow:hidden}
+@media (min-width:980px){
+  .home{padding:22px 26px 10px}
+  body[data-view="home"] .tabbar{display:none}
+  .subbar{padding:16px 26px 0}
+  .menu-tile{min-height:104px}
+  .menu-tile b{font-size:12.5px}
+  .menu-tile span.sub{font-size:10.5px}
+  .menu-tile .mi{width:36px;height:36px}
+  .menu-tile .mi svg{width:19px;height:19px}
+}
+</style>
+</head>
+<body data-view="home">
+
+<header class="appbar">
+  <div class="brand">
+    <div class="mark"><img src="./icons/mascot-128.png" alt="" width="34" height="34" decoding="async"></div>
+    <div>
+      <h1>사장랩</h1>
+      <p id="saveState">무료 · 이 브라우저에만 저장</p>
+    </div>
+  </div>
+  <div class="appbar-actions">
+    <button class="chip-btn" id="btnVat" title="부가세 계산기" aria-label="부가세 계산기">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 5L5 19"/><circle cx="7.5" cy="7.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>
+      <span>부가세</span>
+    </button>
+    <button class="icon-btn" id="btnHistory" title="저장한 문서" aria-label="저장한 문서">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="19" cy="17" r="1.6" fill="currentColor" stroke="none"/></svg>
+    </button>
+    <button class="icon-btn" id="btnHelp" title="도움말" aria-label="도움말">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.4 2.3c-.7.3-1 .9-1 1.6v.4"/><circle cx="12" cy="17" r=".9" fill="currentColor" stroke="none"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============================== 홈 (메뉴판) ============================== -->
+<section class="home" id="homeView">
+  <div class="home-inner">
+
+    <div class="home-hero" id="homeHero">
+      <div class="home-hero-top">
+        <span class="kicker" id="heroKicker">내 사업자</span>
+        <button type="button" class="manage" id="heroManage" hidden>관리</button>
+      </div>
+      <h2 id="heroName">내 사업자 정보 먼저 저장해 보세요</h2>
+      <p id="heroMeta">상호·사업자번호·연락처만 넣어 두면 견적서·거래명세서·공사내역서에 자동으로 찍힙니다. 입력한 내용은 이 브라우저에만 저장되고 어디로도 전송되지 않습니다.</p>
+      <button type="button" class="home-hero-cta" id="heroCta">내 사업자 저장</button>
+    </div>
+
+    <div class="home-sec">
+      <h2>우리 사장님 메뉴</h2>
+      <span id="homeDocSummary">저장 문서 0건</span>
+    </div>
+
+    <div class="menu-grid" id="menuGrid">
+        <button type="button" class="menu-tile" data-menu="quote" aria-label="견적서 작성">
+          <span class="mi t-quote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 16h4"/></svg></span>
+          <b>견적서</b><span class="sub">상담·견적</span>
+        </button>
+        <button type="button" class="menu-tile" data-menu="invoice" aria-label="거래명세서 작성">
+          <span class="mi t-invoice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span>
+          <b>거래명세서</b><span class="sub">납품·정산</span>
+        </button>
+        <button type="button" class="menu-tile" data-menu="detail" aria-label="공사내역서 작성">
+          <span class="mi t-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2.8h6V4"/><path d="M8.6 12.6l2.4 2.4 4-4.4"/></svg></span>
+          <b>공사내역서</b><span class="sub">완료확인</span>
+        </button>
+        <button type="button" class="menu-tile" data-menu="vat" aria-label="부가세(VAT) 계산기">
+          <span class="mi t-vat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5L5 19"/><circle cx="7.5" cy="7.5" r="2.4"/><circle cx="16.5" cy="16.5" r="2.4"/></svg></span>
+          <b>부가세(VAT)</b><span class="sub">세금계산</span>
+        </button>
+        <button type="button" class="menu-tile" data-menu="margin" aria-label="마진율 계산기">
+          <span class="mi t-margin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l5-5 4 3 6-7"/><path d="M15 8h4v4"/></svg></span>
+          <b>마진율</b><span class="sub">계산기</span>
+        </button>
+        <button type="button" class="menu-tile" data-menu="labor" aria-label="3.3% 인건비 계산기">
+          <span class="mi t-labor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.2" r="3.6"/><path d="M5.2 20c1.2-3.5 3.9-5.3 6.8-5.3s5.6 1.8 6.8 5.3"/></svg></span>
+          <b>3.3%</b><span class="sub">인건비</span>
+        </button>
+        <button type="button" class="menu-tile" data-menu="biz" aria-label="내 사업자 관리">
+          <span class="mi t-biz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M3.4 9l1.6-5h14l1.6 5"/><path d="M9.6 20v-5h4.8v5"/></svg></span>
+          <b>내 사업자</b><span class="sub">정보관리</span>
+        </button>
+        <button type="button" class="menu-tile" data-menu="docs" aria-label="저장한 문서함">
+          <span class="mi t-docs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5A1.5 1.5 0 0 1 5.5 6h3.7l2 2h7.3A1.5 1.5 0 0 1 20 9.5v8A1.5 1.5 0 0 1 18.5 19h-13A1.5 1.5 0 0 1 4 17.5z"/></svg></span>
+          <b>문서함</b><span class="sub">저장문서</span>
+        </button>
+    </div>
+
+    <div class="home-row">
+      <button type="button" class="home-row-btn" id="homeRecent">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+        최근 문서 <b class="homeDocCount">0</b>건
+      </button>
+      <button type="button" class="home-row-btn" id="homeHelp">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.4 2.3c-.7.3-1 .9-1 1.6v.4"/><circle cx="12" cy="17" r=".9" fill="currentColor" stroke="none"/></svg>
+        사용법 보기
+      </button>
+    </div>
+
+    <div class="home-note">
+      <b>처음이세요?</b> 위 <b>내 사업자</b>에 상호·사업자번호·연락처·계좌를 한 번 저장해 두면, <b>견적서</b>에서 금액만 채워도 견적서·거래명세서·공사내역서 세 가지 양식이 그대로 나옵니다. 회원가입·설치 없이 무료이고, 입력값은 이 브라우저에만 저장됩니다.
+    </div>
+
+<section class="about">
+      <h2>무료 견적서 만들기 — 회원가입 없이 지금 바로</h2>
+      <p>사장랩은 자영업자·프리랜서·소규모 사업자를 위한 <b>무료 견적서 프로그램</b>입니다. 설치도, 회원가입도, 결제도 없이 브라우저에서 바로 견적서를 만들 수 있습니다. 상호·사업자번호·연락처·계좌·도장을 한 번 저장해 두면 다음부터는 금액만 입력하면 됩니다.</p>
+
+      <h3>한 번 입력으로 3가지 문서</h3>
+      <p>입력한 사업자·거래처·품목·금액이 <b>견적서</b>, <b>거래명세서</b>, <b>공사내역서</b> 세 가지 양식에 그대로 이어집니다. 견적서를 보내고 일이 끝나면 같은 내용으로 거래명세서와 공사내역서를 다시 만들 필요가 없습니다. 공사내역서는 완료 확인 문구와 공급자·공급받는자 사업자 표, 업태·종목까지 갖춘 서식으로 출력되어 관공서·지원금 서류에도 쓰기 좋습니다.</p>
+
+      <h3>부가세 포함·별도·일반 3가지</h3>
+      <p>부가세 <b>포함</b>(총액에서 공급가액과 세액을 나눠 표시), <b>별도</b>(공급가액에 10%를 더함), <b>일반</b>(세액 없이 품목 합계만) 세 가지를 문서에 맞게 고를 수 있습니다. 합계는 한글 금액(일금 ○○원정)으로도 함께 표기됩니다.</p>
+
+      <h3>부가세 계산기 — 합계에서 공급가액 역산</h3>
+      <p>부가세가 포함된 금액만 알 때도 바로 계산됩니다. 화면 위 <b>부가세</b> 버튼으로 계산기를 열고 <b>합계 → 공급가액</b>을 고른 뒤 1,100,000원을 넣으면 공급가액 1,000,000원·부가세 100,000원이 바로 나옵니다. 반대로 <b>공급가액 → 합계</b>는 공급가액에 10%를 더해 합계를 냅니다. +1만·+10만·+100만 버튼으로 금액을 더하고, 결과를 복사하거나 계산한 공급가액을 지금 쓰는 품목 단가에 바로 넣을 수 있습니다.</p>
+      <button class="about-link" data-vat-open>부가세 계산기 열기</button>
+
+      <h3>A4 PNG·PDF 저장, 카톡·메일로 바로</h3>
+      <p>문서는 A4 비율 그대로 고해상도 PNG로 저장하거나 PDF·인쇄로 뽑을 수 있습니다. 카카오톡·문자로 보내기 좋고, 거래처 이메일을 적어 두면 메일 앱이 열리며 제목과 본문(문서번호·합계·입금계좌·연락처)이 자동으로 채워집니다.</p>
+
+      <h3>내용은 내 브라우저에만</h3>
+      <p>거래처 정보, 계좌번호, 도장 이미지까지 모든 입력값은 <b>내 브라우저 저장 공간에만</b> 남고 서버로 전송되지 않습니다. 계정도 로그인도 없습니다. 폰 홈화면에 추가하면 인터넷이 없어도 열리는 앱처럼 쓸 수 있습니다.</p>
+
+      <details>
+        <summary>자주 묻는 질문</summary>
+        <p><b>정말 무료인가요?</b> 네. 회원가입·결제 없이 모든 기능을 쓸 수 있습니다. 서비스 운영을 위해 화면 일부에 광고가 표시될 수 있습니다.</p>
+        <p><b>엑셀 없이도 되나요?</b> 됩니다. 엑셀 양식처럼 칸을 채우는 대신 화면에서 입력하면 A4 문서로 바로 출력됩니다. 필요하면 저장한 문서를 백업 파일(JSON)로 내려받아 다른 기기에서 복원할 수 있습니다.</p>
+        <p><b>도장은 어떻게 넣나요?</b> [내 사업자 정보 입력·수정]에서 도장 이미지(스캔·사진)를 올리면 그 사업자의 문서에 자동으로 날인됩니다.</p>
+        <p><b>부가세 계산기도 있나요?</b> 있습니다. 화면 위 <b>부가세</b> 버튼으로 계산기를 열면 공급가액에 10%를 더한 합계와, 부가세가 포함된 합계금액에서 공급가액·세액을 역산한 값이 바로 나옵니다(1,100,000원 → 공급가액 1,000,000원 / 부가세 100,000원). 계산한 공급가액은 품목 단가에 바로 넣을 수 있습니다.</p>
+        <p><b>휴대폰에서도 되나요?</b> 아이폰 사파리·안드로이드 크롬 모두 됩니다. 공유 → 홈 화면에 추가를 누르면 앱처럼 열립니다.</p>
+      </details>
+    </section>
+
+    <p class="site-foot"><b>사장랩</b> · 무료 견적서·거래명세서·공사내역서·부가세 계산기<br>모든 입력값은 내 브라우저에만 저장됩니다 · 서버 전송 없음<br><a href="./privacy.html">개인정보처리방침</a> · 문의·건의: <a href="mailto:sajanglab2026@gmail.com">sajanglab2026@gmail.com</a></p>
+
+  </div>
+</section>
+
+<div class="subbar" id="subBar">
+  <button type="button" class="back" id="btnHomeBack">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5.5L8.5 12 15 18.5"/></svg>홈으로
+  </button>
+  <span class="where" id="subBarWhere">견적서 작성</span>
+</div>
+
+<div class="viewswitch" id="viewSwitch">
+  <button data-view="edit" class="active">입력</button>
+  <button data-view="preview">미리보기<span class="cnt" id="pvCount"></span></button>
+</div>
+
+<!-- ============================================================
+     [광고 슬롯 · 상단] 애드센스 승인 후 사용하세요.
+     1) <head>에 아래 스크립트를 넣고 ca-pub-XXXXXXXXXXXXXXX 를 내 퍼블리셔 ID로 바꿉니다.
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+     2) 아래 ins 의 data-ad-client / data-ad-slot 을 실제 값으로 바꿉니다.
+     3) 스크립트의 ADS_ENABLED 를 true 로 바꾸면 빈 박스가 아니라 광고 영역이 보입니다.
+        (승인 전에는 display:none 이라 레이아웃에 빈칸이 생기지 않습니다.)
+     ============================================================ -->
+<div class="ad-slot ad-top" id="adTop" data-ad-slot="0000000000" aria-hidden="true">
+  <span class="ad-tag">광고</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXX" data-ad-slot="0000000000" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+
+<main class="workspace">
+  <section class="editor" id="editor">
+
+    <div class="types" id="docTypes" role="tablist" aria-label="문서 종류">
+      <button class="type-btn active" data-type="quote" role="tab" aria-selected="true"><b>견적서</b><span>상담·견적</span></button>
+      <button class="type-btn" data-type="invoice" role="tab" aria-selected="false"><b>거래명세서</b><span>납품·정산</span></button>
+      <button class="type-btn" data-type="detail" role="tab" aria-selected="false"><b>공사내역서</b><span>완료확인·지원금</span></button>
+    </div>
+    <p class="type-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h13M13 6l6 6-6 6"/></svg><span>입력한 내역 그대로 <b>문서 양식만</b> 바뀝니다 · 사업자·거래처·품목·부가세·금액이 그대로 이어집니다</span></p>
+
+    <div class="onboard" id="onboard">
+      <h3>먼저 내 사업자 정보를 저장하세요</h3>
+      <p>상호·사업자번호·연락처만 넣어 두면 견적서·거래명세서·공사내역서에 자동으로 찍힙니다. 사업자가 여러 개면 각각 저장해 골라 쓸 수 있습니다. 입력한 내용은 <b>이 브라우저에만</b> 저장되고 어디로도 전송되지 않습니다.</p>
+      <button class="btn primary" id="btnOnboardSave">내 사업자 저장</button>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2><span class="idx">01</span>사업자</h2>
+        <button class="text-btn" id="btnBizAdd">+ 내 사업자 추가</button>
+      </div>
+      <div class="select-wrap"><select id="bizSelect" aria-label="사업자 선택"></select></div>
+      <p class="biz-summary" id="bizSummary"></p>
+      <div class="quick-biz">
+        <div class="field">
+          <label>사업장 주소 <span class="sub">문서에 바로 반영 · 자동 저장</span></label>
+          <input type="text" id="qAddr" placeholder="예) 서울 강남구 테헤란로 123, 4층" autocomplete="off">
+        </div>
+        <div class="field">
+          <label>우리 이메일 <span class="sub">회신받을 주소</span></label>
+          <input type="email" id="qEmail" placeholder="이 사업자로 회신받을 메일" autocomplete="off">
+        </div>
+        <div class="mail-chips" id="qMailChips"></div>
+      </div>
+      <div class="link-row">
+        <button class="link-btn alt" id="btnBizEdit">내 사업자 정보 입력·수정</button>
+        <button class="link-btn" id="btnBizDemo">예시 채우기(테스트용)</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2><span class="idx">02</span>문서 정보</h2></div>
+      <div class="stack">
+        <div class="grid2">
+          <div class="field"><label>작성일</label><input type="date" data-bind="date"></div>
+          <div class="field" data-not-detail><label id="dueLabel">견적 유효기간</label><input type="date" data-bind="dueDate"></div>
+          <div class="field" data-detail-only hidden>
+            <label>공사기간 <span class="sub">선택</span></label>
+            <input type="text" data-bind="period" placeholder="예) 2026.11.20 ~ 11.22" autocomplete="off">
+          </div>
+        </div>
+        <div class="field">
+          <label>문서번호 <span class="sub">자동 생성</span></label>
+          <div class="inline-field">
+            <input type="text" data-bind="docNo" inputmode="text" autocomplete="off">
+            <button class="icon-inline" id="btnNewNo" title="번호 다시 만들기" aria-label="문서번호 다시 만들기">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 5v6h-6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="field" data-detail-only hidden>
+          <label>공사명 <span class="sub">선택</span></label>
+          <input type="text" data-bind="title" placeholder="예) ○○상가 인테리어 공사">
+        </div>
+        <div class="field">
+          <label>공급받는자 <span class="sub">상호 또는 고객명</span></label>
+          <input type="text" data-bind="client.name" placeholder="예) ○○식당 / 김○○" autocomplete="off">
+        </div>
+        <div class="field">
+          <label>이메일 <span class="sub">선택 · 메일 보내기</span></label>
+          <input type="email" data-bind="client.email" placeholder="예: client@example.com" inputmode="email" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="grid2">
+          <div class="field"><label>연락처</label><input type="tel" data-bind="client.tel" placeholder="010-0000-0000" autocomplete="off"></div>
+          <div class="field"><label>주소 <span class="sub">선택</span></label><input type="text" data-bind="client.addr" placeholder="예) 서울 마포구 월드컵북로 100" autocomplete="off"></div>
+        </div>
+        <div class="grid2" data-detail-only hidden>
+          <div class="field"><label>대표자 <span class="sub">상대편 사업자</span></label><input type="text" data-bind="client.ceo" placeholder="예) 김○○" autocomplete="off"></div>
+          <div class="field"><label>사업자등록번호 <span class="sub">상대편</span></label><input type="text" data-bind="client.bizno" placeholder="000-00-00000" inputmode="numeric" autocomplete="off"></div>
+        </div>
+        <div class="field" data-detail-only hidden>
+          <label>현장 주소 <span class="sub">선택</span></label>
+          <input type="text" data-bind="client.site" placeholder="공사·방문 현장 주소" autocomplete="off">
+        </div>
+        <div class="field" data-detail-only hidden>
+          <label>담당자 · 연락처 <span class="sub">문서 상단 표시</span></label>
+          <p class="note-box" style="margin:0">문서 상단의 담당자는 <b>01 사업자</b>의 대표자가, 연락처는 <b>공사내역서 연락처</b>가 들어갑니다. [내 사업자 정보 입력·수정]에서 바꿀 수 있습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2><span class="idx">03</span>품목</h2>
+      </div>
+      <div class="items" id="items"></div>
+      <button class="add-item" id="btnAddItem">+ 품목 추가</button>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2><span class="idx">04</span>금액 · 부가세</h2></div>
+      <div class="seg" id="vatSeg">
+        <button data-vat="excl" class="active">부가세 별도</button>
+        <button data-vat="incl">부가세 포함</button>
+        <button data-vat="none">일반·면세</button>
+      </div>
+      <div class="calc" id="calcBox"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2><span class="idx">05</span>입금 계좌</h2></div>
+      <div class="stack">
+        <div class="grid2">
+          <div class="field"><label>은행</label><input type="text" data-bind="acct.bank" placeholder="예) 국민" autocomplete="off"></div>
+          <div class="field"><label>예금주</label><input type="text" data-bind="acct.holder" placeholder="예) 홍길동" autocomplete="off"></div>
+        </div>
+        <div class="field"><label>계좌번호</label><input type="text" data-bind="acct.number" inputmode="numeric" placeholder="000-00-000000" autocomplete="off"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2><span class="idx">06</span>특약 · 비고</h2></div>
+      <textarea data-bind="note" placeholder="예) 상기 금액은 현장 확인 후 최종 확정됩니다."></textarea>
+      <div class="chips" id="noteChips"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2><span class="idx">07</span>도장</h2></div>
+      <div class="stamp-box">
+        <div class="stamp-prev" id="stampPrev"></div>
+        <div class="stamp-actions">
+          <button class="mini-btn" id="btnStampUp">도장 이미지 올리기</button>
+          <button class="mini-btn ghost" id="btnStampDel">지우기</button>
+          <label class="check"><input type="checkbox" id="stampShow" checked>문서에 표시</label>
+        </div>
+      </div>
+      <input type="file" id="stampFile" accept="image/*" hidden>
+      <p class="preview-hint" style="text-align:left;margin-top:10px">도장은 사업자별로 저장돼 다음 문서에도 그대로 찍힙니다. 배경이 투명한 PNG가 가장 깔끔합니다.</p>
+    </div>
+
+    <div class="editor-actions">
+      <button id="btnNewDoc">새 문서</button>
+      <button id="btnSaveTop" class="primary">이 문서 저장</button>
+    </div>
+    <p class="preview-hint" style="text-align:left;margin:-2px 2px 0">[이 문서 저장]은 지금 문서를 저장·덮어쓰고, 다른 건은 <b>새 문서</b>로 시작합니다. 저장한 문서는 오른쪽 위 <b>≡</b> 목록에서 다시 열 수 있습니다.</p>
+
+
+  </section>
+
+  <section class="preview-pane" id="previewPane">
+    <div class="preview-toolbar">
+      <div class="page-nav">
+        <button id="prevPage" aria-label="이전 페이지">‹</button>
+        <span class="lbl" id="pageLabel">1 / 1</span>
+        <button id="nextPage" aria-label="다음 페이지">›</button>
+        <button id="btnZoom" class="pv-zoom" title="확대" aria-label="미리보기 확대">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+        </button>
+      </div>
+      <div class="pv-actions">
+        <button class="btn mail" id="btnMail" title="메일로 보내기" aria-label="메일로 보내기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.6 7.2l8.4 5.9 8.4-5.9"/></svg>메일</button>
+        <button class="btn" id="btnPng">PNG 저장</button>
+        <button class="btn blue" id="btnPdf">PDF·인쇄</button>
+        <button class="btn primary" id="btnSave">저장</button>
+      </div>
+    </div>
+    <div class="page-stage">
+      <div class="frame"><canvas id="docCanvas" width="794" height="1123"></canvas></div>
+    </div>
+    <p class="preview-hint">A4 비율 그대로 출력됩니다 · <b>PNG는 카톡 전송용</b>, <b>PDF는 인쇄 대화상자에서 저장</b><br><span style="display:inline-block;margin-top:5px;color:#98A2B3">문서 종류는 <b>[입력]</b> 화면 맨 위 탭에서 바꿉니다 · 입력한 내역 그대로 양식만 바뀝니다</span></p>
+  </section>
+</main>
+
+<!-- [광고 슬롯 · 하단] 위 상단 슬롯과 같은 방법으로 사용하세요 (승인 전 display:none) -->
+<div class="ad-slot ad-bottom" id="adBottom" data-ad-slot="1111111111" aria-hidden="true">
+  <span class="ad-tag">광고</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXX" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+
+<nav class="tabbar" id="tabBar" aria-label="주요 메뉴">
+  <button type="button" data-tab="home" class="active" aria-label="홈">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.6 10.4L12 3.5l8.4 6.9V20a1 1 0 0 1-1 1h-4.6v-6H10v6H5a1 1 0 0 1-1-1z"/></svg>
+    <span>홈</span>
+  </button>
+  <button type="button" data-tab="write" aria-label="문서작성">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4l10-10a2.5 2.5 0 0 0-3.5-3.5L4.5 16.5z"/><path d="M13.5 7L17 10.5"/></svg>
+    <span>문서작성</span>
+  </button>
+  <button type="button" data-tab="calc" aria-label="부가세·계산">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="3" width="15" height="18" rx="2.4"/><path d="M8 7.5h8"/><path d="M8.6 12h.9M14.5 12h.9M8.6 16.4h.9M14.5 16.4h.9"/></svg>
+    <span>부가세·계산</span>
+  </button>
+  <button type="button" data-tab="docs" aria-label="문서함">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5A1.5 1.5 0 0 1 5.5 6h3.7l2 2h7.3A1.5 1.5 0 0 1 20 9.5v8A1.5 1.5 0 0 1 18.5 19h-13A1.5 1.5 0 0 1 4 17.5z"/></svg>
+    <span>문서함</span>
+  </button>
+</nav>
+
+<div class="bottombar">
+  <div class="bb-total"><span>합계금액</span><b id="bbTotal">0원</b></div>
+  <button class="btn mail" id="btnMail2" title="메일로 보내기" aria-label="메일로 보내기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.6 7.2l8.4 5.9 8.4-5.9"/></svg>메일</button>
+  <button class="btn" id="btnPng2">PNG</button>
+  <button class="btn blue" id="btnPdf2">PDF</button>
+  <button class="btn primary" id="btnSave2">저장</button>
+</div>
+
+<!-- 사업자 정보 수정 -->
+<div class="modal" id="modalBiz">
+  <div class="modal-card">
+    <div class="modal-head"><h3>사업자 정보</h3><button class="x" data-close aria-label="닫기">✕</button></div>
+    <div class="modal-body">
+      <div class="field"><label>상호 <span class="sub">앱에서 부르는 이름</span></label><input type="text" id="bzName" autocomplete="off"></div>
+      <div class="field"><label>문서 상호 <span class="sub">사업자등록증 상호 · 비우면 위 상호</span></label><input type="text" id="bzLegal" placeholder="예) 사업자등록증에 적힌 상호" autocomplete="off"></div>
+      <div class="grid2">
+        <div class="field"><label>대표</label><input type="text" id="bzCeo" autocomplete="off"></div>
+        <div class="field"><label>사업자번호</label><input type="text" id="bzNo" inputmode="numeric" placeholder="000-00-00000" autocomplete="off"></div>
+      </div>
+      <div class="grid2">
+        <div class="field"><label>업태 <span class="sub">공사내역서 표시</span></label><input type="text" id="bzUptae" placeholder="예) 서비스" autocomplete="off"></div>
+        <div class="field"><label>종목 <span class="sub">공사내역서 표시</span></label><input type="text" id="bzJongmok" placeholder="예) 실내건축" autocomplete="off"></div>
+      </div>
+      <div class="grid2">
+        <div class="field"><label>연락처 <span class="sub">견적서·거래명세서</span></label><input type="tel" id="bzTel" placeholder="010-0000-0000" autocomplete="off"></div>
+        <div class="field"><label>공사내역서 연락처 <span class="sub">비우면 위 연락처</span></label><input type="tel" id="bzTelDetail" placeholder="010-0000-0000" autocomplete="off"></div>
+      </div>
+      <div class="field"><label>주소</label><input type="text" id="bzAddr" placeholder="사업장 주소" autocomplete="off"></div>
+      <div class="field">
+        <label>우리 이메일 <span class="sub">회신 메일 · 문서·메일 본문에 표시</span></label>
+        <input type="email" id="bzEmail" placeholder="회신받을 메일 주소" autocomplete="off">
+        <div class="mail-chips" id="bzMailChips"></div>
+      </div>
+      <div class="grid2">
+        <div class="field"><label>은행</label><input type="text" id="bzBank" autocomplete="off"></div>
+        <div class="field"><label>예금주</label><input type="text" id="bzHolder" autocomplete="off"></div>
+      </div>
+      <div class="field"><label>계좌번호</label><input type="text" id="bzAcct" inputmode="numeric" autocomplete="off"></div>
+      <p class="note-box">확인되지 않은 정보는 비워 두세요. 빈칸은 문서에도 빈칸으로 나옵니다. 여기 저장한 정보는 이 브라우저에만 보관됩니다.</p>
+    </div>
+    <div class="modal-foot">
+      <button class="btn" id="bzDelete" style="display:none;color:#C0392B;border-color:#F6DFDC">삭제</button>
+      <button class="btn" data-close>취소</button>
+      <button class="btn primary" id="bzSave">저장</button>
+    </div>
+  </div>
+</div>
+
+<!-- 저장한 문서 -->
+<div class="modal" id="modalHistory">
+  <div class="modal-card">
+    <div class="modal-head"><h3>저장한 문서</h3><button class="x" data-close aria-label="닫기">✕</button></div>
+    <div class="modal-body">
+      <div class="hsearch">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+        <input type="text" id="hSearch" placeholder="제목 · 고객명 · 문서번호로 검색" autocomplete="off">
+      </div>
+      <div class="hlist" id="hList"></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn" id="btnBackup">전체 백업</button>
+      <button class="btn" id="btnRestore">백업 복원</button>
+      <button class="btn primary" data-close>닫기</button>
+    </div>
+  </div>
+</div>
+
+<!-- 도움말 -->
+<!-- ---------------- 부가세 계산기 ---------------- -->
+<div class="modal" id="modalVat">
+  <div class="modal-card" style="max-width:460px">
+    <div class="modal-head"><h3>부가세(VAT) 계산기</h3><button class="x" data-close aria-label="닫기">✕</button></div>
+    <div class="modal-body">
+      <div class="vat-switch" id="vatSwitch">
+        <button type="button" data-vatdir="supply" class="active">공급가액 → 합계</button>
+        <button type="button" data-vatdir="total">합계 → 공급가액</button>
+      </div>
+      <label class="vat-label" id="vatInputLabel" for="vatInput">공급가액 (부가세 별도)</label>
+      <div class="vat-input-row">
+        <input type="text" id="vatInput" inputmode="numeric" autocomplete="off" placeholder="0" value="">
+        <span>원</span>
+      </div>
+      <div class="vat-quick" id="vatQuick">
+        <button type="button" data-add="10000">+1만</button>
+        <button type="button" data-add="100000">+10만</button>
+        <button type="button" data-add="1000000">+100만</button>
+        <button type="button" class="alt" data-reset="1">초기화</button>
+      </div>
+      <div class="vat-out">
+        <div><span>공급가액</span><b id="vatOutSupply">0 원</b></div>
+        <div><span>부가세 (10%)</span><b id="vatOutTax">0 원</b></div>
+        <div class="total"><span>합계금액</span><b id="vatOutTotal">0 원</b></div>
+        <p class="vat-ko" id="vatOutKo">일금 영원정</p>
+      </div>
+      <label class="vat-label" for="vatItemSelect">들어갈 품목 선택</label>
+      <div class="vat-row">
+        <select id="vatItemSelect" aria-label="들어갈 품목 선택"></select>
+      </div>
+      <p class="vat-note" id="vatNote">공급가액에 부가세 10%를 더했습니다. 합계 = 공급가액 + 부가세</p>
+    </div>
+    <div class="modal-foot">
+      <button class="btn" id="vatCopy">결과 복사</button>
+      <button class="btn primary" id="vatFill">품목 단가에 넣기</button>
+    </div>
+  </div>
+</div>
+
+<!-- ---------------- 계산기 모음 (하단 탭 '부가세·계산') ---------------- -->
+<div class="modal" id="modalCalc">
+  <div class="modal-card" style="max-width:460px">
+    <div class="modal-head"><h3>부가세·계산</h3><button class="x" data-close aria-label="닫기">✕</button></div>
+    <div class="modal-body">
+      <p class="vat-note">자주 쓰는 세금·마진 계산을 모았습니다. 값을 넣으면 바로 계산됩니다.</p>
+      <button type="button" class="calc-pick" data-calc="vat">
+        <span class="mi t-vat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M19 5L5 19"/><circle cx="7.5" cy="7.5" r="2.4"/><circle cx="16.5" cy="16.5" r="2.4"/></svg></span>
+        <span class="txt"><b>부가세(VAT) 계산기</b><span>공급가액 ↔ 합계 · 부가세 10% 역산</span></span>
+        <span class="chev">›</span>
+      </button>
+      <button type="button" class="calc-pick" data-calc="margin">
+        <span class="mi t-margin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l5-5 4 3 6-7"/><path d="M15 8h4v4"/></svg></span>
+        <span class="txt"><b>마진율 계산기</b><span>순이익·마진율·원가율·손익분기 판매가</span></span>
+        <span class="chev">›</span>
+      </button>
+      <button type="button" class="calc-pick" data-calc="withhold">
+        <span class="mi t-labor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.2" r="3.6"/><path d="M5.2 20c1.2-3.5 3.9-5.3 6.8-5.3s5.6 1.8 6.8 5.3"/></svg></span>
+        <span class="txt"><b>3.3% 인건비 계산기</b><span>세전 → 실수령 · 실수령 → 세전 역산</span></span>
+        <span class="chev">›</span>
+      </button>
+    </div>
+    <div class="modal-foot"><button class="btn primary" data-close>닫기</button></div>
+  </div>
+</div>
+
+<!-- ---------------- 마진율 · 순이익 계산기 ---------------- -->
+<div class="modal" id="modalMargin">
+  <div class="modal-card" style="max-width:460px">
+    <div class="modal-head"><h3>마진율 계산기</h3><button class="x" data-close aria-label="닫기">✕</button></div>
+    <div class="modal-body">
+      <div class="calc-grid">
+        <label class="calc-field" for="mgSale"><span>판매가 (받는 금액)</span>
+          <span class="box"><input type="text" id="mgSale" inputmode="numeric" autocomplete="off" placeholder="0"><i>원</i></span>
+        </label>
+        <label class="calc-field" for="mgCost"><span>매입원가</span>
+          <span class="box"><input type="text" id="mgCost" inputmode="numeric" autocomplete="off" placeholder="0"><i>원</i></span>
+        </label>
+        <label class="calc-field" for="mgFee"><span>플랫폼·카드 수수료</span>
+          <span class="box"><input type="text" id="mgFee" inputmode="decimal" autocomplete="off" placeholder="0"><i>%</i></span>
+        </label>
+        <label class="calc-field" for="mgExtra"><span>배송·기타비</span>
+          <span class="box"><input type="text" id="mgExtra" inputmode="numeric" autocomplete="off" placeholder="0"><i>원</i></span>
+        </label>
+      </div>
+      <p class="calc-hint">빠른 금액 — 아래 버튼은 판매가에 더합니다</p>
+      <div class="vat-quick" id="mgQuick">
+        <button type="button" data-add="10000">+1만</button>
+        <button type="button" data-add="100000">+10만</button>
+        <button type="button" data-add="1000000">+100만</button>
+        <button type="button" class="alt" data-reset="1">초기화</button>
+      </div>
+      <div class="vat-out">
+        <div><span>판매가</span><b id="mgOutSale">0 원</b></div>
+        <div><span>수수료</span><b id="mgOutFee">0 원</b></div>
+        <div><span>매입원가 + 배송·기타비</span><b id="mgOutCost">0 원</b></div>
+        <div class="total"><span>순이익</span><b id="mgOutProfit">0 원</b></div>
+        <div class="sub"><span>마진율</span><b id="mgOutMargin">0%</b></div>
+        <div class="sub"><span>원가율</span><b id="mgOutCostRate">0%</b></div>
+        <div class="sub"><span>손익분기 판매가</span><b id="mgOutBe">0 원</b></div>
+      </div>
+      <p class="vat-note">순이익 = 판매가 − 매입원가 − 배송·기타비 − 수수료(판매가 × 수수료%). 마진율 = 순이익 ÷ 판매가, 원가율 = (매입원가 + 배송·기타비) ÷ 판매가, 손익분기 판매가 = (매입원가 + 배송·기타비) ÷ (1 − 수수료%)입니다.</p>
+    </div>
+    <div class="modal-foot">
+      <button class="btn" id="mgCopy">결과 복사</button>
+      <button class="btn primary" data-close>닫기</button>
+    </div>
+  </div>
+</div>
+
+<!-- ---------------- 3.3% 원천징수(인건비) 계산기 ---------------- -->
+<div class="modal" id="modalWithhold">
+  <div class="modal-card" style="max-width:460px">
+    <div class="modal-head"><h3>3.3% 인건비 계산기</h3><button class="x" data-close aria-label="닫기">✕</button></div>
+    <div class="modal-body">
+      <div class="vat-switch" id="whSwitch">
+        <button type="button" data-whdir="gross" class="active">세전 → 실수령</button>
+        <button type="button" data-whdir="net">실수령 → 세전</button>
+      </div>
+      <label class="vat-label" id="whInputLabel" for="whInput">세전 지급액 (계약 금액)</label>
+      <div class="vat-input-row">
+        <input type="text" id="whInput" inputmode="numeric" autocomplete="off" placeholder="0" value="">
+        <span>원</span>
+      </div>
+      <div class="vat-quick" id="whQuick">
+        <button type="button" data-add="10000">+1만</button>
+        <button type="button" data-add="100000">+10만</button>
+        <button type="button" data-add="1000000">+100만</button>
+        <button type="button" class="alt" data-reset="1">초기화</button>
+      </div>
+      <div class="vat-out">
+        <div id="whRowGross"><span>세전 지급액</span><b id="whGross">0 원</b></div>
+        <div><span>소득세 (3%)</span><b id="whIncome">0 원</b></div>
+        <div><span>지방세 (0.3%)</span><b id="whLocal">0 원</b></div>
+        <div class="total" id="whRowNet"><span>세후 실수령액</span><b id="whNet">0 원</b></div>
+      </div>
+      <p class="vat-note" id="whNote">세전 지급액에서 소득세 3%와 지방세 0.3%(합계 3.3%)를 뺀 금액이 실수령액입니다. 일용·프리랜서 인건비 지급 때 쓰는 계산입니다.</p>
+    </div>
+    <div class="modal-foot">
+      <button class="btn" id="whCopy">결과 복사</button>
+      <button class="btn primary" data-close>닫기</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modalHelp">
+  <div class="modal-card">
+    <div class="modal-head"><h3>이렇게 쓰면 됩니다</h3><button class="x" data-close aria-label="닫기">✕</button></div>
+    <div class="modal-body">
+      <div class="help-list">
+        <div>
+          <h4><span class="num">1</span>문서 종류는 위에서 한 번만</h4>
+          <p>견적서 · 거래명세서 · 공사내역서가 같은 입력값을 공유합니다. 견적서를 보낸 뒤 거래명세서로 바꿀 때는 <b>저장한 문서</b>에서 <b>거래명세서로</b> 버튼을 누르면 품목이 그대로 넘어갑니다.</p>
+        </div>
+        <div>
+          <h4><span class="num">2</span>어디에도 전송되지 않습니다</h4>
+          <p>거래처, 계좌번호, 도장 이미지를 포함한 모든 내용은 <b>이 브라우저의 저장 공간(localStorage)</b>에만 남습니다. 서버도, 계정도, 로그인도 없습니다.</p>
+        </div>
+        <div>
+          <h4><span class="num">3</span>이미지(PNG) 저장</h4>
+          <p>미리보기의 <b>PNG 저장</b>을 누르면 문서 부분만 고해상도로 저장됩니다. 카톡·문자로 바로 보내기 좋습니다. (여러 장이면 세로로 이어 붙입니다.) 아이폰에서는 내려받은 이미지가 <b>파일 앱</b>에 저장되니, 카톡에서 <b>파일</b>로 골라 보내면 됩니다.</p>
+        </div>
+        <div>
+          <h4><span class="num">4</span>PDF 저장 · 인쇄</h4>
+          <p><b>PDF·인쇄</b>를 누르고 인쇄 대화상자에서 <b>PDF로 저장</b>을 고르세요. 아이폰 사파리는 공유 → <b>프린트</b> → 미리보기에서 <b>파일로 저장</b>하면 PDF가 됩니다. 여백은 <b>없음</b>, 배율 <b>100%</b>로 두세요.</p>
+        </div>
+        <div>
+          <h4><span class="num">5</span>아이폰 홈 화면에 앱처럼</h4>
+          <p>사파리에서 이 파일을 연 뒤 <b>공유 → 홈 화면에 추가</b>를 누르면 앱처럼 열립니다. 인터넷 없이도 동작합니다. (파일을 옮기거나 브라우저 저장 공간을 지우면 기록도 사라지니, 가끔 <b>전체 백업</b>으로 파일을 받아 두세요.)</p>
+        </div>
+        <div>
+          <h4><span class="num">6</span>부가세 3가지</h4>
+          <p><b>부가세 포함</b> — 입력한 단가·수량이 이미 부가세가 포함된 금액입니다. 총액은 그대로 두고 공급가액과 세액을 나눠 표시합니다.<br><b>부가세 별도</b> — 입력한 금액이 공급가액이고, 10%를 더해 합계를 냅니다.<br><b>일반(부가세 없음)</b> — 세액 줄 없이 품목 합계만 표시합니다. 현금 거래·간이과세·부가세 미표기 견적용.<br>화면 위 <b>[% 부가세]</b> 버튼은 <b>부가세 계산기</b>입니다. 거래처가 부가세 포함 금액만 불러 줄 때 <b>합계 → 공급가액</b>으로 공급가액·세액을 바로 역산하고, 그 금액을 품목 단가에 넣을 수 있습니다.</p>
+        </div>
+        <div>
+          <h4><span class="num">7</span>공사내역서 양식</h4>
+          <p>탭에서 <b>공사내역서</b>를 고르면 실제 공사내역서 양식으로 나옵니다. 상단에 <b>담당자</b>(사업자 대표자)와 <b>연락처</b>(사업자의 <b>공사내역서 연락처</b>)·<b>견적일자</b>가 들어가고, 그 아래 <b>왼쪽 = 공급받는자(상대편 사업자) / 오른쪽 = 공급자(우리 사업자)</b> 표가 나란히 놓입니다. 상대편 상호·사업자번호·대표자는 <b>02 문서 정보</b>에서 적고, 우리 쪽 업태·종목은 <b>[내 사업자 정보 입력·수정]</b>에서 적습니다. 품목표는 <b>NO·품명·규격·단위·수량·단가·공급가액·세액</b>이고, 합계는 <b>소계·총공급가액·세액·합계(부가세 포함)</b>로 나옵니다. 참고사항에는 완료 확인 문구가 자동으로 들어가며(자유롭게 고칠 수 있음), 그 아래에 계좌번호가 찍힙니다. 도장은 서명란이 아니라 <b>공급자 표의 대표자 (인)</b> 자리에 찍힙니다.</p>
+        </div>
+        <div>
+          <h4><span class="num">8</span>내 사업자 저장(여러 개)</h4>
+          <p>01 사업자 카드의 <b>내 사업자 정보 입력·수정</b>을 눌러 상호·사업자번호·대표·업태·종목·연락처·주소·이메일·계좌를 넣고 <b>저장</b>하면 이 브라우저에 남아 다음 문서부터 자동으로 채워집니다. <b>+ 내 사업자 추가</b>로 여러 사업자를 만들어 두고 위 선택 칸에서 골라 쓸 수 있습니다. 처음 화면이 비어 있을 때는 <b>예시 채우기(테스트용)</b>로 가상의 값(예시상사·홍길동 등)을 넣어 사용법을 먼저 확인해 보세요.</p>
+        </div>
+        <div>
+          <h4><span class="num">9</span>고객 이메일로 바로 보내기</h4>
+          <p>공급받는자에 <b>이메일</b>을 적어 두고 <b>메일</b> 버튼을 누르면 메일 앱이 열립니다. 제목·본문(합계금액·입금계좌·연락처)이 자동으로 채워집니다. 사업자마다 다른 <b>우리 이메일</b>을 저장해 두었다면 본문에 <b>회신 메일</b> 줄이 함께 들어가 받는 분이 바로 회신할 수 있습니다. 메일로는 파일이 자동 첨부되지 않으니, 먼저 <b>PNG 저장</b> 또는 <b>PDF</b>로 받은 파일을 메일 앱에서 첨부해 발송하세요. 이메일을 비워 두면 받는사람 없이 열려 직접 입력할 수 있습니다.</p>
+        </div>
+      </div>
+      <div class="note-box">사업자 정보·도장·계좌·우리 이메일은 사업자별로 저장됩니다. 01 사업자 카드의 <b>사업장 주소</b>·<b>우리 이메일</b> 칸에 바로 적으면 그 사업자에 저장되어 다음 문서에도 자동으로 들어갑니다. 사업자는 <b>+ 내 사업자 추가</b>로 여러 개를 저장해 두고 골라 쓸 수 있습니다. 값을 비워 두면 문서에도 빈칸으로 나옵니다.</div>
+      <button class="mini-btn danger" id="btnReset" style="align-self:flex-start">저장된 모든 데이터 지우기</button>
+    </div>
+    <div class="modal-foot"><button class="btn primary" data-close>알겠습니다</button></div>
+  </div>
+</div>
+
+<!-- 확인 -->
+<div class="modal" id="modalConfirm">
+  <div class="modal-card" style="max-width:400px">
+    <div class="modal-head"><h3 id="cfTitle">확인</h3><button class="x" data-close aria-label="닫기">✕</button></div>
+    <div class="modal-body"><p id="cfMsg" style="font-size:13.5px;color:#4B5768;line-height:1.7;word-break:keep-all"></p></div>
+    <div class="modal-foot">
+      <button class="btn" id="cfNo">취소</button>
+      <button class="btn primary" id="cfYes">확인</button>
+    </div>
+  </div>
+</div>
+
+<div id="toastWrap"></div>
+<div id="printRoot"></div>
+<input type="file" id="restoreFile" accept="application/json,.json" hidden>
+
+<script>
+/* =====================================================================
+   사장랩 — 견적서 / 거래명세서 / 공사내역서 (공개배포용)
+   단일 HTML · 모든 입력값은 브라우저 localStorage에만 저장(서버 전송 없음)
+   ===================================================================== */
+'use strict';
+
+const APP = 'qfw.v1';
+const K = { biz: APP + '.biz', draft: APP + '.draft', docs: APP + '.docs', ui: APP + '.ui' };
+
+/* ---------------- 안전한 저장소 (file:// · 저장공간 차단 대비) ---------------- */
+const MEM = {};
+const store = {
+  get(key, fb){
+    try{
+      const raw = localStorage.getItem(key);
+      if(raw === null) return (key in MEM) ? MEM[key] : fb;
+      return JSON.parse(raw);
+    }catch(e){
+      return (key in MEM) ? MEM[key] : fb;
+    }
+  },
+  set(key, val){
+    MEM[key] = val;
+    try{ localStorage.setItem(key, JSON.stringify(val)); return true; }
+    catch(e){ return false; }
+  },
+  del(key){
+    try{ localStorage.removeItem(key); }catch(e){}
+    delete MEM[key];
+  }
+};
+
+/* ---------------- 문서 종류 ---------------- */
+const TYPES = {
+  quote:   { plain:'견적서',        title:'견 적 서',     prefix:'Q', due:'견적 유효기간', closing:'위와 같이 견적합니다.',        sumLabel:'견적금액' },
+  invoice: { plain:'거래명세서',    title:'거래명세서',   prefix:'T', due:'납기일',        closing:'위와 같이 거래 내역을 명세합니다.', sumLabel:'합계금액' },
+  detail:  { plain:'공사내역서',     sheet:'공사내역서', sub:'완료확인·지원금', title:'공사내역서',     prefix:'D', due:'완료일',  closing:'위와 같이 공사 내역을 명세합니다.',  sumLabel:'공사금액' }
+};
+
+/* ---------------- 사업자 (전부 사용자가 직접 입력·저장) ----------------
+   이 공개용 앱에는 어떤 사업자 정보도 들어 있지 않습니다.
+   처음 열면 빈 칸이고, [내 사업자 저장]으로 상호·사업자번호·업태·종목·연락처·이메일·계좌·도장을
+   이 브라우저에 저장해 두면 다음 문서부터 자동으로 채워집니다(여러 개 저장 가능). */
+const BRAND = '사장랩';
+/* 자주 쓰는 내 메일을 원터치 칩으로 쓰고 싶으면 여기에 주소를 넣으세요. 예) ['me@example.com'] */
+const MY_MAILS = [];
+/* 100% 가상의 예시값 — [예시 채우기(테스트용)] 버튼을 눌렀을 때만 채워집니다. */
+const DEMO_BIZ = {
+  label:'예시 사업자(테스트용)', name:'예시상사', legalName:'예시상사', ceo:'홍길동',
+  bizno:'123-45-67890', tel:'010-0000-0000', telDetail:'',
+  addr:'서울특별시 강남구 테헤란로 123, 4층', email:'example@example.com',
+  uptae:'서비스', jongmok:'실내건축', bank:'예시은행', acct:'000-000-000000', holder:'홍길동'
+};
+const DEMO_CLIENT = {
+  name:'예시 고객사', email:'client@example.com', tel:'010-0000-0000',
+  addr:'서울특별시 마포구 월드컵북로 100', ceo:'김예시', bizno:'987-65-43210', site:'예시 현장 주소'
+};
+const DEMO_ITEMS = [
+  { name:'예시 공사 항목 A', spec:'1식', unit:'식', qty:'1', unitPrice:'1500000', remark:'' },
+  { name:'예시 자재·운반 B', spec:'1대', unit:'대', qty:'1', unitPrice:'350000', remark:'' }
+];
+
+/* ---------------- 사업자 목록 로드/저장 ---------------- */
+function blankBiz(label){
+  return {
+    id: 'b' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5),
+    label: label || '내 사업자',
+    name:'', legalName:'', ceo:'', bizno:'', tel:'', telDetail:'', addr:'', email:'',
+    uptae:'', jongmok:'', bank:'', acct:'', holder:'', stamp:''
+  };
+}
+function loadBiz(){
+  const saved = store.get(K.biz, null);
+  let list = (saved && Array.isArray(saved.list)) ? saved.list.filter(b=>b && b.id) : [];
+  if(!list.length) list.push(blankBiz());           // 첫 실행: 정보를 넣을 빈 사업자 한 칸
+  return { list, activeId: (saved && saved.activeId) || list[0].id };
+}
+let BIZ = loadBiz();
+function saveBiz(){ store.set(K.biz, BIZ); }
+function getBiz(id){ return BIZ.list.find(b=>b.id===id) || BIZ.list[0]; }
+
+/* ---------------- 날짜/숫자 유틸 ---------------- */
+function pad2(n){ return String(n).padStart(2,'0'); }
+function todayISO(){ const d = new Date(); return d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate()); }
+function addDaysISO(iso, days){
+  const d = new Date(iso+'T00:00:00');
+  if(isNaN(d)) return iso;
+  d.setDate(d.getDate()+days);
+  return d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate());
+}
+function fmtDate(iso){
+  if(!iso) return '';
+  const m = String(iso).match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if(!m) return iso;
+  return m[1]+'. '+Number(m[2])+'. '+Number(m[3])+'.';
+}
+function fmtDateKo(iso){
+  if(!iso) return '';
+  const m = String(iso).match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if(!m) return iso;
+  return m[1]+'년 '+Number(m[2])+'월 '+Number(m[3])+'일';
+}
+/* 2026년 11월 16일 월요일 — 공사내역서 상단 양식 */
+const WEEK_KO = ['일','월','화','수','목','금','토'];
+function fmtDateKoWeek(iso){
+  if(!iso) return '';
+  const m = String(iso).match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if(!m) return iso;
+  const d = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+  const w = isNaN(d.getTime()) ? '' : ' ' + WEEK_KO[d.getDay()] + '요일';
+  return m[1]+'년 '+Number(m[2])+'월 '+Number(m[3])+'일'+w;
+}
+/* 2026년11월16일 — 완료 확인 문구용(붙여쓰기) */
+function fmtDateKoCompact(iso){
+  const m = String(iso || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if(!m) return '';
+  return m[1]+'년'+m[2]+'월'+m[3]+'일';
+}
+function num(v){
+  if(typeof v === 'number') return isFinite(v) ? v : 0;
+  const n = parseFloat(String(v == null ? '' : v).replace(/,/g,''));
+  return isFinite(n) ? n : 0;
+}
+function fmtWon(n){ return (Math.round(num(n))).toLocaleString('ko-KR'); }
+function fmtQty(q){
+  const n = num(q);
+  if(!n) return '';
+  return Number.isInteger(n) ? String(n) : String(Math.round(n*100)/100);
+}
+function esc(s){
+  return String(s == null ? '' : s).replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+}
+// 숫자 → 한글 금액 (일금 이백삼만오천원정)
+const KO_D = ['','일','이','삼','사','오','육','칠','팔','구'];
+const KO_S = ['','십','백','천'];
+const KO_B = ['','만','억','조','경'];
+function koreanNumber(v){
+  let n = Math.round(Math.abs(num(v)));
+  if(n === 0) return '영';
+  const groups = [];
+  while(n > 0){ groups.push(n % 10000); n = Math.floor(n / 10000); }
+  let out = '';
+  for(let i = groups.length - 1; i >= 0; i--){
+    const g = groups[i];
+    if(!g) continue;
+    let s = '';
+    const dg = String(g).padStart(4,'0').split('').map(Number);
+    for(let j = 0; j < 4; j++){
+      if(!dg[j]) continue;
+      s += KO_D[dg[j]] + KO_S[3-j];
+    }
+    out += s + KO_B[i];
+  }
+  return out;
+}
+function amountKo(total){
+  const neg = num(total) < 0;
+  return (neg ? '마이너스 ' : '') + '일금 ' + koreanNumber(total) + '원정';
+}
+
+/* ---------------- 금액 계산 ----------------
+   incl : 입력 금액 = 부가세 포함 총액 (공급가액 = 총액/1.1 반올림, 세액 = 총액 - 공급가액)
+   excl : 입력 금액 = 공급가액 (+10% 세액)
+   none : 일반(부가세 없음) — 세액 계산·표시 없음                                             */
+function calcModel(s){
+  const items = (s.items || []).map((it, i)=>({
+    no: i + 1,
+    name: (it.name || '').trim(),
+    spec: (it.spec || '').trim(),
+    unit: (it.unit || '').trim(),
+    qty: num(it.qty),
+    price: num(it.unitPrice),
+    remark: (it.remark || '').trim()
+  })).map(it=>Object.assign(it, { amount: Math.round(it.qty * it.price) }));
+
+  const sum = items.reduce((a, b)=>a + b.amount, 0);
+  let supply = sum, tax = 0, total = sum, mode = s.vat || 'excl';
+  if(mode === 'incl'){
+    total = sum; supply = Math.round(sum / 1.1); tax = total - supply;
+  }else if(mode === 'excl'){
+    supply = sum; tax = Math.round(sum * 0.1); total = supply + tax;
+  }else{
+    mode = 'none'; supply = sum; tax = 0; total = sum;
+  }
+  const vatLabel = mode === 'incl' ? '부가세 포함' : (mode === 'excl' ? '부가세 별도' : '');
+
+  /* 품목별 공급가액·세액 (공사내역서 품목표의 공급가액/세액 칸)
+     합계와 어긋나지 않도록 마지막 품목에서 반올림 차이를 보정한다. */
+  let rowSupply = 0, rowTax = 0;
+  items.forEach(it=>{
+    if(!it.amount){ it.rsupply = 0; it.rtax = (mode === 'none' ? null : 0); return; }
+    if(mode === 'incl'){ it.rsupply = Math.round(it.amount / 1.1); it.rtax = it.amount - it.rsupply; }
+    else if(mode === 'excl'){ it.rsupply = it.amount; it.rtax = Math.round(it.amount * 0.1); }
+    else { it.rsupply = it.amount; it.rtax = null; }   // 면세: 세액 칸 비움
+    rowSupply += it.rsupply; rowTax += (it.rtax || 0);
+  });  const last = items.filter(it=>it.amount).pop();
+  if(last){
+    if(mode === 'incl'){ last.rsupply += supply - rowSupply; last.rtax = last.amount - last.rsupply; }
+    else if(mode === 'excl'){ last.rtax += tax - rowTax; }
+  }
+
+  return { items, sum, supply, tax, total, vat: mode, vatLabel, hasTax: mode !== 'none' };
+}
+
+/* ---------------- 새 문서 ---------------- */
+function blankItem(){ return { name:'', spec:'', unit:'', qty:'1', unitPrice:'', remark:'' }; }
+function newState(type, bizId){
+  const t = type || 'quote';
+  return {
+    type: t,
+    bizId: bizId || BIZ.activeId || (BIZ.list[0] && BIZ.list[0].id) || '',
+    docNo: '',
+    docNoEdited: false,
+    date: todayISO(),
+    dueDate: addDaysISO(todayISO(), t === 'quote' ? 14 : (t === 'invoice' ? 7 : 0)),
+    title: '', period: '',
+    client: { name:'', email:'', tel:'', addr:'', site:'', ceo:'', bizno:'' },
+    items: [blankItem(), blankItem()],
+    vat: 'excl',
+    acct: { bank:'', number:'', holder:'' },
+    note: '',
+    noteAuto: true,
+    stamp: { show: true },
+    doneConfirm: true
+  };
+}
+/* ---------------- 공사내역서 완료 확인 문구 (자동 생성 · 자유 수정) ---------------- */
+function detailNoteText(s){
+  const b = getBiz(s.bizId);
+  const when = fmtDateKoCompact(s.date);
+  const ceo = (b && b.ceo ? String(b.ceo) : '').trim();
+  return '위와 같이 공사를 완료했음을 확인합니다.\n' +
+    (when ? when + ' ' : '') + '사업주 대표: ' + (ceo || '');
+}
+/* 사용자가 손대지 않은 자동 문구는 사업자·날짜가 바뀌면 다시 맞춘다 */
+function syncAutoNote(s, force){
+  const auto = detailNoteText(s);
+  const empty = !String(s.note || '').trim();       // 비어 있거나
+  const same = s._autoNote === s.note;              // 기본 안내 그대로면 자동 문구로 맞춘다
+  if(s.type === 'detail' && (force || empty || same)) s.note = auto;
+  s._autoNote = auto;
+  return s.note;
+}
+/* 사업자의 계좌 정보를 문서로 복사 */
+function syncAcct(s, biz){
+  const b = biz || getBiz(s.bizId);
+  s.acct = { bank: b.bank || '', number: b.acct || '', holder: b.holder || '' };
+  return s;
+}
+/* 문서번호 자동 생성 (문서번호 규칙: 접두어-연도-월-일-일련번호) */
+function nextDocNo(type, dateISO){
+  const p = TYPES[type].prefix;
+  const m = String(dateISO || todayISO()).match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  const head = p + '-' + (m ? m[1] + '-' + m[2] + '-' + m[3] : (dateISO || todayISO())) + '-';
+  let max = 0;
+  (DOCS || []).forEach(doc=>{
+    const no = (doc && doc.docNo) || '';
+    if(no.indexOf(head) === 0){
+      const n = parseInt(no.slice(head.length), 10);
+      if(isFinite(n) && n > max) max = n;
+    }
+  });
+  return head + String(max + 1).padStart(3, '0');
+}
+
+/* =====================================================================
+   A4 문서 렌더러 (순수 Canvas — 외부 라이브러리 없음)
+   A4 @96dpi = 794 x 1123
+   ===================================================================== */
+const PW = 794, PH = 1123;
+const MX = 54, MY = 46, MB = 42;
+const CW = PW - MX * 2;
+const FOOT_H = 96;
+const FONT_STACK = "'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Helvetica Neue',Arial,sans-serif";
+const C = {
+  ink:'#101B2C', ink2:'#38445A', muted:'#7C8899', faint:'#9AA5B4',
+  line:'#D7DFEA', soft:'#E8EDF4', head:'#EDF2F8', box:'#F8FAFD',
+  navy:'#12294A', blue:'#2B5FE0', accent:'#1F4E8C', white:'#FFFFFF'
+};
+
+const mcv = document.createElement('canvas');
+mcv.width = 8; mcv.height = 8;
+const mctx = mcv.getContext('2d');
+
+function setFont(ctx, size, weight, ls){
+  ctx.font = (weight || 400) + ' ' + size + 'px ' + FONT_STACK;
+  if('letterSpacing' in ctx) ctx.letterSpacing = (ls ? ls : 0) + 'px';
+}
+function txt(ctx, str, x, y, o){
+  o = o || {};
+  setFont(ctx, o.size || 10.5, o.weight || 400, o.ls || 0);
+  ctx.fillStyle = o.color || C.ink;
+  ctx.textAlign = o.align || 'left';
+  ctx.textBaseline = 'top';
+  ctx.fillText(str == null ? '' : String(str), x, y);
+}
+function wrapText(ctx, str, maxW, size, weight, ls){
+  setFont(ctx, size, weight, ls);
+  const out = [];
+  String(str == null ? '' : str).split('\n').forEach(para=>{
+    if(!para){ out.push(''); return; }
+    let line = '';
+    para.split(' ').forEach(tk=>{
+      const cand = line ? line + ' ' + tk : tk;
+      if(ctx.measureText(cand).width <= maxW){ line = cand; return; }
+      if(line){ out.push(line); line = ''; }
+      if(ctx.measureText(tk).width <= maxW){ line = tk; return; }
+      let cur = '';
+      for(const ch of tk){
+        if(cur && ctx.measureText(cur + ch).width > maxW){ out.push(cur); cur = ch; }
+        else cur += ch;
+      }
+      line = cur;
+    });
+    out.push(line);
+  });
+  if(out.length > 1 && out[out.length-1] === '') out.pop();
+  return out;
+}
+function hairline(ctx, x1, y, x2, color, w){
+  ctx.beginPath();
+  ctx.strokeStyle = color || C.soft;
+  ctx.lineWidth = w || 1;
+  ctx.moveTo(x1, y + 0.5);
+  ctx.lineTo(x2, y + 0.5);
+  ctx.stroke();
+}
+function vline(ctx, x, y1, y2, color, w){
+  ctx.beginPath();
+  ctx.strokeStyle = color || C.soft;
+  ctx.lineWidth = w || 1;
+  ctx.moveTo(x + 0.5, y1);
+  ctx.lineTo(x + 0.5, y2);
+  ctx.stroke();
+}
+function roundRect(ctx, x, y, w, h, r){
+  const rr = Math.min(r, w/2, h/2);
+  ctx.beginPath();
+  ctx.moveTo(x+rr, y);
+  ctx.lineTo(x+w-rr, y);
+  ctx.quadraticCurveTo(x+w, y, x+w, y+rr);
+  ctx.lineTo(x+w, y+h-rr);
+  ctx.quadraticCurveTo(x+w, y+h, x+w-rr, y+h);
+  ctx.lineTo(x+rr, y+h);
+  ctx.quadraticCurveTo(x, y+h, x, y+h-rr);
+  ctx.lineTo(x, y+rr);
+  ctx.quadraticCurveTo(x, y, x+rr, y);
+  ctx.closePath();
+}
+
+/* ---------------- 문서 모델 ---------------- */
+function buildDoc(s){
+  const t = TYPES[s.type] || TYPES.quote;
+  const bizRaw = getBiz(s.bizId);
+  /* 공식 문서(공급자 표·서명·푸터)에는 사업자등록증 상호를 찍고,
+     앱 표시용 이름(brand)은 그대로 둔다 — 예: 앱 이름 '○○철거' · 문서 상호 '○○산업' */
+  const biz = Object.assign({}, bizRaw, {
+    name: String((bizRaw.legalName || bizRaw.name || '')).trim(),
+    brand: String(bizRaw.name || '').trim()
+  });
+  const cm = calcModel(s);
+  return {
+    type: s.type, t, biz, cm,
+    docNo: (s.docNo || '').trim(),
+    dateStr: fmtDate(s.date), dateKo: fmtDateKo(s.date), dateKoWeek: fmtDateKoWeek(s.date),
+    dueStr: (s.type === 'detail') ? '' : fmtDate(s.dueDate), dueLabel: t.due,
+    client: s.client || { name:'', tel:'', addr:'', site:'', ceo:'', bizno:'' },
+    acct: s.acct || { bank:'', number:'', holder:'' },
+    note: (s.note || '').trim(),
+    period: (s.period || '').trim(),
+    title: (s.title || '').trim(),
+    stampImg: (s.stamp && s.stamp.show !== false && biz.stamp) ? biz.stamp : '',
+    closing: s.type === 'detail'
+      ? (s.doneConfirm ? '상기 공사는 위 내역과 같이 완료되었음을 확인합니다.' : t.closing)
+      : t.closing
+  };
+}
+
+/* ---------------- 표 열 구성 ---------------- */
+function columnsFor(type){
+  if(type === 'detail'){
+    return [
+      { key:'no',     label:'NO',      w:34,  align:'center' },
+      { key:'name',   label:'품명',    w:200, align:'left' },
+      { key:'spec',   label:'규격',    w:84,  align:'left' },
+      { key:'unit',   label:'단위',    w:40,  align:'center' },
+      { key:'qty',    label:'수량',    w:42,  align:'center' },
+      { key:'price',  label:'단가(원)', w:86,  align:'right' },
+      { key:'supply', label:'공급가액', w:100, align:'right' },
+      { key:'tax',    label:'세액',    w:100, align:'right' }
+    ];
+  }
+  return [
+    { key:'no',     label:'No',   w:34,  align:'center' },
+    { key:'name',   label:'품명', w:258, align:'left' },
+    { key:'spec',   label:'규격', w:110, align:'left' },
+    { key:'qty',    label:'수량', w:54,  align:'center' },
+    { key:'price',  label:'단가', w:100, align:'right' },
+    { key:'amount', label:'금액', w:130, align:'right' }
+  ];
+}
+function planRow(item, cols, showNo, no){
+  const padX = 8, padY = 9, size = 10.2;
+  const isEmpty = !item.name && !item.spec && !item.price && !item.amount && !item.remark;
+  let maxLines = 1;
+  const cells = cols.map(c=>{
+    let text = '';
+    if(c.key === 'no') text = (showNo && !isEmpty) ? String(no) : '';
+    else if(c.key === 'name') text = item.name || '';
+    else if(c.key === 'spec') text = item.spec || '';
+    else if(c.key === 'unit') text = (!isEmpty && item.unit) ? item.unit : '';
+    else if(c.key === 'qty') text = (!isEmpty && item.qty) ? fmtQty(item.qty) : '';
+    else if(c.key === 'price') text = (!isEmpty && item.price) ? fmtWon(item.price) : '';
+    else if(c.key === 'amount') text = isEmpty ? '' : fmtWon(item.amount);
+    else if(c.key === 'supply') text = isEmpty ? '' : fmtWon(item.rsupply);
+    else if(c.key === 'tax') text = (isEmpty || item.rtax == null) ? '' : fmtWon(item.rtax);
+    else if(c.key === 'remark') text = item.remark || '';
+    const lines = text ? wrapText(mctx, text, c.w - padX*2, size, c.key === 'name' ? 500 : 400) : [];
+    if(lines.length > maxLines) maxLines = lines.length;
+    return { c, text, lines };
+  });
+  return { h: Math.max(31, maxLines*13.6 + padY*2), cells, padX, padY, size };
+}
+
+/* =====================================================================
+   공사내역서 전용 양식 (실제 쓰던 공사내역서 양식 반영)
+   상단 제목·담당자·견적일자 → 좌(공급받는자)·우(공급자) 사업자 표
+   → 품목표(NO·품명·규격·단위·수량·단가·공급가액·세액) → 소계·총공급가액·세액·합계
+   → 참고사항(완료 확인 문구)·계좌번호
+   ===================================================================== */
+const DT = { vLabelW:28, labelW:62, padX:7, cellMinH:26, ujLabelW:30 };
+const DET_BLUE = '#1F4E8C';
+
+function planDetailHeader(doc){
+  const hasTitle = !!(doc.title && String(doc.title).trim());
+  return { hasTitle, h: hasTitle ? 130 : 100 };
+}
+function drawDetailHeader(ctx, doc, plan){
+  const y = MY, rx = MX + CW;
+  // 제목
+  hairline(ctx, MX, y, rx, DET_BLUE, 2);
+  txt(ctx, '공사내역서', MX + CW/2, y + 8, { size:19, weight:700, ls:9, align:'center', color:C.navy });
+  hairline(ctx, MX, y + 33, rx, DET_BLUE, 1.2);
+  let yy = y + 42;
+  // 담당자 · 연락처
+  const biz = doc.biz || {};
+  txt(ctx, '담당자', MX, yy, { size:9.2, weight:700, color:'#54627A' });
+  txt(ctx, ':', MX + 36, yy, { size:9.2, weight:700, color:'#54627A' });
+  txt(ctx, biz.ceo || '', MX + 45, yy - 1, { size:10, weight:600, color:C.ink });
+  txt(ctx, '연락처', MX + 220, yy, { size:9.2, weight:700, color:'#54627A' });
+  txt(ctx, ':', MX + 256, yy, { size:9.2, weight:700, color:'#54627A' });
+  txt(ctx, biz.telDetail || biz.tel || '', MX + 265, yy - 1, { size:10, weight:600, color:C.ink });
+  if(doc.docNo) txt(ctx, 'No. ' + doc.docNo, rx, yy - 0.5, { size:8.8, color:C.faint, align:'right' });
+  hairline(ctx, MX, yy + 22, rx, C.line, 1);
+  yy += 30;
+  // 견적일자
+  txt(ctx, '견적일자', MX, yy, { size:9.2, weight:700, color:'#54627A' });
+  txt(ctx, ':', MX + 46, yy, { size:9.2, weight:700, color:'#54627A' });
+  txt(ctx, doc.dateKoWeek || doc.dateKo || '', MX + 55, yy - 1, { size:10, weight:600, color:C.ink });
+  hairline(ctx, MX, yy + 22, rx, C.line, 1);
+  yy += 30;
+  // 공사명(입력한 경우에만)
+  if(plan.hasTitle){
+    txt(ctx, '공사명', MX, yy, { size:9.2, weight:700, color:'#54627A' });
+    txt(ctx, ':', MX + 36, yy, { size:9.2, weight:700, color:'#54627A' });
+    txt(ctx, doc.title, MX + 45, yy - 1, { size:10, weight:600, color:C.ink });
+    hairline(ctx, MX, yy + 22, rx, C.line, 1);
+    yy += 30;
+  }
+  return yy;
+}
+
+/* 좌우 사업자 표 — 같은 높이의 행을 나란히 둔다 */
+function detailTablesPlan(doc){
+  const gap = 12;
+  const bw = Math.round((CW - gap) / 2);
+  const vw = DT.vLabelW, lw = DT.labelW, padX = DT.padX;
+  const valW = bw - vw - lw - padX * 2 - 3;
+  const ujV1 = Math.floor((bw - vw - lw - DT.ujLabelW) / 2);
+  const ujV2 = bw - vw - lw - DT.ujLabelW - ujV1;
+  const b = doc.biz || {};
+  const c = doc.client || {};
+  const left = [
+    { label:'상호',   value: c.name || '' },
+    { label:'등록번호', value: c.bizno || '' },
+    { label:'대표자', value: c.ceo || '' },
+    { label:'연락처', value: c.tel || '' },
+    { label:'소재지', value: c.addr || '' }
+  ];
+  const right = [
+    { label:'등록번호', value: b.bizno || '' },
+    { label:'대표자',  value: b.ceo || '', inst:true },
+    { label:'회사명',  value: b.name || '' },
+    { label:'소재지',  value: b.addr || '' },
+    { kind:'uj', label:'업태', up: b.uptae || '', label2:'종목', jo: b.jongmok || '' }
+  ];
+  const hs = [];
+  let h = 0;
+  for(let i = 0; i < left.length; i++){
+    const key = label => String(label || '').trim();
+    const lLeft = Math.max(1, key(left[i].value) ? wrapText(mctx, left[i].value, valW, 9.2, 400).length : 1);
+    let lRight;
+    if(right[i].kind === 'uj'){
+      const a = key(right[i].up) ? wrapText(mctx, right[i].up, ujV1 - padX*2, 9.2, 400).length : 1;
+      const d = key(right[i].jo) ? wrapText(mctx, right[i].jo, ujV2 - padX*2, 9.2, 400).length : 1;
+      lRight = Math.max(a, d);
+    }else{
+      lRight = key(right[i].value) ? wrapText(mctx, right[i].value, valW, 9.2, 400).length : 1;
+    }
+    const rh = Math.max(DT.cellMinH, Math.max(lLeft, lRight) * 13 + 12);
+    hs.push(rh); h += rh;
+  }
+  return { gap, bw, vw, lw, padX, valW, ujV1, ujV2, left, right, hs, h };
+}
+
+function drawDetailTable(ctx, x, y, w, rows, hs, vLabel, opt){
+  opt = opt || {};
+  const vw = DT.vLabelW, lw = DT.labelW, padX = DT.padX;
+  const h = opt.h || hs.reduce((a, b)=>a + b, 0);
+  const box = '#C9D3E2';
+  // 세로 라벨(공급자 · 공급받는자)
+  ctx.fillStyle = '#E7EEF7';
+  ctx.fillRect(x + 1, y + 1, vw - 1, h - 2);
+  const chars = String(vLabel).split('');
+  const lh = 13.4;
+  const startY = y + Math.max(5, (h - chars.length * lh) / 2);
+  chars.forEach((ch, i)=> txt(ctx, ch, x + vw/2, startY + i*lh, { size:10, weight:500, color:'#41546F', align:'center' }));
+  // 행
+  let ry = y;
+  rows.forEach((r, i)=>{
+    const rh = hs[i];
+    const mid = ry + rh/2;
+    if(r.kind === 'uj'){
+      const w1 = opt.ujV1, w2 = opt.ujV2;
+      // 라벨 칸 배경
+      ctx.fillStyle = '#F5F8FC';
+      ctx.fillRect(x + vw + 0.5, ry + 0.5, lw - 1, rh - 1);
+      ctx.fillRect(x + vw + lw + w1 + 0.5, ry + 0.5, DT.ujLabelW - 1, rh - 1);
+      txt(ctx, r.label, x + vw + padX, mid - 6.5, { size:9, weight:600, color:'#54627A' });
+      txt(ctx, r.label2, x + vw + lw + w1 + padX, mid - 6.5, { size:9, weight:600, color:'#54627A' });
+      const upLines = r.up ? wrapText(mctx, r.up, w1 - padX*2, 9.2, 400) : [];
+      const joLines = r.jo ? wrapText(mctx, r.jo, w2 - padX*2, 9.2, 400) : [];
+      const ly = (n)=> mid - (n * 13)/2 + 0.4;
+      upLines.forEach((ln, k)=> txt(ctx, ln, x + vw + lw + padX, ly(upLines.length) + k*13, { size:9.2, color:C.ink2 }));
+      joLines.forEach((ln, k)=> txt(ctx, ln, x + vw + lw + w1 + DT.ujLabelW + padX, ly(joLines.length) + k*13, { size:9.2, color:C.ink2 }));
+      vline(ctx, x + vw + lw + w1, ry, ry + rh, '#E1E8F2', 1);
+      vline(ctx, x + vw + lw, ry, ry + rh, '#E1E8F2', 1);
+    }else{
+      ctx.fillStyle = '#F5F8FC';
+      ctx.fillRect(x + vw + 0.5, ry + 0.5, lw - 1, rh - 1);
+      txt(ctx, r.label, x + vw + padX, mid - 6.5, { size:9, weight:600, color:'#54627A' });
+      if(r.value){
+        const lines = wrapText(mctx, r.value, opt.valW, 9.2, 400);
+        const ly = mid - (lines.length * 13)/2 + 0.4;
+        lines.forEach((ln, k)=> txt(ctx, ln, x + vw + lw + padX, ly + k*13, { size:9.2, color:C.ink2 }));
+      }
+      if(r.inst){
+        txt(ctx, '(인)', x + w - padX - 2, mid - 6.5, { size:8.6, color:C.faint, align:'right' });
+        if(opt.stamp){
+          const img = stampCache(opt.stamp);
+          if(img && img.complete && img.naturalWidth){
+            const s = Math.min(34, rh + 6);
+            ctx.save();
+            try{ ctx.globalCompositeOperation = 'multiply'; }catch(e){}
+            ctx.globalAlpha = 0.93;
+            ctx.drawImage(img, x + w - s - 3, ry + (rh - s)/2, s, s);
+            ctx.restore();
+          }
+        }
+      }
+      vline(ctx, x + vw + lw, ry, ry + rh, '#E1E8F2', 1);
+    }
+    if(i < rows.length - 1) hairline(ctx, x + vw, ry + rh - 0.5, x + w, '#E1E8F2', 1);
+    ry += rh;
+  });
+  // 테두리
+  ctx.strokeStyle = box; ctx.lineWidth = 1;
+  ctx.strokeRect(x + 0.5, y + 0.5, w - 1, h - 1);
+  vline(ctx, x + vw, y + 1, y + h - 1, box, 1);
+}
+
+function detailTotalRows(doc){
+  const cm = doc.cm;
+  const rows = [];
+  if(cm.vat === 'incl'){
+    rows.push(['소계', cm.total]);
+    rows.push(['총공급가액', cm.supply]);
+    rows.push(['세액', cm.tax]);
+  }else if(cm.vat === 'excl'){
+    rows.push(['소계', cm.sum]);
+    rows.push(['총공급가액', cm.supply]);
+    rows.push(['세액', cm.tax]);
+  }else{
+    rows.push(['소계', cm.sum]);
+    rows.push(['총공급가액', cm.supply]);
+  }
+  rows.push([cm.vat === 'none' ? '합계' : '합계(부가세 포함)', cm.total, true]);
+  return rows;
+}
+function detailNotePlan(doc){
+  const note = String(doc.note || '');
+  if(!note) return { lines:[], h:0 };
+  const lines = wrapText(mctx, note, CW - 78, 9.4, 400);
+  return { lines, h: lines.length * 16 + 4 };
+}
+function detailBottomHeight(doc){
+  const rows = detailTotalRows(doc);
+  let h = (rows.length - 1) * 21 + 32;
+  h += 26;                                  // 한글 금액 줄 + 간격
+  if(doc.note) h += 14 + detailNotePlan(doc).h;
+  if(acctText(doc)) h += 10 + 18;
+  return h + 8;
+}
+function drawDetailBottom(ctx, doc, y){
+  const rx = MX + CW;
+  let yy = y;
+  const rows = detailTotalRows(doc);
+  rows.forEach(r=>{
+    if(r[2]){
+      hairline(ctx, MX, yy, rx, C.navy, 1.4);
+      txt(ctx, r[0], MX, yy + 9, { size:11.5, weight:800, color:C.navy });
+      txt(ctx, fmtWon(r[1]) + '원', rx, yy + 5, { size:15, weight:800, color:C.navy, align:'right' });
+      yy += 30;
+      hairline(ctx, MX, yy, rx, C.navy, 1.4);
+      yy += 2;
+    }else{
+      txt(ctx, r[0], MX, yy + 4, { size:9.4, color:'#54627A' });
+      txt(ctx, fmtWon(r[1]) + '원', rx, yy + 3, { size:10.4, weight:600, color:C.ink2, align:'right' });
+      yy += 21;
+    }
+  });
+  yy += 10;
+  txt(ctx, amountKo(doc.cm.total), rx, yy, { size:8.6, color:'#9AA5B4', align:'right' });
+  yy += 17;
+  if(doc.note){
+    const np = detailNotePlan(doc);
+    yy += 14;
+    txt(ctx, '참고사항', MX, yy + 1, { size:9, weight:700, color:'#7C8899' });
+    np.lines.forEach((ln, i)=> txt(ctx, ln, MX + 78, yy + i*16, { size:9.4, color:'#37445A' }));
+    yy += np.h;
+  }
+  const at = acctText(doc);
+  if(at){
+    yy += 10;
+    txt(ctx, '계좌번호', MX, yy + 1, { size:9, weight:700, color:'#7C8899' });
+    txt(ctx, at, MX + 78, yy, { size:9.4, color:C.ink2 });
+    yy += 18;
+  }
+  return yy;
+}
+
+/* ---------------- 정보 박스(공급자/공급받는자) ---------------- */
+function planInfoBox(w, data){
+  const pad = 13, labelW = 47;
+  const nameLines = wrapText(mctx, data.name || '—', w - pad*2, 13, 700);
+  let h = pad + 10 + 5 + Math.max(1, nameLines.length) * 18;
+  const rows = (data.rows || []).map(r=>{
+    const lines = wrapText(mctx, r[1], w - pad*2 - labelW, 9.8, 400);
+    h += Math.max(1, lines.length) * 13.6 + 3;
+    return { label: r[0], lines };
+  });
+  h += pad;
+  return { h:Math.round(h), pad, labelW, nameLines, rows, w };
+}
+function drawInfoBox(ctx, x, y, plan, data){
+  roundRect(ctx, x, y, plan.w, plan.h, 8);
+  ctx.fillStyle = C.box; ctx.fill();
+  ctx.strokeStyle = '#E2E8F1'; ctx.lineWidth = 1; ctx.stroke();
+  txt(ctx, data.label, x + plan.pad, y + plan.pad, { size:8.4, weight:700, color:C.faint, ls:0.6 });
+  let yy = y + plan.pad + 10 + 5;
+  plan.nameLines.forEach((ln, i)=>{
+    txt(ctx, ln || '—', x + plan.pad, yy + i*18, { size:13, weight:700, color: data.muted ? C.faint : C.ink });
+  });
+  yy += Math.max(1, plan.nameLines.length) * 18;
+  plan.rows.forEach(r=>{
+    r.lines.forEach((ln, i)=>{
+      if(i === 0) txt(ctx, r.label, x + plan.pad, yy + 1.2, { size:8.6, weight:600, color:C.muted });
+      txt(ctx, ln, x + plan.pad + plan.labelW, yy + i * 13.6, { size:9.8, color:C.ink2 });
+    });
+    yy += Math.max(1, r.lines.length) * 13.6 + 3;
+  });
+}
+
+/* ---------------- 헤더 ---------------- */
+function planHeaderPage1(doc){
+  const rightW = 210;
+  const leftW = CW - rightW - 16;
+  const nameLines = wrapText(mctx, doc.biz.name || '사업자명', leftW, 19, 700);
+  const metaParts = [];
+  if(doc.biz.ceo) metaParts.push('대표 ' + doc.biz.ceo);
+  if(doc.biz.bizno) metaParts.push('사업자번호 ' + doc.biz.bizno);
+  if(doc.biz.tel) metaParts.push(doc.biz.tel);
+  const metaLines = metaParts.length ? wrapText(mctx, metaParts.join('  ·  '), leftW, 9.6, 400) : [];
+  const leftH = nameLines.length * 24 + 4 + metaLines.length * 13.6;
+  const rightH = 34 + 16 + 14 * 2 + 4;
+  const h = Math.max(leftH, rightH, 92) + 12;
+  return { h: Math.round(h), leftW, nameLines, metaLines, rightW };
+}
+function drawHeaderPage1(ctx, doc, plan){
+  const y = MY;
+  // 사업자명
+  ctx.fillStyle = C.navy;
+  ctx.fillRect(MX, y + 4, 3, 16);
+  let yy = y;
+  plan.nameLines.forEach((ln, i)=>{
+    txt(ctx, ln, MX + 12, yy + i*24, { size:19, weight:700, color:C.ink, ls:-0.3 });
+  });
+  yy += plan.nameLines.length * 24 + 4;
+  plan.metaLines.forEach((ln, i)=>{
+    txt(ctx, ln, MX + 12, yy + i*13.6, { size:9.6, color:C.muted });
+  });
+
+  // 제목 + 문서 정보
+  const rx = MX + CW;
+  txt(ctx, doc.t.title, rx, y - 2, { size: doc.type === 'detail' ? 22 : 26, weight:700, align:'right', ls: doc.type === 'detail' ? 2 : 7, color:C.navy });
+  let ry = y + 38;
+  if(doc.docNo){ txt(ctx, 'No.  ' + doc.docNo, rx, ry, { size:9.6, color:C.ink2, align:'right' }); ry += 14; }
+  txt(ctx, '작성일  ' + doc.dateStr, rx, ry, { size:9.6, color:C.ink2, align:'right' }); ry += 14;
+  if(doc.dueStr){ txt(ctx, doc.dueLabel + '  ' + doc.dueStr, rx, ry, { size:9.6, color:C.muted, align:'right' }); }
+
+  // 구분선
+  const ruleY = y + plan.h;
+  hairline(ctx, MX, ruleY, MX + CW, C.navy, 1.6);
+  return ruleY + 1;
+}
+function drawHeaderCompact(ctx, doc, pageNo){
+  const y = MY;
+  txt(ctx, doc.t.title + '  (계속)', MX, y, { size:11, weight:700, color:C.ink });
+  txt(ctx, 'No. ' + (doc.docNo || '—') + '   ·   ' + doc.dateStr, MX + CW, y, { size:9.4, color:C.muted, align:'right' });
+  hairline(ctx, MX, y + 22, MX + CW, C.navy, 1.2);
+  return y + 22;
+}
+
+/* ---------------- 합계/계좌/비고 ---------------- */
+function drawTotals(ctx, doc, y){
+  const cm = doc.cm;
+  const boxW = CW - 320;
+  const boxH = 64;
+  // 왼쪽: 한글 금액
+  roundRect(ctx, MX, y, boxW, boxH, 8);
+  ctx.fillStyle = C.box; ctx.fill();
+  ctx.strokeStyle = '#E2E8F1'; ctx.lineWidth = 1; ctx.stroke();
+  txt(ctx, cm.hasTax ? '합계금액' : '품목 합계', MX + 14, y + 10, { size:8.4, weight:700, color:C.faint, ls:0.6 });
+  const ko = amountKo(cm.total);
+  let ks = 13.2;
+  setFont(mctx, ks, 700, -0.2);
+  while(mctx.measureText(ko).width > boxW - 28 - (cm.vatLabel ? 66 : 0) && ks > 8.5){
+    ks -= 0.35;
+    setFont(mctx, ks, 700, -0.2);
+  }
+  txt(ctx, ko, MX + 14, y + 24, { size:ks, weight:700, color:C.ink, ls:-0.2 });
+  txt(ctx, '₩ ' + fmtWon(cm.total), MX + 14, y + 46, { size:9.6, color:C.muted });
+  if(cm.vatLabel){
+    const pillW = 52, pillH = 15, px = MX + boxW - pillW - 12, py = y + 9;
+    roundRect(ctx, px, py, pillW, pillH, 7.5);
+    ctx.fillStyle = '#EDF2FE'; ctx.fill();
+    txt(ctx, cm.vatLabel, px + pillW/2, py + 3.4, { size:7.8, weight:700, color:'#3462C8', align:'center' });
+  }
+
+  // 오른쪽: 계산 내역
+  const rx = MX + CW;
+  const lx = rx - 300;
+  const rows = [];
+  if(cm.vat === 'incl'){ rows.push(['공급가액', cm.supply], ['부가세', cm.tax]); }
+  if(cm.vat === 'excl'){ rows.push(['공급가액', cm.supply], ['부가세 (10%)', cm.tax]); }
+  rows.push([doc.t.sumLabel, cm.total, true]);
+
+  let ry = y + boxH - (rows.length * 19) - 4;
+  rows.forEach(r=>{
+    if(r[2]){
+      hairline(ctx, lx, ry - 4, rx, C.line, 1);
+      txt(ctx, r[0], lx, ry + 3, { size:10, weight:700, color:C.navy });
+      txt(ctx, fmtWon(r[1]), rx, ry, { size:14, weight:800, color:C.navy, align:'right', ls:-0.2 });
+      ry += 22;
+    }else{
+      txt(ctx, r[0], lx, ry + 2, { size:9.6, color:C.muted });
+      txt(ctx, fmtWon(r[1]), rx, ry + 1, { size:10.4, weight:600, color:C.ink2, align:'right' });
+      ry += 19;
+    }
+  });
+  return y + boxH + 4;
+}
+function planNote(note){
+  if(!note) return { lines:[], h:0 };
+  let lines = wrapText(mctx, note, CW, 9.9, 400);
+  const MAX = 13;
+  if(lines.length > MAX){
+    lines = lines.slice(0, MAX);
+    lines[MAX-1] = lines[MAX-1] + ' …';
+  }
+  return { lines, h: 14 + lines.length * 15.2 + 10 };
+}
+function acctText(doc){
+  const a = doc.acct || {};
+  const parts = [];
+  if(a.bank) parts.push(a.bank);
+  if(a.number) parts.push(a.number);
+  if(a.holder) parts.push('예금주 ' + a.holder);
+  return parts.join('  ');
+}
+function bottomBodyHeight(doc){
+  const notePlan = planNote(doc.note);
+  const hasAcct = !!acctText(doc);
+  return 68 + (hasAcct ? 38 : 0) + (doc.note ? 4 + notePlan.h : 0) + 12;
+}
+function bottomHeight(doc){
+  return bottomBodyHeight(doc) + 26 + FOOT_H;
+}
+function drawBottom(ctx, doc, y, pageNo, totalPages, footerY){
+  let yy = drawTotals(ctx, doc, y);
+  const at = acctText(doc);
+  if(at){
+    yy += 8;
+    hairline(ctx, MX, yy, MX + CW, C.soft, 1);
+    txt(ctx, '입금 계좌', MX, yy + 8, { size:8.4, weight:700, color:C.faint, ls:0.5 });
+    txt(ctx, at, MX + 58, yy + 7, { size:10, weight:500, color:C.ink2 });
+    yy += 28;
+  }
+  if(doc.note){
+    const np = planNote(doc.note);
+    yy += 4;
+    if(!at) hairline(ctx, MX, yy, MX + CW, C.soft, 1);
+    txt(ctx, '비고', MX, yy + 8, { size:8.4, weight:700, color:C.faint, ls:0.5 });
+    np.lines.forEach((ln, i)=> txt(ctx, ln, MX + 58, yy + 7 + i*15.2, { size:9.9, color:'#37445A' }));
+    yy += 14 + np.lines.length * 15.2;
+  }
+  const fy = (footerY == null) ? yy + 26 : Math.max(footerY, yy + 20);
+  drawFooter(ctx, doc, fy, pageNo, totalPages);
+  return fy + FOOT_H;
+}
+function drawFooter(ctx, doc, y0, pageNo, totalPages, compact){
+  const rx = MX + CW;
+  if(compact){
+    hairline(ctx, MX, y0, rx, C.soft, 1);
+    txt(ctx, '다음 페이지에 계속', MX, y0 + 12, { size:9.4, color:C.faint });
+    return;
+  }
+  hairline(ctx, MX, y0, rx, C.soft, 1);
+  txt(ctx, doc.closing, MX, y0 + 14, { size:10.6, weight:600, color:C.ink2 });
+  txt(ctx, doc.dateKo, MX, y0 + 36, { size:11, weight:600, color:C.ink });
+
+  // 서명 + 도장
+  const stampW = doc.stampImg ? 82 : 0;
+  const sigRight = rx - (stampW ? stampW + 6 : 0);
+  txt(ctx, doc.biz.name || '', sigRight, y0 + 16, { size:12.5, weight:700, align:'right', color:C.ink });
+  if(doc.biz.ceo) txt(ctx, '대표 ' + doc.biz.ceo, sigRight, y0 + 36, { size:10.2, align:'right', color:C.ink2 });
+  txt(ctx, '(인)', sigRight, y0 + 54, { size:8.8, align:'right', color:C.muted });
+  if(doc.stampImg){
+    const img = stampCache(doc.stampImg);
+    if(img && img.complete && img.naturalWidth){
+      const s = 82, ix = rx - s, iy = y0 + 2;
+      ctx.save();
+      try{ ctx.globalCompositeOperation = 'multiply'; }catch(e){}
+      ctx.globalAlpha = 0.95;
+      ctx.drawImage(img, ix, iy, s, s);
+      ctx.restore();
+    }
+  }
+  // 하단 고지
+  const foot = [doc.biz.name, doc.biz.bizno, doc.biz.tel].filter(Boolean).join('  ·  ');
+  txt(ctx, foot, MX, y0 + 74, { size:7.6, color:C.faint });
+}
+
+/* ---------------- 페이지 나눔 ---------------- */
+function paginate(doc){
+  const cols = columnsFor(doc.type);
+  const realRows = doc.cm.items.map((it, i)=>planRow(it, cols, true, i + 1));
+  const det = doc.type === 'detail';
+  const header1 = det ? planDetailHeader(doc) : planHeaderPage1(doc);
+  const tbar = (!det && doc.title) ? 1 : 0;
+
+  // 정보 박스
+  const gap = 14;
+  const bw = Math.round((CW - gap) / 2);
+  const biz = doc.biz;
+  const sRows = [];
+  if(biz.ceo) sRows.push(['대표', biz.ceo]);
+  if(biz.bizno) sRows.push(['사업자번호', biz.bizno]);
+  if(biz.tel) sRows.push(['연락처', biz.tel]);
+  if(biz.email) sRows.push(['이메일', biz.email]);
+  if(biz.addr) sRows.push(['주소', biz.addr]);
+  if(acctText(doc)) sRows.push(['계좌', acctText(doc)]);
+  const sBox = planInfoBox(bw, { label:'공급자', name: biz.name || '', rows: sRows });
+
+  const cRows = [];
+  if(doc.client.tel) cRows.push(['연락처', doc.client.tel]);
+  if(doc.client.addr) cRows.push(['주소', doc.client.addr]);
+  if(doc.type === 'detail' && doc.client.site) cRows.push(['현장', doc.client.site]);
+  if(doc.type === 'detail' && doc.period) cRows.push(['공사기간', doc.period]);
+  const cBox = planInfoBox(bw, { label:'공급받는자', name: doc.client.name || '', rows: cRows, muted: !doc.client.name });
+  const tables = det ? detailTablesPlan(doc) : null;
+  const infoH = det ? tables.h : Math.max(sBox.h, cBox.h);
+
+  const TH = 30;
+  const bottomH = det ? detailBottomHeight(doc) : bottomHeight(doc);
+  const footH = det ? 0 : FOOT_H;
+  const page1Top = det
+    ? (MY + header1.h + 10 + infoH + 14)
+    : (MY + header1.h + 15 + infoH + (tbar ? 38 : 0) + 14); // 표(헤더) 시작 y
+  const page2Top = MY + 32;
+
+  // 마지막 페이지 여유(빈 행) 계산을 위해 우선 분배
+  const pages = [];
+  let i = 0;
+  let first = true;
+  let guard = 0;
+  while(guard++ < 80){
+    const rowsTop = (first ? page1Top : page2Top) + TH;
+    const availLast = PH - MB - 22 - bottomH - 18 - rowsTop;
+    const availCont = PH - MB - footH - 8 - rowsTop;
+    let remainH = 0;
+    for(let k = i; k < realRows.length; k++) remainH += realRows[k].h;
+    let n = 0, h = 0, isLast = false;
+    if(remainH <= availLast){
+      n = realRows.length - i;
+      isLast = true;
+      h = remainH;
+    }else{
+      // 계속 페이지: 서명란 없이 아래 여백까지만 채움
+      while(i + n < realRows.length && h + realRows[i + n].h <= availCont){ h += realRows[i + n].h; n++; }
+      if(i + n >= realRows.length){
+        // 모든 행이 들어가지만 서명란 자리가 없다 → 서명란을 확보한 만큼으로 줄임
+        n = 0; h = 0;
+        while(i + n < realRows.length && h + realRows[i + n].h <= availLast){ h += realRows[i + n].h; n++; }
+        if(n === 0){ n = 1; h = realRows[i].h; }
+      }else if(n === 0){
+        n = 1; h = realRows[i].h;
+      }
+    }
+    pages.push({ first, rowsTop, from:i, to:i+n, bottom:isLast, rowH:h, avail: isLast ? availLast : availCont });
+    if(isLast) break;
+    i += n; first = false;
+  }
+  if(!pages.length) pages.push({ first:true, rowsTop: page1Top + TH, from:0, to:0, bottom:true, rowH:0, avail:0 });
+
+  // 마지막 페이지 빈 행 — 종이 양식처럼 최소 4줄이 되도록 (공간이 있을 때만)
+  const lastPage = pages[pages.length - 1];
+  const realOnLast = lastPage.to - lastPage.from;
+  let remainH = lastPage.avail - lastPage.rowH;
+  const blankHs = [];
+  const want = det ? 0 : Math.max(0, Math.min((pages.length > 1 ? 4 : 12) - realOnLast, Math.floor(remainH / 31)));
+  while(blankHs.length < want && remainH >= 31){
+    blankHs.push(31);
+    remainH -= 31;
+  }
+  lastPage.blankHs = blankHs;
+
+  return { doc, cols, realRows, pages, header1, infoH, sBox, cBox, page1Top, page2Top, TH, tbar, det, tables, bottomH };
+}
+
+/* ---------------- 페이지 그리기 ---------------- */
+function drawRowsBlock(ctx, plan, page, rowsTop){
+  const rows = [];
+  for(let i = page.from; i < page.to; i++) rows.push(plan.realRows[i]);
+  if(page.bottom && page.blankHs){
+    page.blankHs.forEach(h=>{
+      const cols = plan.cols.map(c=>({ c, text:'', lines:[] }));
+      rows.push({ h, cells: cols, padX:8, padY:9, size:10.2, blank:true });
+    });
+  }
+  const rowsH = rows.reduce((a, r)=>a + r.h, 0);
+  const tableH = plan.TH + rowsH;
+
+  // 표 테두리
+  ctx.strokeStyle = '#C9D3E2'; ctx.lineWidth = 1;
+  ctx.strokeRect(MX + 0.5, rowsTop + 0.5, CW - 1, tableH - 1);
+
+  // 헤더
+  ctx.fillStyle = C.head;
+  ctx.fillRect(MX + 1, rowsTop + 1, CW - 2, plan.TH - 1);
+  let cx = MX;
+  plan.cols.forEach((c, idx)=>{
+    txt(ctx, c.label, c.align === 'left' ? cx + 8 : (c.align === 'center' ? cx + c.w/2 : cx + c.w - 8), rowsTop + 9, {
+      size:9.2, weight:700, color:'#4A5A72', align:c.align
+    });
+    cx += c.w;
+    if(idx < plan.cols.length - 1){
+      hairline(ctx, cx, rowsTop + 1, cx, rowsTop + plan.TH - 1, '#DCE3EE', 1);
+    }
+  });
+  hairline(ctx, MX, rowsTop + plan.TH - 1, MX + CW, '#C9D3E2', 1);
+
+  // 행
+  let ry = rowsTop + plan.TH;
+  rows.forEach(r=>{
+    let cx2 = MX;
+    r.cells.forEach((cell, idx)=>{
+      const c = cell.c;
+      const lineH = 13.6;
+      const blockH = (cell.lines.length || 1) * lineH;
+      const ty = ry + (r.h - blockH)/2 + 0.6;
+      (cell.lines.length ? cell.lines : []).forEach((ln, i)=>{
+        txt(ctx, ln, c.align === 'left' ? cx2 + r.padX : (c.align === 'center' ? cx2 + c.w/2 : cx2 + c.w - r.padX), ty + i*lineH, {
+          size: r.size, weight: c.key === 'name' ? 500 : 400, align: c.align,
+          color: c.key === 'no' ? C.faint : (c.key === 'amount' || c.key === 'supply' || c.key === 'tax' ? C.ink : C.ink2)
+        });
+      });
+      cx2 += c.w;
+      if(idx < r.cells.length - 1) hairline(ctx, cx2, ry, cx2, ry + r.h - 1, '#EDF1F7', 1);
+    });
+    hairline(ctx, MX, ry + r.h - 1, MX + CW, '#E3E9F2', 1);
+    ry += r.h;
+  });
+  return tableH;
+}
+function drawPage(ctx, plan, pageIndex, opts){
+  const doc = plan.doc;
+  const pages = plan.pages;
+  const page = pages[pageIndex];
+  const total = pages.length;
+  ctx.save();
+  ctx.setTransform(1,0,0,1,0,0);
+  ctx.fillStyle = '#FFFFFF';
+  ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+  ctx.restore();
+
+  let y;
+  if(page.first){
+    if(plan.det){
+      // 공사내역서: 제목 → 담당자/연락처 → 견적일자 → 좌우 사업자 표
+      y = drawDetailHeader(ctx, doc, plan.header1);
+      const tp = plan.tables;
+      const ty = y + 10;
+      drawDetailTable(ctx, MX, ty, tp.bw, tp.left, tp.hs, '공급받는자', { h: tp.h, bw: tp.bw, valW: tp.valW, ujV1: tp.ujV1, ujV2: tp.ujV2 });
+      drawDetailTable(ctx, MX + tp.bw + tp.gap, ty, tp.bw, tp.right, tp.hs, '공급자', { h: tp.h, bw: tp.bw, valW: tp.valW, ujV1: tp.ujV1, ujV2: tp.ujV2, stamp: doc.stampImg });
+      y = ty + tp.h + 14;
+    }else{
+    y = drawHeaderPage1(ctx, doc, plan.header1);
+    // 정보 박스
+    const gap = 14;
+    const bw = Math.round((CW - gap) / 2);
+    const boxY = y + 14;
+    // 한국 표준 양식: 왼쪽 = 공급받는자(고객/수신), 오른쪽 = 공급자(우리 사업자)
+    drawInfoBox(ctx, MX, boxY, Object.assign({}, plan.cBox, { w: bw, h: plan.infoH }), { label:'공급받는자', name: doc.client.name || '', muted: !doc.client.name });
+    drawInfoBox(ctx, MX + bw + gap, boxY, Object.assign({}, plan.sBox, { w: bw, h: plan.infoH }), { label:'공급자', name: doc.biz.name || '' });
+    y = boxY + plan.infoH;
+    if(plan.tbar){
+      y += 12;
+      roundRect(ctx, MX, y, CW, 26, 6);
+      ctx.fillStyle = '#F1F5FB'; ctx.fill();
+      txt(ctx, '공사명', MX + 12, y + 7, { size:8.4, weight:700, color:C.faint, ls:0.5 });
+      txt(ctx, doc.title, MX + 58, y + 6, { size:10, weight:600, color:C.ink2 });
+      y += 26;
+    }
+    y += 14;
+    }
+  }else{
+    y = drawHeaderCompact(ctx, doc, pageIndex + 1);
+    y += 10;
+  }
+
+  const rowsTop = y;
+  const tableH = drawRowsBlock(ctx, plan, page, rowsTop);
+
+  if(page.bottom){
+    if(plan.det) drawDetailBottom(ctx, doc, rowsTop + tableH + 16);
+    else drawBottom(ctx, doc, rowsTop + tableH + 18, pageIndex + 1, total, null);
+  }else if(plan.det){
+    hairline(ctx, MX, PH - MB - 16, MX + CW, C.soft, 1);
+    txt(ctx, '다음 페이지에 계속', MX, PH - MB - 4, { size:9.2, color:C.faint });
+  }else{
+    drawFooter(ctx, doc, PH - MB - FOOT_H, pageIndex + 1, total, true);
+  }
+  if(total > 1){
+    txt(ctx, (pageIndex + 1) + ' / ' + total, MX + CW, PH - MB + 2, { size:8.2, color:C.faint, align:'right' });
+  }
+  return pageIndex;
+}
+
+/* 도장 이미지 캐시 */
+const STAMP_CACHE = {};
+function stampCache(src){
+  if(!src) return null;
+  if(STAMP_CACHE[src]) return STAMP_CACHE[src];
+  const img = new Image();
+  img.onload = ()=>{ if(typeof onStampLoaded === 'function') onStampLoaded(); };
+  img.src = src;
+  STAMP_CACHE[src] = img;
+  return img;
+}
+
+/* =====================================================================
+   앱 상태 · UI
+   ===================================================================== */
+const $ = sel=>document.querySelector(sel);
+const $$ = sel=>Array.prototype.slice.call(document.querySelectorAll(sel));
+
+let S = null;              // 현재 문서
+let DOCS = [];             // 저장한 문서
+let PLAN = null;           // 현재 레이아웃
+let PAGE = 0;              // 현재 페이지
+let renderTimer = 0;
+let draftTimer = 0;
+
+function deepClone(o){ try{ return JSON.parse(JSON.stringify(o)); }catch(e){ return o; } }
+function getPath(obj, path){
+  return path.split('.').reduce((o, k)=> (o == null ? undefined : o[k]), obj);
+}
+function setPath(obj, path, val){
+  const parts = path.split('.');
+  let o = obj;
+  for(let i = 0; i < parts.length - 1; i++){
+    const k = parts[i];
+    if(o[k] == null) o[k] = /^\d+$/.test(parts[i+1]) ? [] : {};
+    o = o[k];
+  }
+  o[parts[parts.length-1]] = val;
+}
+function normalizeState(src){
+  const base = newState((src && src.type) || 'quote', (src && src.bizId) || BIZ.activeId);
+  const s = Object.assign(base, src || {});
+  if(!TYPES[s.type]) s.type = 'quote';
+  s.client = Object.assign({ name:'', email:'', tel:'', addr:'', site:'', ceo:'', bizno:'' }, (src && src.client) || {});
+  s.acct = Object.assign({ bank:'', number:'', holder:'' }, (src && src.acct) || {});
+  s.stamp = Object.assign({ show:true }, (src && src.stamp) || {});
+  s.items = (Array.isArray(s.items) && s.items.length)
+    ? s.items.map(it=>Object.assign(blankItem(), it))
+    : [blankItem(), blankItem()];
+  return s;
+}
+
+/* ---------------- 부가세 계산기 ----------------
+   supply : 공급가액 → 부가세 10% → 합계
+   total  : 부가세 포함 합계 → 공급가액 = round(합계 / 1.1), 세액 = 합계 - 공급가액 */
+const VATC = { dir:'supply', value:0 };
+function vatCalc(dir, value){
+  const v = Math.max(0, Math.round(num(value)));
+  if(dir === 'total'){
+    const supply = Math.round(v / 1.1);
+    return { supply: supply, tax: v - supply, total: v };
+  }
+  const tax = Math.round(v * 0.1);
+  return { supply: v, tax: tax, total: v + tax };
+}
+function vatResult(){ return vatCalc(VATC.dir, VATC.value); }
+function vatSummaryText(){
+  const r = vatResult();
+  return '공급가액 ' + fmtWon(r.supply) + '원 / 부가세 ' + fmtWon(r.tax) + '원 / 합계 ' + fmtWon(r.total) + '원';
+}
+function vatItemOptions(){
+  const sel = $('#vatItemSelect');
+  if(!sel) return;
+  const prev = sel.value;
+  sel.innerHTML = S.items.map((it, i)=>{
+    const nm = (it.name || '').trim();
+    return '<option value="' + i + '">' + (i + 1) + '. ' + esc(nm || '(빈 품목)') + '</option>';
+  }).join('');
+  if(prev !== '' && prev != null && Number(prev) < S.items.length) sel.value = prev;
+}
+function renderVatCalc(){
+  if(!$('#vatOutSupply')) return;
+  const r = vatResult();
+  $('#vatOutSupply').textContent = fmtWon(r.supply) + ' 원';
+  $('#vatOutTax').textContent = fmtWon(r.tax) + ' 원';
+  $('#vatOutTotal').textContent = fmtWon(r.total) + ' 원';
+  $('#vatOutKo').textContent = amountKo(r.total);
+  $('#vatInputLabel').textContent = VATC.dir === 'total' ? '부가세 포함 합계금액' : '공급가액 (부가세 별도)';
+  $('#vatNote').textContent = VATC.dir === 'total'
+    ? '부가세가 포함된 합계에서 공급가액을 역산했습니다. 공급가액 = 합계 ÷ 1.1 (원 단위 반올림)'
+    : '공급가액에 부가세 10%를 더했습니다. 합계 = 공급가액 + 부가세';
+  $$('#vatSwitch button').forEach(b=>b.classList.toggle('active', b.dataset.vatdir === VATC.dir));
+}
+function setVatValue(v, syncInput){
+  VATC.value = Math.max(0, Math.round(num(v)));
+  renderVatCalc();
+  if(syncInput !== false && $('#vatInput')) $('#vatInput').value = VATC.value ? fmtWon(VATC.value) : '';
+}
+function openVatCalc(){
+  renderVatCalc();
+  $('#vatInput').value = VATC.value ? fmtWon(VATC.value) : '';
+  vatItemOptions();
+  openModal($('#modalVat'));
+}
+function vatFillItem(){
+  const r = vatResult();
+  if(!r.supply){ toast('금액을 먼저 입력하세요'); $('#vatInput').focus(); return; }
+  if(!S.items.length) S.items.push(blankItem());
+  const sel = $('#vatItemSelect');
+  const idx = Math.max(0, Math.min(S.items.length - 1, parseInt(sel && sel.value, 10) || 0));
+  const it = S.items[idx];
+  const doFill = ()=>{
+    it.unitPrice = String(r.supply);
+    if(!num(it.qty)) it.qty = '1';
+    closeModal($('#modalVat'));
+    setView('edit');
+    renderForm(); PLAN = null; renderPreview(); scheduleDraft();
+    toast((idx + 1) + '번 품목 단가에 ' + fmtWon(r.supply) + '원을 넣었습니다');
+  };
+  if(num(it.unitPrice)){
+    confirmDialog('단가 바꾸기', (idx + 1) + '번 품목에 이미 단가 ' + fmtWon(it.unitPrice) + '원이 있습니다. ' + fmtWon(r.supply) + '원으로 바꿀까요?', '바꾸기')
+      .then(ok=>{ if(ok) doFill(); });
+  } else {
+    doFill();
+  }
+}
+function vatCopyFallback(txt, done){
+  try{
+    const ta = document.createElement('textarea');
+    ta.value = txt; ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+    done();
+  }catch(e){ toast('복사가 막혔습니다 · ' + txt); }
+}
+function vatCopyResult(){
+  const txt = vatSummaryText();
+  const done = ()=>toast('계산 결과를 복사했습니다');
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(done).catch(()=>vatCopyFallback(txt, done));
+  } else {
+    vatCopyFallback(txt, done);
+  }
+}
+
+/* ---------------- toast ---------------- */
+function toast(msg){
+  const wrap = $('#toastWrap');
+  wrap.innerHTML = '';
+  const el = document.createElement('div');
+  el.className = 'toast';
+  el.textContent = msg;
+  wrap.appendChild(el);
+  clearTimeout(toast._t);
+  toast._t = setTimeout(()=>{ el.style.transition = 'opacity .25s'; el.style.opacity = '0'; setTimeout(()=>{ if(el.parentNode) el.remove(); }, 260); }, 2400);
+}
+
+/* ---------------- 자동 저장 ---------------- */
+function saveDraft(){
+  store.set(K.draft, deepClone(S));
+  const d = new Date();
+  const st = $('#saveState');
+  if(st) st.textContent = '자동 저장됨 · ' + pad2(d.getHours()) + ':' + pad2(d.getMinutes());
+}
+function scheduleDraft(){ clearTimeout(draftTimer); draftTimer = setTimeout(saveDraft, 400); }
+function scheduleRender(){
+  clearTimeout(renderTimer);
+  renderTimer = setTimeout(renderPreview, 130);
+}
+function onStampLoaded(){ scheduleRender(); }
+
+/* ---------------- 사업자 ---------------- */
+function renderBizSelect(){
+  const sel = $('#bizSelect');
+  sel.innerHTML = BIZ.list.map(b=>'<option value="'+esc(b.id)+'">'+esc(b.label || b.name || '사업자')+'</option>').join('');
+  sel.value = S.bizId;
+}
+function renderBizSummary(){
+  const b = getBiz(S.bizId);
+  const parts = [];
+  const legal = String(b.legalName || '').trim();
+  if(legal && legal !== String(b.name || '').trim()) parts.push('문서 상호 <b>' + esc(legal) + '</b>');
+  if(b.ceo) parts.push('대표 <b>' + esc(b.ceo) + '</b>');
+  if(b.bizno) parts.push('사업자번호 <b>' + esc(b.bizno) + '</b>');
+  if(b.tel) parts.push('연락처 <b>' + esc(b.tel) + '</b>');
+  if(b.telDetail) parts.push('공사내역서 연락처 <b>' + esc(b.telDetail) + '</b>');
+  if(b.email) parts.push('이메일 <b>' + esc(b.email) + '</b>');
+  if(b.addr) parts.push('주소 <b>' + esc(b.addr) + '</b>');
+  const acc = [b.bank, b.acct, b.holder ? '예금주 ' + b.holder : ''].filter(Boolean).join(' ');
+  if(acc) parts.push('계좌 <b>' + esc(acc) + '</b>');
+  const empty = [];
+  if(!b.ceo) empty.push('대표');
+  if(!b.bizno) empty.push('사업자번호');
+  if(!b.addr) empty.push('주소');
+  if(!b.email) empty.push('이메일');
+  if(!acc) empty.push('계좌');
+  let html = parts.length ? parts.join(' · ') : '등록된 정보가 없습니다.';
+  if(empty.length) html += '<br><span style="color:#98A2B3">비어 있는 항목: ' + empty.join(' · ') + ' — [내 사업자 정보 입력·수정]에서 채우면 문서에 바로 반영됩니다.</span>';
+  $('#bizSummary').innerHTML = html;
+  const ob = $('#onboard');
+  if(ob) ob.hidden = !!(String(b.name || '').trim() || String(b.bizno || '').trim());
+  const qa = $('#qAddr');
+  if(qa && document.activeElement !== qa) qa.value = b.addr || '';
+  const qe = $('#qEmail');
+  if(qe && document.activeElement !== qe) qe.value = b.email || '';
+  renderMailChips($('#qMailChips'), b.email, m=>setBizField('email', m));
+}
+/* 자주 쓰는 내 메일 원터치 칩 */
+function renderMailChips(host, current, onPick){
+  if(!host) return;
+  if(!MY_MAILS.length){ host.innerHTML = ''; host.hidden = true; return; }
+  host.hidden = false;
+  const cur = String(current || '').trim().toLowerCase();
+  host.innerHTML = MY_MAILS.map(m=>'<button type="button" class="mail-chip' + (m.toLowerCase() === cur ? ' on' : '') + '" data-mail="' + esc(m) + '">' + esc(m) + '</button>').join('');
+  host._onPick = onPick;
+  if(!host.dataset.bound){
+    host.dataset.bound = '1';
+    host.addEventListener('click', e=>{
+      const btn = e.target.closest('.mail-chip');
+      if(!btn) return;
+      if(typeof host._onPick === 'function') host._onPick(btn.dataset.mail);
+    });
+  }
+}
+/* 입력 화면에서 주소·우리 이메일을 바로 적으면 그 사업자에 영구 저장 */
+function setBizField(k, v){
+  const b = getBiz(S.bizId);
+  b[k] = String(v == null ? '' : v).trim();
+  saveBiz();
+  renderBizSummary();
+  PLAN = null; renderPreview(); scheduleDraft();
+}
+function applyBiz(id){
+  S.bizId = id;
+  BIZ.activeId = id;
+  saveBiz();
+  syncAcctToDoc();
+}
+function syncAcctToDoc(){
+  const b = getBiz(S.bizId);
+  S.acct = { bank: b.bank || '', number: b.acct || '', holder: b.holder || '' };
+}
+function persistAcct(){
+  const b = getBiz(S.bizId);
+  b.bank = S.acct.bank || '';
+  b.acct = S.acct.number || '';
+  b.holder = S.acct.holder || '';
+  saveBiz();
+}
+
+/* ---------------- 예시 채우기(테스트용) ---------------- */
+function fillDemo(){
+  const b = getBiz(S.bizId);
+  Object.assign(b, DEMO_BIZ, { stamp: b.stamp || '' });
+  b.label = DEMO_BIZ.label;
+  saveBiz();
+  S.client = Object.assign({}, S.client, DEMO_CLIENT);
+  S.items = DEMO_ITEMS.map(it=>Object.assign({}, it));
+  S.vat = 'excl';
+  if(!S.title) S.title = '예시 공사 견적';
+  PLAN = null; PAGE = 0;
+  renderForm(); renderBizSummary(); renderPreview(); scheduleDraft();
+  toast('예시 값을 채웠습니다 · 실제 정보로 바꿔 쓰세요');
+}
+/* ---------------- 문서 정보 UI ---------------- */
+function renderDocMeta(){
+  const t = TYPES[S.type];
+  $('#dueLabel').textContent = t.due;
+  $('#dueLabel').innerHTML = t.due + (S.type === 'quote' ? ' <span class="sub">까지</span>' : '');
+}
+function renderItems(){
+  const box = $('#items');
+  const isDet = S.type === 'detail';
+  box.innerHTML = S.items.map((it, i)=>{
+    return '<div class="item" data-i="' + i + '">' +
+      '<div class="item-top">' +
+        '<span class="item-no">' + (i+1) + '</span>' +
+        '<span style="font-size:11px;font-weight:600;color:#9AA5B4;letter-spacing:-.1px">' + '품목</span>' +
+        '<button class="item-del" data-del="' + i + '" aria-label="품목 삭제">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M9 7V5h6v2M7 7l1 13h8l1-13"/></svg>' +
+        '</button>' +
+      '</div>' +
+      '<input type="text" data-bind="items.' + i + '.name" placeholder="품명 (예: 사무실 인테리어 공사)" autocomplete="off">' +
+      '<div class="row">' +
+        '<input type="text" data-bind="items.' + i + '.spec" placeholder="' + (isDet ? '규격' : '규격 · 비고') + '" autocomplete="off">' +
+        (isDet
+          ? '<input type="text" data-bind="items.' + i + '.unit" placeholder="단위 (예: 식 · 톤 · 대)" autocomplete="off">'
+          : '<input type="number" data-bind="items.' + i + '.qty" placeholder="수량" inputmode="decimal" step="any">') +
+      '</div>' +
+      '<div class="row">' +
+        (isDet ? '<input type="number" data-bind="items.' + i + '.qty" placeholder="수량" inputmode="decimal" step="any">' : '') +
+        '<input type="number" data-bind="items.' + i + '.unitPrice" placeholder="단가 (원)" inputmode="numeric" step="any">' +
+        (isDet ? '' : '<div class="amount"><span>금액</span><b data-amt="' + i + '">0원</b></div>') +
+      '</div>' +
+      (isDet
+        ? '<div class="amount full"><span>공급가액 · 세액</span><b data-amt="' + i + '">0원</b></div>' +
+          '<div class="row" style="grid-template-columns:1fr"><input type="text" data-bind="items.' + i + '.remark" placeholder="비고 (선택)" autocomplete="off"></div>'
+        : '') +
+    '</div>';
+  }).join('');
+  updateRowAmounts();
+}
+function updateRowAmounts(){
+  const cm = calcModel(S);
+  const isDet = S.type === 'detail';
+  cm.items.forEach((it, i)=>{
+    const el = document.querySelector('[data-amt="' + i + '"]');
+    if(!el) return;
+    if(isDet && cm.vat !== 'none' && it.rtax != null){
+      el.textContent = fmtWon(it.rsupply) + '원 / 세액 ' + fmtWon(it.rtax) + '원';
+    }else{
+      el.textContent = fmtWon(it.amount) + '원';
+    }
+  });
+}
+function renderCalc(){
+  const cm = calcModel(S);
+  const rows = [];
+  if(cm.vat === 'incl'){
+    rows.push(['공급가액', cm.supply]);
+    rows.push(['부가세 (포함분)', cm.tax]);
+  }else if(cm.vat === 'excl'){
+    rows.push(['공급가액', cm.supply]);
+    rows.push(['부가세 (10%)', cm.tax]);
+  }
+  rows.push([cm.vat === 'none' ? '품목 합계' : '합계금액', cm.total, true]);
+  const hint = cm.vat === 'incl'
+    ? '입력한 단가·수량은 <b>부가세 포함 금액</b>입니다. 총액에서 공급가액과 세액을 나눠 표시합니다.'
+    : (cm.vat === 'excl'
+      ? '입력한 금액이 <b>공급가액</b>이고, 부가세 10%를 더해 합계를 냅니다.'
+      : '<b>부가세 없이</b> 품목 합계만 표시합니다. (현금 거래 · 간이과세 · 부가세 미표기 견적)');
+  $('#calcBox').innerHTML = rows.map(r=>
+    '<div class="calc-row' + (r[2] ? ' total' : '') + '"><span>' + r[0] + '</span><b>' + fmtWon(r[1]) + '원</b></div>'
+  ).join('') + '<div class="ko">' + esc(amountKo(cm.total)) + '</div>' +
+    '<div class="ko" style="margin-top:4px;color:#98A2B3">' + (S.vat === 'none' ? hint : hint) + '</div>';
+  $('#bbTotal').textContent = fmtWon(cm.total) + '원';
+}
+function renderVatSeg(){
+  $$('#vatSeg button').forEach(b=>b.classList.toggle('active', b.dataset.vat === S.vat));
+}
+function renderTypeTabs(){
+  $$('#docTypes .type-btn').forEach(b=>{
+    const on = b.dataset.type === S.type;
+    b.classList.toggle('active', on);
+    b.setAttribute('aria-selected', on ? 'true' : 'false');
+  });
+}
+function renderStamp(){
+  const b = getBiz(S.bizId);
+  const prev = $('#stampPrev');
+  if(b.stamp){
+    prev.innerHTML = '<img src="' + b.stamp + '" alt="도장">';
+    $('#btnStampDel').style.display = '';
+  }else{
+    prev.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3a4 4 0 0 1 4 4v3H8V7a4 4 0 0 1 4-4z"/><path d="M8 10h8M7 14h10M6 21h12"/></svg>';
+    $('#btnStampDel').style.display = 'none';
+  }
+  $('#stampShow').checked = S.stamp.show !== false;
+}
+const NOTE_CHIPS = ['현장 확인 후 최종 확정', '철거·폐기물 처리 포함', '전자세금계산서·공사내역서 발행'];
+function renderChips(){
+  $('#noteChips').innerHTML = NOTE_CHIPS.map(t=>'<button class="chip" type="button" data-chip="' + esc(t) + '">+ ' + esc(t) + '</button>').join('');
+}
+function renderForm(){
+  syncAutoNote(S);
+  renderTypeTabs();
+  renderDocMeta();
+  renderBizSelect();
+  renderBizSummary();
+  renderVatSeg();
+  renderItems();
+  renderCalc();
+  renderStamp();
+  $$('.field [data-bind]').forEach(el=>{
+    const path = el.dataset.bind;
+    if(path.indexOf('items.') === 0) return;
+    const v = getPath(S, path);
+    el.value = (v == null ? '' : v);
+  });
+  $$('[data-detail-only]').forEach(el=>{ el.hidden = S.type !== 'detail'; });
+  $$('[data-not-detail]').forEach(el=>{ el.hidden = S.type === 'detail'; });
+  const noteEl = document.querySelector('[data-bind="note"]');
+  if(noteEl) noteEl.value = S.note || '';
+  updatePageUI();
+}
+
+/* ---------------- 미리보기 ---------------- */
+function ensurePlan(){
+  if(!PLAN) PLAN = paginate(buildDoc(S));
+  return PLAN;
+}
+function renderPreview(){
+  PLAN = paginate(buildDoc(S));
+  if(PAGE > PLAN.pages.length - 1) PAGE = Math.max(0, PLAN.pages.length - 1);
+  const visible = document.body.getAttribute('data-view') === 'preview' || window.innerWidth >= 980;
+  if(visible) drawCurrentPage();
+  updatePageUI();
+}
+function drawCurrentPage(){
+  const cv = $('#docCanvas');
+  const scale = 2;
+  cv.width = Math.round(PW * scale);
+  cv.height = Math.round(PH * scale);
+  const ctx = cv.getContext('2d');
+  ctx.setTransform(scale, 0, 0, scale, 0, 0);
+  drawPage(ctx, PLAN, PAGE, {});
+  ctx.strokeStyle = '#E3E8F0';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(0.5, 0.5, PW - 1, PH - 1);
+}
+function updatePageUI(){
+  const total = PLAN ? PLAN.pages.length : 1;
+  $('#pageLabel').textContent = (PAGE + 1) + ' / ' + total;
+  $('#prevPage').disabled = PAGE <= 0;
+  $('#nextPage').disabled = PAGE >= total - 1;
+  const cnt = $('#pvCount');
+  if(cnt) cnt.textContent = total > 1 ? '· ' + total + '장' : '';
+}
+
+/* ---------------- 저장/불러오기 ---------------- */
+function docTitle(s){
+  const t = TYPES[s.type];
+  const who = (s.client && s.client.name ? s.client.name : '').trim();
+  if(s.title && s.title.trim()) return s.title.trim();
+  if(who) return who + ' ' + t.plain;
+  return t.plain + ' ' + fmtDate(s.date);
+}
+function saveDoc(auto){
+  const cm = calcModel(S);
+  const data = deepClone(S);
+  let entry = null;
+  const isUpdate = !!S._docId && !!DOCS.find(d=>d.id === S._docId);
+  if(S._docId){
+    entry = DOCS.find(d=>d.id === S._docId);
+  }
+  if(entry){
+    Object.assign(entry, {
+      type:S.type, title:docTitle(S), client:(S.client.name||'').trim(), docNo:S.docNo,
+      date:S.date, total:cm.total, updatedAt:Date.now(), data
+    });
+  }else{
+    entry = {
+      id:'d' + Date.now() + Math.floor(Math.random()*1000),
+      type:S.type, title:docTitle(S), client:(S.client.name||'').trim(), docNo:S.docNo,
+      date:S.date, total:cm.total, updatedAt:Date.now(), data
+    };
+    DOCS.unshift(entry);
+    S._docId = entry.id;
+    data._docId = entry.id;
+    entry.data = deepClone(S);
+  }
+  DOCS.sort((a,b)=>b.updatedAt - a.updatedAt);
+  if(DOCS.length > 200) DOCS = DOCS.slice(0, 200);
+  const ok = store.set(K.docs, DOCS);
+  saveDraft();
+  if(!auto){
+    toast(ok
+      ? (entry && S._docId === entry.id && isUpdate ? '저장했습니다 · 같은 문서에 덮어썼습니다 (새 건은 [새 문서])' : '새 문서로 저장했습니다 · [저장한 문서]에서 다시 열립니다')
+      : '이 브라우저에 저장하지 못했습니다 (저장 공간 부족)');
+  }
+  renderHistory($('#hSearch').value);
+  return ok;
+}
+function loadDoc(id, goPreview){
+  const entry = DOCS.find(d=>d.id === id);
+  if(!entry) return;
+  S = normalizeState(deepClone(entry.data));
+  S._docId = entry.id;
+  PLAN = null; PAGE = 0;
+  renderForm();
+  renderPreview();
+  saveDraft();
+  closeModal($('#modalHistory'));
+  if(goPreview !== false) setView('preview');
+  toast('불러왔습니다 · ' + entry.title);
+}
+function newDoc(type){
+  const keepBiz = S.bizId;
+  S = newState(type || S.type, keepBiz);
+  syncAcctToDoc();
+  S.docNo = nextDocNo(S.type, S.date);
+  PLAN = null; PAGE = 0;
+  renderForm();
+  renderPreview();
+  saveDraft();
+}
+function toInvoice(id){
+  const entry = DOCS.find(d=>d.id === id);
+  if(!entry){ toast('문서를 찾지 못했습니다'); return; }
+  const src = normalizeState(deepClone(entry.data));
+  src.type = 'invoice';
+  src.date = todayISO();
+  src.dueDate = addDaysISO(src.date, 7);
+  src.docNoEdited = false;
+  src.docNo = nextDocNo('invoice', src.date);
+  delete src._docId;
+  S = normalizeState(src);
+  PLAN = null; PAGE = 0;
+  renderForm();
+  renderPreview();
+  saveDoc(true);
+  closeModal($('#modalHistory'));
+  setView('preview');
+  toast('거래명세서로 전환해 저장했습니다');
+}
+function duplicateDoc(id){
+  const entry = DOCS.find(d=>d.id === id);
+  if(!entry) return;
+  const src = normalizeState(deepClone(entry.data));
+  src.date = todayISO();
+  src.docNoEdited = false;
+  src.docNo = nextDocNo(src.type, src.date);
+  delete src._docId;
+  S = normalizeState(src);
+  PLAN = null; PAGE = 0;
+  renderForm();
+  renderPreview();
+  saveDoc(true);
+  closeModal($('#modalHistory'));
+  setView('preview');
+  toast('복제해 새 문서로 저장했습니다');
+}
+function deleteDoc(id){
+  const entry = DOCS.find(d=>d.id === id);
+  if(!entry) return;
+  confirmDialog('문서 삭제', '“' + entry.title + '”을(를) 지울까요? 되돌릴 수 없습니다.', '삭제').then(ok=>{
+    if(!ok) return;
+    DOCS = DOCS.filter(d=>d.id !== id);
+    store.set(K.docs, DOCS);
+    if(S._docId === id) delete S._docId;
+    renderHistory($('#hSearch').value);
+    toast('삭제했습니다');
+  });
+}
+function renderHistory(q){
+  const box = $('#hList');
+  if(!box) return;
+  const kw = (q || '').trim().toLowerCase();
+  const list = DOCS.filter(d=>{
+    if(!kw) return true;
+    return [d.title, d.client, d.docNo, TYPES[d.type] && TYPES[d.type].plain].filter(Boolean).join(' ').toLowerCase().indexOf(kw) >= 0;
+  });
+  if(!list.length){
+    box.innerHTML = '<div class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 4h9l5 5v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/><path d="M14 4v5h5"/></svg><div>' + (kw ? '검색 결과가 없습니다.' : '저장한 문서가 없습니다.<br>미리보기에서 [저장]을 누르면 여기에 쌓입니다.') + '</div></div>';
+    return;
+  }
+  box.innerHTML = list.map(d=>{
+    const t = TYPES[d.type] || TYPES.quote;
+    const cls = d.type === 'invoice' ? 'invoice' : (d.type === 'detail' ? 'detail' : '');
+    return '<div class="hitem" data-id="' + esc(d.id) + '">' +
+      '<div class="hitem-top"><span class="badge ' + cls + '">' + t.plain + '</span><h4>' + esc(d.title) + '</h4></div>' +
+      '<div class="meta">' + [d.client ? esc(d.client) : '', fmtDate(d.date), fmtWon(d.total) + '원', d.docNo ? esc(d.docNo) : ''].filter(Boolean).join(' · ') + '</div>' +
+      '<div class="hact">' +
+        '<button data-act="load" class="blue">불러오기</button>' +
+        '<button data-act="copy">복제</button>' +
+        (d.type === 'quote' ? '<button data-act="toinvoice" class="blue">거래명세서로</button>' : '') +
+        '<button data-act="del" class="red">삭제</button>' +
+      '</div></div>';
+  }).join('');
+}
+
+/* ---------------- 확인 대화상자 ---------------- */
+let cfResolve = null;
+function confirmDialog(title, msg, yesLabel){
+  $('#cfTitle').textContent = title;
+  $('#cfMsg').textContent = msg;
+  $('#cfYes').textContent = yesLabel || '확인';
+  openModal($('#modalConfirm'));
+  return new Promise(res=>{ cfResolve = res; });
+}
+function closeConfirm(v){
+  closeModal($('#modalConfirm'));
+  if(cfResolve){ cfResolve(v); cfResolve = null; }
+}
+
+/* ---------------- 모달 ---------------- */
+function openModal(el){ el.classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeModal(el){ el.classList.remove('open'); if(!$$('.modal.open').length) document.body.style.overflow = ''; }
+function closeAllModals(){ $$('.modal.open').forEach(m=>m.classList.remove('open')); document.body.style.overflow = ''; }
+
+/* ---------------- 보기 전환 ---------------- */
+function setView(v){
+  if(v !== 'home' && v !== 'edit' && v !== 'preview') v = 'home';
+  document.body.setAttribute('data-view', v);
+  $$('#viewSwitch button').forEach(b=>b.classList.toggle('active', b.dataset.view === v));
+  $$('#tabBar [data-tab]').forEach(b=>{
+    const k = b.getAttribute('data-tab');
+    b.classList.toggle('active', v === 'home' ? k === 'home' : k === 'write');
+  });
+  if(v === 'preview') renderPreview();
+  renderHomeBanner();
+  window.scrollTo({ top:0, behavior:'smooth' });
+}
+
+/* ---------------- 내보내기 ---------------- */
+function fileName(ext){
+  const b = getBiz(S.bizId);
+  const who = (S.client && S.client.name) ? S.client.name : '';
+  const raw = [TYPES[S.type].plain, who || b.name, S.date].filter(Boolean).join('_');
+  return raw.replace(/[\\/:*?"<>|\s]+/g, '_') + '.' + ext;
+}
+function renderPageCanvas(index, scale){
+  const cv = document.createElement('canvas');
+  cv.width = Math.round(PW * scale);
+  cv.height = Math.round(PH * scale);
+  const ctx = cv.getContext('2d');
+  ctx.setTransform(scale, 0, 0, scale, 0, 0);
+  drawPage(ctx, PLAN, index, {});
+  ctx.strokeStyle = '#E6EAF1';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(0.5, 0.5, PW - 1, PH - 1);
+  return cv;
+}
+function downloadCanvas(cv, name){
+  cv.toBlob(blob=>{
+    if(!blob){ toast('이미지를 만들지 못했습니다'); return; }
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url), 5000);
+  }, 'image/png');
+}
+function exportPng(){
+  ensurePlan();
+  const n = PLAN.pages.length;
+  let scale = n === 1 ? 3 : (n === 2 ? 2.6 : 2);
+  const gapCss = 18;
+  const totalCss = n * PH + (n - 1) * gapCss;
+  if(totalCss * scale > 30000) scale = Math.max(1.2, 30000 / totalCss);
+  const parts = PLAN.pages.map((_, i)=>renderPageCanvas(i, scale));
+  let out = parts[0];
+  if(parts.length > 1){
+    out = document.createElement('canvas');
+    out.width = parts[0].width;
+    out.height = parts.reduce((a, c)=>a + c.height, 0) + Math.round(gapCss * scale) * (parts.length - 1);
+    const ctx = out.getContext('2d');
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillRect(0, 0, out.width, out.height);
+    let y = 0;
+    parts.forEach(c=>{ ctx.drawImage(c, 0, y); y += c.height + Math.round(gapCss * scale); });
+  }
+  downloadCanvas(out, fileName('png'));
+  toast(parts.length > 1 ? 'PNG 저장 · ' + parts.length + '장을 세로로 이어 붙였습니다' : 'PNG 저장 완료 · 카톡으로 바로 보내세요');
+}
+async function exportPdf(){
+  ensurePlan();
+  const root = $('#printRoot');
+  root.innerHTML = '';
+  // 인쇄용 페이지는 캔버스를 그대로 넣는다 (이미지 디코딩 기다림 없이 동기 실행 → iOS 인쇄 차단 방지)
+  PLAN.pages.forEach((_, i)=>{
+    const cv = renderPageCanvas(i, 3);
+    const page = document.createElement('div');
+    page.className = 'print-page';
+    page.appendChild(cv);
+    root.appendChild(page);
+  });
+  toast('인쇄 창에서 “PDF로 저장”을 고르세요');
+  window.print();
+}
+
+/* ---------------- 메일 보내기 (mailto) ---------------- */
+function isEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(v == null ? '' : v).trim()); }
+function buildMailto(){
+  const b = getBiz(S.bizId);
+  const t = TYPES[S.type] || TYPES.quote;
+  const cm = calcModel(S);
+  const bizName = (b.name || b.label || '').trim() || '담당자';
+  const to = ((S.client && S.client.email) ? String(S.client.email) : '').trim();
+  const docNo = (S.docNo || '').trim();
+  const subject = '[' + bizName + '] ' + t.plain + ' 송부의 건' + (docNo ? ' (' + docNo + ')' : '');
+
+  const lines = [];
+  lines.push('안녕하세요, ' + bizName + '입니다.');
+  lines.push('요청하신 ' + t.plain + ' 전달드립니다.');
+  lines.push('');
+  if(docNo) lines.push('· 문서번호: ' + docNo);
+  if(S.date) lines.push('· 작성일: ' + fmtDateKo(S.date));
+  lines.push('· 합계금액: ' + fmtWon(cm.total) + '원 (' + amountKo(cm.total) + ')');
+  const acc = [S.acct.bank, S.acct.number, S.acct.holder ? '예금주 ' + S.acct.holder : ''].filter(Boolean).join(' ');
+  if(acc) lines.push('· 입금계좌: ' + acc);
+  const tel = (b.tel || '').trim();
+  if(tel) lines.push('· 연락처: ' + tel);
+  const mail = (b.email || '').trim();
+  if(mail) lines.push('· 회신 메일: ' + mail);
+  lines.push('');
+  lines.push('※ ' + t.plain + ' 파일(PNG·PDF)을 첨부해 드립니다. 확인 부탁드립니다.');
+  const body = lines.join('\r\n');
+  const url = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  return { to, subject, body, url };
+}
+function sendMail(){
+  const raw = ((S.client && S.client.email) ? String(S.client.email) : '').trim();
+  if(raw && !isEmail(raw)){
+    toast('이메일 주소를 확인해 주세요 · 예) client@example.com');
+    setView('edit');
+    const el = document.querySelector('[data-bind="client.email"]');
+    if(el){ el.focus(); el.select && el.select(); }
+    return;
+  }
+  const m = buildMailto();
+  const a = document.createElement('a');
+  a.href = m.url;
+  a.style.display = 'none';
+  a.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  toast(m.to
+    ? '메일 앱이 열립니다 · ' + m.to + ' / 파일(PNG·PDF)을 첨부해 발송하세요'
+    : '받는사람이 비어 있습니다 · 메일 앱에서 직접 입력하거나, [이메일]을 적어 두세요');
+}
+
+/* ---------------- 백업 ---------------- */
+function backup(){
+  const payload = { app:'사장랩', version:1, exportedAt:new Date().toISOString(), biz:BIZ, docs:DOCS, draft:S };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type:'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = '견적서_백업_' + todayISO() + '.json';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url), 5000);
+  toast('백업 파일을 저장했습니다');
+}
+function restoreFile(file){
+  const fr = new FileReader();
+  fr.onload = ()=>{
+    try{
+      const data = JSON.parse(String(fr.result));
+      if(!data || (!data.docs && !data.biz)) throw new Error('bad');
+      confirmDialog('백업 복원', '백업 파일의 사업자 정보와 저장한 문서로 덮어쓸까요? 지금 내용은 사라집니다.', '복원').then(ok=>{
+        if(!ok) return;
+        if(data.biz && Array.isArray(data.biz.list)){ BIZ = data.biz; saveBiz(); }
+        if(Array.isArray(data.docs)){ DOCS = data.docs; store.set(K.docs, DOCS); }
+        if(data.draft){ S = normalizeState(data.draft); renderForm(); renderPreview(); }
+        renderHistory('');
+        toast('복원했습니다 · 문서 ' + DOCS.length + '건');
+      });
+    }catch(e){ toast('백업 파일을 읽지 못했습니다'); }
+  };
+  fr.readAsText(file);
+}
+
+/* =====================================================================
+   이벤트 연결
+   ===================================================================== */
+function bindEvents(){
+  // 문서 종류
+  $('#docTypes').addEventListener('click', e=>{
+    const b = e.target.closest('.type-btn');
+    if(!b) return;
+    const t = b.dataset.type;
+    if(t === S.type) return;
+    const wasAuto = !String(S.note || '').trim() || (S.noteAuto !== false && S._autoNote === S.note);
+    S.type = t;
+    // 공사내역서의 완료 확인 문구는 그 문서에만 — 견적서·거래명세서로 바꾸면 자동 문구는 비운다
+    if(t === 'detail') syncAutoNote(S);
+    else if(wasAuto){ S.note = ''; S.noteAuto = true; }
+    if(!S.docNoEdited) S.docNo = nextDocNo(S.type, S.date);
+    PLAN = null; PAGE = 0;
+    renderForm();
+    renderPreview();
+    scheduleDraft();
+  });
+
+  // 사업자
+  $('#bizSelect').addEventListener('change', e=>{
+    applyBiz(e.target.value);
+    renderForm(); renderPreview(); scheduleDraft();
+  });
+  $('#btnBizEdit').addEventListener('click', ()=>openBizModal(S.bizId));
+  $('#btnBizAdd').addEventListener('click', ()=>openBizModal(null));
+  $('#btnBizDemo').addEventListener('click', ()=>{
+    confirmDialog('예시 채우기(테스트용)', '가상의 사업자·거래처·품목 값으로 채웁니다. 지금 입력 중인 사업자 칸이 예시 값으로 바뀌니, 실제 정보는 [내 사업자 정보 입력·수정]에서 넣어 주세요.', '채우기').then(ok=>{ if(ok) fillDemo(); });
+  });
+  const obBtn = $('#btnOnboardSave');
+  if(obBtn) obBtn.addEventListener('click', ()=>openBizModal(S.bizId));
+  // 주소·우리 이메일 바로 입력 → 이 사업자에 영구 저장
+  $('#qAddr').addEventListener('change', e=>setBizField('addr', e.target.value));
+  $('#qEmail').addEventListener('change', e=>setBizField('email', e.target.value));
+
+  // 입력
+  const editor = $('#editor');
+  const onInput = e=>{
+    const el = e.target.closest('[data-bind]');
+    if(!el) return;
+    const path = el.dataset.bind;
+    setPath(S, path, el.value);
+    if(path === 'docNo') S.docNoEdited = true;
+    if(path === 'note') S.noteAuto = false;
+    if(path.indexOf('acct.') === 0) persistAcct();
+    if(path === 'date'){
+      if(S.type === 'detail'){
+        syncAutoNote(S);
+        const ta = document.querySelector('[data-bind="note"]');
+        if(ta) ta.value = S.note || '';
+      }
+    }
+    if(path === 'date' && !S.docNoEdited){
+      S.docNo = nextDocNo(S.type, S.date);
+      const noEl = document.querySelector('[data-bind="docNo"]');
+      if(noEl) noEl.value = S.docNo;
+    }
+    if(/^items\.\d+\.(qty|unitPrice|name)$/.test(path)) updateRowAmounts();
+    renderCalc();
+    PLAN = null;
+    scheduleRender();
+    scheduleDraft();
+  };
+  editor.addEventListener('input', onInput);
+  editor.addEventListener('change', e=>{
+    onInput(e);
+    if(e.target && e.target.id === 'stampShow'){
+      S.stamp.show = e.target.checked;
+      PLAN = null; renderPreview(); scheduleDraft();
+    }
+  });
+
+  // 품목 추가/삭제
+  $('#btnAddItem').addEventListener('click', ()=>{
+    S.items.push(blankItem());
+    renderItems();
+    PLAN = null; scheduleRender(); scheduleDraft();
+    const inputs = $$('#items .item');
+    const last = inputs[inputs.length - 1];
+    if(last){ const inp = last.querySelector('input'); if(inp) inp.focus(); }
+  });
+  $('#items').addEventListener('click', e=>{
+    const btn = e.target.closest('[data-del]');
+    if(!btn) return;
+    const i = Number(btn.dataset.del);
+    if(S.items.length <= 1){ S.items = [blankItem()]; }
+    else S.items.splice(i, 1);
+    renderItems();
+    PLAN = null; scheduleRender(); scheduleDraft();
+  });
+
+  // 부가세
+  $('#vatSeg').addEventListener('click', e=>{
+    const b = e.target.closest('button');
+    if(!b) return;
+    S.vat = b.dataset.vat;
+    renderVatSeg(); renderCalc();
+    PLAN = null; scheduleRender(); scheduleDraft();
+  });
+
+  // 비고 칩
+  $('#noteChips').addEventListener('click', e=>{
+    const b = e.target.closest('[data-chip]');
+    if(!b) return;
+    const phrase = b.dataset.chip;
+    S.note = (S.note ? S.note.replace(/\s+$/,'') + '\n' : '') + phrase;
+    const ta = document.querySelector('[data-bind="note"]');
+    if(ta) ta.value = S.note;
+    PLAN = null; scheduleRender(); scheduleDraft();
+  });
+
+  // 도장
+  $('#btnStampUp').addEventListener('click', ()=>$('#stampFile').click());
+  $('#stampFile').addEventListener('change', e=>{
+    const f = e.target.files && e.target.files[0];
+    if(!f) return;
+    readImageFile(f, dataUrl=>{
+      const b = getBiz(S.bizId);
+      b.stamp = dataUrl;
+      saveBiz();
+      renderStamp();
+      PLAN = null; renderPreview(); scheduleDraft();
+      toast('도장을 저장했습니다 · 이 사업자의 문서에 계속 쓰입니다');
+    });
+    e.target.value = '';
+  });
+  $('#btnStampDel').addEventListener('click', ()=>{
+    const b = getBiz(S.bizId);
+    confirmDialog('도장 지우기', '이 사업자에 저장된 도장 이미지를 지울까요?', '지우기').then(ok=>{
+      if(!ok) return;
+      b.stamp = ''; saveBiz(); renderStamp(); PLAN = null; renderPreview(); toast('도장을 지웠습니다');
+    });
+  });
+
+  // 문서번호 재생성
+  $('#btnNewNo').addEventListener('click', ()=>{
+    S.docNo = nextDocNo(S.type, S.date);
+    S.docNoEdited = false;
+    const el = document.querySelector('[data-bind="docNo"]');
+    if(el) el.value = S.docNo;
+    PLAN = null; scheduleRender(); scheduleDraft();
+    toast('문서번호를 새로 만들었습니다 · ' + S.docNo);
+  });
+
+  // 새 문서 / 저장
+  $('#btnNewDoc').addEventListener('click', ()=>{
+    confirmDialog('새 문서', '지금 화면의 입력값을 비우고 새 문서를 시작할까요? 저장한 문서는 그대로 남습니다.', '새로 시작').then(ok=>{ if(ok){ newDoc(S.type); toast('새 문서를 시작했습니다'); } });
+  });
+  ['#btnSave', '#btnSave2', '#btnSaveTop'].forEach(sel=>{
+    const el = $(sel); if(el) el.addEventListener('click', ()=>saveDoc(false));
+  });
+
+  // 내보내기
+  ['#btnPng', '#btnPng2'].forEach(sel=>$(sel).addEventListener('click', exportPng));
+  ['#btnPdf', '#btnPdf2'].forEach(sel=>$(sel).addEventListener('click', exportPdf));
+  ['#btnMail', '#btnMail2'].forEach(sel=>$(sel).addEventListener('click', sendMail));
+
+  // 페이지 이동
+  $('#prevPage').addEventListener('click', ()=>{ if(PAGE > 0){ PAGE--; drawCurrentPage(); updatePageUI(); } });
+  $('#nextPage').addEventListener('click', ()=>{ if(PLAN && PAGE < PLAN.pages.length - 1){ PAGE++; drawCurrentPage(); updatePageUI(); } });
+  $('#btnZoom').addEventListener('click', ()=>{
+    const stage = document.querySelector('.page-stage');
+    const on = stage.classList.toggle('zoom');
+    $('#btnZoom').classList.toggle('on', on);
+    if(on) stage.scrollLeft = 0;
+  });
+
+  // 보기 전환
+  $('#viewSwitch').addEventListener('click', e=>{
+    const b = e.target.closest('button');
+    if(b) setView(b.dataset.view);
+  });
+
+  // 모달 열기/닫기
+  $('#btnHistory').addEventListener('click', ()=>{ renderHistory($('#hSearch').value); openModal($('#modalHistory')); });
+  $('#btnHelp').addEventListener('click', ()=>openModal($('#modalHelp')));
+  // 부가세 계산기
+  $('#btnVat').addEventListener('click', openVatCalc);
+  $$('[data-vat-open]').forEach(b=>b.addEventListener('click', openVatCalc));
+  $('#vatSwitch').addEventListener('click', e=>{
+    const b = e.target.closest('button[data-vatdir]');
+    if(!b || b.dataset.vatdir === VATC.dir) return;
+    VATC.dir = b.dataset.vatdir;
+    renderVatCalc();
+  });
+  $('#vatInput').addEventListener('input', e=>setVatValue(e.target.value, false));
+  $('#vatInput').addEventListener('blur', ()=>setVatValue(VATC.value, true));
+  $('#vatQuick').addEventListener('click', e=>{
+    const b = e.target.closest('button');
+    if(!b) return;
+    setVatValue(b.dataset.reset ? 0 : VATC.value + num(b.dataset.add), true);
+  });
+  $('#vatCopy').addEventListener('click', vatCopyResult);
+  $('#vatFill').addEventListener('click', vatFillItem);
+  $$('[data-close]').forEach(b=>b.addEventListener('click', e=>{
+    const m = e.target.closest('.modal');
+    if(m) closeModal(m);
+  }));
+  $$('.modal').forEach(m=>m.addEventListener('click', e=>{ if(e.target === m) closeModal(m); }));
+  document.addEventListener('keydown', e=>{ if(e.key === 'Escape') closeAllModals(); });
+
+  // 확인 모달
+  $('#cfYes').addEventListener('click', ()=>closeConfirm(true));
+  $('#cfNo').addEventListener('click', ()=>closeConfirm(false));
+  $('#modalConfirm').addEventListener('click', e=>{ if(e.target.id === 'modalConfirm') closeConfirm(false); });
+  $$('#modalConfirm [data-close]').forEach(b=>b.addEventListener('click', ()=>closeConfirm(false)));
+
+  // 내역
+  $('#hSearch').addEventListener('input', e=>renderHistory(e.target.value));
+  $('#hList').addEventListener('click', e=>{
+    const btn = e.target.closest('button[data-act]');
+    if(!btn) return;
+    const id = btn.closest('.hitem').dataset.id;
+    const act = btn.dataset.act;
+    if(act === 'load') loadDoc(id);
+    else if(act === 'copy') duplicateDoc(id);
+    else if(act === 'toinvoice') toInvoice(id);
+    else if(act === 'del') deleteDoc(id);
+  });
+
+  // 백업/복원
+  $('#btnBackup').addEventListener('click', backup);
+  $('#btnRestore').addEventListener('click', ()=>$('#restoreFile').click());
+  $('#restoreFile').addEventListener('change', e=>{
+    const f = e.target.files && e.target.files[0];
+    if(f) restoreFile(f);
+    e.target.value = '';
+  });
+  $('#btnReset').addEventListener('click', ()=>{
+    confirmDialog('모든 데이터 지우기', '사업자 정보 · 도장 · 저장한 문서가 이 브라우저에서 모두 사라집니다. 백업하지 않았다면 되돌릴 수 없습니다.', '모두 지우기').then(ok=>{
+      if(!ok) return;
+      store.del(K.biz); store.del(K.docs); store.del(K.draft); store.del(K.ui);
+      DOCS = []; BIZ = loadBiz(); S = newState('quote'); syncAcctToDoc(); S.docNo = nextDocNo('quote', S.date);
+      closeAllModals(); renderForm(); PLAN = null; renderPreview(); toast('초기화했습니다');
+    });
+  });
+
+  // 사업자 모달
+  $('#bzSave').addEventListener('click', saveBizModal);
+  $('#bzDelete').addEventListener('click', deleteBizModal);
+
+  window.addEventListener('resize', ()=>{ /* 캔버스는 CSS로 반응형 */ });
+  window.addEventListener('afterprint', ()=>{ const r = $('#printRoot'); if(r) r.innerHTML = ''; });
+}
+
+/* ---------------- 사업자 모달 ---------------- */
+let editingBizId = null;
+function openBizModal(id){
+  editingBizId = id;
+  const b = id ? getBiz(id) : null;
+  $('#modalBiz').querySelector('h3').textContent = b ? '사업자 정보' : '새 사업자';
+  $('#bzName').value = b ? (b.name || '') : '';
+  $('#bzLegal').value = b ? (b.legalName || '') : '';
+  $('#bzCeo').value = b ? (b.ceo || '') : '';
+  $('#bzNo').value = b ? (b.bizno || '') : '';
+  $('#bzUptae').value = b ? (b.uptae || '') : '';
+  $('#bzJongmok').value = b ? (b.jongmok || '') : '';
+  $('#bzTel').value = b ? (b.tel || '') : '';
+  $('#bzTelDetail').value = b ? (b.telDetail || '') : '';
+  $('#bzAddr').value = b ? (b.addr || '') : '';
+  $('#bzEmail').value = b ? (b.email || '') : '';
+  renderMailChips($('#bzMailChips'), b ? b.email : '', m=>{
+    $('#bzEmail').value = m;
+    document.querySelectorAll('#bzMailChips .mail-chip').forEach(el=>el.classList.toggle('on', el.dataset.mail === m));
+  });
+  $('#bzBank').value = b ? (b.bank || '') : '';
+  $('#bzHolder').value = b ? (b.holder || '') : '';
+  $('#bzAcct').value = b ? (b.acct || '') : '';
+  $('#bzDelete').style.display = (b && !b.builtin) ? '' : 'none';
+  openModal($('#modalBiz'));
+}
+function saveBizModal(){
+  const name = $('#bzName').value.trim();
+  if(!name){ toast('상호를 입력해 주세요'); $('#bzName').focus(); return; }
+  let b = editingBizId ? getBiz(editingBizId) : null;
+  if(!b){
+    b = { id:'c' + Date.now(), label:name, stamp:'', builtin:false };
+    BIZ.list.push(b);
+  }
+  b.name = name;
+  b.legalName = $('#bzLegal').value.trim();
+  b.label = b.label && b.builtin ? b.label : name;
+  b.ceo = $('#bzCeo').value.trim();
+  b.bizno = $('#bzNo').value.trim();
+  b.uptae = $('#bzUptae').value.trim();
+  b.jongmok = $('#bzJongmok').value.trim();
+  b.tel = $('#bzTel').value.trim();
+  b.telDetail = $('#bzTelDetail').value.trim();
+  b.addr = $('#bzAddr').value.trim();
+  b.email = $('#bzEmail').value.trim();
+  b.bank = $('#bzBank').value.trim();
+  b.holder = $('#bzHolder').value.trim();
+  b.acct = $('#bzAcct').value.trim();
+  saveBiz();
+  applyBiz(b.id);
+  closeModal($('#modalBiz'));
+  renderForm(); PLAN = null; renderPreview(); scheduleDraft();
+  toast('사업자 정보를 저장했습니다');
+}
+function deleteBizModal(){
+  const b = editingBizId ? getBiz(editingBizId) : null;
+  if(!b || b.builtin) return;
+  confirmDialog('사업자 삭제', '“' + (b.name || b.label || '사업자') + '” 정보를 지울까요? 저장한 문서는 그대로 남습니다.', '삭제').then(ok=>{
+    if(!ok) return;
+    BIZ.list = BIZ.list.filter(x=>x.id !== b.id);
+    if(!BIZ.list.length) BIZ.list.push(blankBiz());
+    applyBiz(BIZ.list[0].id);
+    saveBiz();
+    closeModal($('#modalBiz'));
+    renderForm(); PLAN = null; renderPreview();
+    toast('삭제했습니다');
+  });
+}
+
+/* ---------------- 이미지 파일 → 축소 dataURL ---------------- */
+function readImageFile(file, cb){
+  if(!/^image\//.test(file.type)){ toast('이미지 파일만 올릴 수 있습니다'); return; }
+  const fr = new FileReader();
+  fr.onload = ()=>{
+    const img = new Image();
+    img.onload = ()=>{
+      const max = 320;
+      let w = img.naturalWidth || img.width, h = img.naturalHeight || img.height;
+      if(!w || !h) return;
+      if(w >= h){ if(w > max){ h = Math.round(h * max / w); w = max; } }
+      else { if(h > max){ w = Math.round(w * max / h); h = max; } }
+      const cv = document.createElement('canvas');
+      cv.width = w; cv.height = h;
+      const ctx = cv.getContext('2d');
+      ctx.clearRect(0, 0, w, h);
+      ctx.drawImage(img, 0, 0, w, h);
+      cb(cv.toDataURL('image/png'));
+    };
+    img.onerror = ()=>toast('이미지를 읽지 못했습니다');
+    img.src = fr.result;
+  };
+  fr.readAsDataURL(file);
+}
+
+/* =====================================================================
+   홈(메뉴판) · 하단 탭 · 계산기
+   ===================================================================== */
+function homeBizMeta(b){
+  const bits = [];
+  if(b.ceo) bits.push('대표 ' + b.ceo);
+  if(b.bizno) bits.push('사업자번호 ' + b.bizno);
+  if(b.tel) bits.push('연락처 ' + b.tel);
+  if(b.addr) bits.push(b.addr);
+  return bits.join(' · ');
+}
+/* 홈 배너 + 문서 건수 + 작성 화면 표제 */
+function renderHomeBanner(){
+  const hero = $('#homeHero');
+  if(!hero) return;
+  const b = getBiz(S.bizId) || {};
+  const name = String(b.name || '').trim();
+  const filled = !!name;
+  hero.classList.toggle('filled', filled);
+  $('#heroName').textContent = filled ? name : '내 사업자 정보 먼저 저장해 보세요';
+  const meta = homeBizMeta(b);
+  const extra = BIZ.list.length > 1 ? '저장된 사업자 ' + BIZ.list.length + '개' : '';
+  $('#heroMeta').textContent = filled
+    ? ([meta, extra].filter(Boolean).join(' · ') || '사업자 정보를 채워 두면 문서에 자동으로 찍힙니다.')
+    : '상호·사업자번호·연락처만 넣어 두면 견적서·거래명세서·공사내역서에 자동으로 찍힙니다. 입력한 내용은 이 브라우저에만 저장되고 어디로도 전송되지 않습니다.';
+  $('#heroKicker').textContent = filled ? '지금 쓰는 내 사업자' : '내 사업자';
+  $('#heroCta').textContent = filled ? '내 사업자 정보 수정' : '내 사업자 저장';
+  const mg = $('#heroManage');
+  if(mg) mg.hidden = !filled;
+  updateHomeDocCount();
+  const where = $('#subBarWhere');
+  if(where) where.textContent = (TYPES[S.type] ? TYPES[S.type].plain : '문서') + ' 작성';
+}
+function updateHomeDocCount(){
+  const n = (DOCS || []).length;
+  $$('.homeDocCount').forEach(el=>{ el.textContent = String(n); });
+  const ds = $('#homeDocSummary');
+  if(ds) ds.textContent = '저장 문서 ' + n + '건';
+}
+function openHome(){ setView('home'); }
+/* 문서작성 화면 열기 — 종류를 지정하면 그 양식으로 바꾼다 */
+function openWrite(type){
+  if(type && TYPES[type] && type !== S.type){
+    const btn = $('#docTypes .type-btn[data-type="' + type + '"]');
+    if(btn){ btn.click(); }
+    else {
+      S.type = type; PLAN = null; PAGE = 0;
+      renderForm(); renderPreview(); scheduleDraft();
+    }
+  }
+  setView('edit');
+  window.scrollTo(0, 0);
+}
+function openDocsBox(){
+  renderHistory($('#hSearch').value);
+  openModal($('#modalHistory'));
+}
+function openHelpBox(){ openModal($('#modalHelp')); }
+function openCalcHub(){ openModal($('#modalCalc')); }
+
+/* ---------------- 마진율 · 순이익 계산기 ---------------- */
+function mgResult(){
+  const sale = Math.max(0, Math.round(num($('#mgSale').value)));
+  const cost = Math.max(0, Math.round(num($('#mgCost').value)));
+  const extra = Math.max(0, Math.round(num($('#mgExtra').value)));
+  const feePct = Math.min(100, Math.max(0, num($('#mgFee').value)));
+  const fee = Math.round(sale * feePct / 100);
+  const costTotal = cost + extra;
+  const profit = sale - costTotal - fee;
+  const margin = sale > 0 ? (profit / sale * 100) : 0;
+  const costRate = sale > 0 ? (costTotal / sale * 100) : 0;
+  const be = feePct >= 100 ? 0 : Math.ceil(costTotal / (1 - feePct / 100));
+  return { sale:sale, cost:cost, extra:extra, feePct:feePct, fee:fee, costTotal:costTotal,
+           profit:profit, margin:margin, costRate:costRate, be:be };
+}
+function renderMargin(){
+  if(!$('#mgOutProfit')) return;
+  const r = mgResult();
+  $('#mgOutSale').textContent = fmtWon(r.sale) + ' 원';
+  $('#mgOutFee').textContent = (r.fee > 0 ? '- ' : '') + fmtWon(r.fee) + ' 원' + (r.feePct ? ' (' + r.feePct + '%)' : '');
+  $('#mgOutCost').textContent = (r.costTotal > 0 ? '- ' : '') + fmtWon(r.costTotal) + ' 원';
+  const p = $('#mgOutProfit');
+  p.textContent = (r.profit < 0 ? '- ' : '') + fmtWon(Math.abs(r.profit)) + ' 원';
+  p.classList.toggle('neg', r.profit < 0);
+  const m = $('#mgOutMargin');
+  m.textContent = r.margin.toFixed(1) + '%';
+  m.classList.toggle('neg', r.profit < 0);
+  $('#mgOutCostRate').textContent = r.costRate.toFixed(1) + '%';
+  $('#mgOutBe').textContent = fmtWon(r.be) + ' 원';
+}
+function mgSummaryText(){
+  const r = mgResult();
+  return '판매가 ' + fmtWon(r.sale) + '원 / 매입원가 ' + fmtWon(r.cost) + '원 / 수수료 ' + fmtWon(r.fee) + '원(' + r.feePct + '%) / 배송·기타 ' + fmtWon(r.extra) + '원 → 순이익 ' + fmtWon(r.profit) + '원 · 마진율 ' + r.margin.toFixed(1) + '% · 원가율 ' + r.costRate.toFixed(1) + '% · 손익분기 판매가 ' + fmtWon(r.be) + '원';
+}
+function openMargin(){ renderMargin(); openModal($('#modalMargin')); }
+
+/* ---------------- 3.3% 원천징수(인건비) 계산기 ---------------- */
+const WHC = { dir:'gross' };
+function whCalc(dir, v){
+  const x = Math.max(0, Math.round(num(v)));
+  if(dir === 'net'){
+    const gross = Math.round(x / 0.967);
+    const income = Math.round(gross * 0.03);
+    const local = Math.round(gross * 0.003);
+    return { gross:gross, income:income, local:local, net:gross - income - local };
+  }
+  const income = Math.round(x * 0.03);
+  const local = Math.round(x * 0.003);
+  return { gross:x, income:income, local:local, net:x - income - local };
+}
+function whResult(){ return whCalc(WHC.dir, $('#whInput').value); }
+function renderWithhold(){
+  if(!$('#whNet')) return;
+  const r = whResult();
+  $('#whGross').textContent = fmtWon(r.gross) + ' 원';
+  $('#whIncome').textContent = (r.income > 0 ? '- ' : '') + fmtWon(r.income) + ' 원';
+  $('#whLocal').textContent = (r.local > 0 ? '- ' : '') + fmtWon(r.local) + ' 원';
+  $('#whNet').textContent = fmtWon(r.net) + ' 원';
+  const netMode = WHC.dir === 'net';
+  $('#whInputLabel').textContent = netMode ? '실수령액 (받은 금액)' : '세전 지급액 (계약 금액)';
+  $('#whNote').textContent = netMode
+    ? '받은 금액에서 3.3%(소득세 3% + 지방세 0.3%)를 역산해 세전 지급총액을 구했습니다. 세전 = 실수령액 ÷ 0.967 (원 단위 반올림)'
+    : '세전 지급액에서 소득세 3%와 지방세 0.3%(합계 3.3%)를 뺀 금액이 실수령액입니다. 일용·프리랜서 인건비 지급 때 쓰는 계산입니다.';
+  $('#whRowGross').classList.toggle('total', netMode);
+  $('#whRowNet').classList.toggle('total', !netMode);
+  $$('#whSwitch button').forEach(b=>b.classList.toggle('active', b.dataset.whdir === WHC.dir));
+}
+function whSummaryText(){
+  const r = whResult();
+  return '세전 ' + fmtWon(r.gross) + '원 / 소득세 ' + fmtWon(r.income) + '원 / 지방세 ' + fmtWon(r.local) + '원 / 세후 실수령 ' + fmtWon(r.net) + '원';
+}
+function openWithhold(){ renderWithhold(); openModal($('#modalWithhold')); }
+
+/* 공통 복사 */
+function copyPlain(txt, msg){
+  const done = ()=>toast(msg || '복사했습니다');
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(done).catch(()=>vatCopyFallback(txt, done));
+  } else {
+    vatCopyFallback(txt, done);
+  }
+}
+
+/* ---------------- 홈 이벤트 (1회 연결) ---------------- */
+function initHome(){
+  renderHomeBanner();
+
+  const grid = $('#menuGrid');
+  if(grid) grid.addEventListener('click', e=>{
+    const t = e.target.closest('[data-menu]');
+    if(!t) return;
+    const m = t.getAttribute('data-menu');
+    if(m === 'quote' || m === 'invoice' || m === 'detail') openWrite(m);
+    else if(m === 'vat') openVatCalc();
+    else if(m === 'margin') openMargin();
+    else if(m === 'labor') openWithhold();
+    else if(m === 'biz') openBizModal(S.bizId);
+    else if(m === 'docs') openDocsBox();
+  });
+
+  const tab = $('#tabBar');
+  if(tab) tab.addEventListener('click', e=>{
+    const b = e.target.closest('[data-tab]');
+    if(!b) return;
+    const k = b.getAttribute('data-tab');
+    if(k === 'home') openHome();
+    else if(k === 'write') openWrite(S.type);
+    else if(k === 'calc') openCalcHub();
+    else if(k === 'docs') openDocsBox();
+  });
+
+  const cta = $('#heroCta'); if(cta) cta.addEventListener('click', ()=>openBizModal(S.bizId));
+  const hm = $('#heroManage'); if(hm) hm.addEventListener('click', ()=>openBizModal(S.bizId));
+  const back = $('#btnHomeBack'); if(back) back.addEventListener('click', openHome);
+  const rec = $('#homeRecent'); if(rec) rec.addEventListener('click', openDocsBox);
+  const help = $('#homeHelp'); if(help) help.addEventListener('click', openHelpBox);
+
+  /* 계산기 모음 → 개별 계산기 */
+  const hub = $('#modalCalc');
+  if(hub) hub.addEventListener('click', e=>{
+    const b = e.target.closest('[data-calc]');
+    if(!b) return;
+    const k = b.getAttribute('data-calc');
+    closeModal(hub);
+    if(k === 'vat') openVatCalc();
+    else if(k === 'margin') openMargin();
+    else if(k === 'withhold') openWithhold();
+  });
+
+  /* 마진율 계산기 */
+  ['#mgSale', '#mgCost', '#mgFee', '#mgExtra'].forEach(id=>{
+    const el = $(id);
+    if(el) el.addEventListener('input', renderMargin);
+  });
+  const mq = $('#mgQuick');
+  if(mq) mq.addEventListener('click', e=>{
+    const b = e.target.closest('button');
+    if(!b) return;
+    const sale = $('#mgSale');
+    if(b.dataset.reset){
+      sale.value = ''; $('#mgCost').value = ''; $('#mgFee').value = ''; $('#mgExtra').value = '';
+    } else {
+      sale.value = fmtWon(num(sale.value) + num(b.dataset.add));
+    }
+    renderMargin();
+  });
+  const mc = $('#mgCopy');
+  if(mc) mc.addEventListener('click', ()=>copyPlain(mgSummaryText(), '마진율 계산 결과를 복사했습니다'));
+
+  /* 3.3% 인건비 계산기 */
+  const whs = $('#whSwitch');
+  if(whs) whs.addEventListener('click', e=>{
+    const b = e.target.closest('button[data-whdir]');
+    if(!b || b.dataset.whdir === WHC.dir) return;
+    WHC.dir = b.dataset.whdir;
+    renderWithhold();
+  });
+  const whIn = $('#whInput');
+  if(whIn){
+    whIn.addEventListener('input', renderWithhold);
+    whIn.addEventListener('blur', ()=>{
+      const v = Math.max(0, Math.round(num(whIn.value)));
+      whIn.value = v ? fmtWon(v) : '';
+      renderWithhold();
+    });
+  }
+  const wq = $('#whQuick');
+  if(wq) wq.addEventListener('click', e=>{
+    const b = e.target.closest('button');
+    if(!b) return;
+    const inp = $('#whInput');
+    const v = b.dataset.reset ? 0 : Math.round(num(inp.value) + num(b.dataset.add));
+    inp.value = v ? fmtWon(v) : '';
+    renderWithhold();
+  });
+  const wc = $('#whCopy');
+  if(wc) wc.addEventListener('click', ()=>copyPlain(whSummaryText(), '3.3% 계산 결과를 복사했습니다'));
+}
+
+/* 사업자·문서 목록이 바뀌면 홈 배너·건수도 갱신 */
+const _renderBizSummaryHome = renderBizSummary;
+renderBizSummary = function(){
+  _renderBizSummaryHome.apply(this, arguments);
+  renderHomeBanner();
+};
+const _renderHistoryHome = renderHistory;
+renderHistory = function(){
+  _renderHistoryHome.apply(this, arguments);
+  updateHomeDocCount();
+};
+
+/* =====================================================================
+   시작
+   ===================================================================== */
+function init(){
+  DOCS = store.get(K.docs, []) || [];
+  if(!Array.isArray(DOCS)) DOCS = [];
+  const draft = store.get(K.draft, null);
+  S = normalizeState(draft || newState('quote'));
+  /* 홈화면 바로가기(?doc=quote|invoice|detail) — 문서 종류만 바꾸고 입력값은 그대로 둔다 */
+  let wantType = null;
+  try{ wantType = new URLSearchParams(location.search).get('doc'); }catch(e){}
+  if(wantType && TYPES[wantType] && wantType !== S.type) S.type = wantType;
+  if(!S.docNo) S.docNo = nextDocNo(S.type, S.date);
+  if(!S.acct.bank && !S.acct.number){
+    const b = getBiz(S.bizId);
+    if(b && (b.bank || b.acct)) syncAcctToDoc();
+  }
+  bindEvents();
+  renderForm();
+  renderPreview();
+  initHome();
+  /* 홈화면 바로가기(?doc=quote|invoice|detail)는 곷바로 작성 화면으로 */
+  if(wantType && TYPES[wantType]) openWrite(wantType);
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(()=>{ PLAN = null; renderPreview(); });
+  }
+}
+document.addEventListener('DOMContentLoaded', init);
+
+/* ---------------- 광고 슬롯 ----------------
+   애드센스 승인 전에는 false 로 두세요. true 로 바꾸면 광고 영역이 보입니다. */
+const ADS_ENABLED = false;
+if(ADS_ENABLED){
+  ['adTop', 'adBottom'].forEach(id=>{ const el = document.getElementById(id); if(el) el.classList.add('on'); });
+  try{ (window.adsbygoogle = window.adsbygoogle || []).push({}); (window.adsbygoogle = window.adsbygoogle || []).push({}); }catch(e){}
+}
+
+/* ---------------- PWA 서비스워커 (오프라인에서도 열림) ---------------- */
+if('serviceWorker' in navigator && location.protocol.indexOf('http') === 0){
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('./sw.js', { scope: './' }).catch(function(){ /* 미지원·file:// 환경은 그냥 넘어감 */ });
+  });
+}
+</script>
+</body>
+</html>

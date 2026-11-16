@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# 광고 크롤러(애드센스) 허용
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+Sitemap: https://sajanglab.github.io/sitemap.xml

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f294a">
+<title>개인정보처리방침 | 사장랩</title>
+<meta name="description" content="사장랩(무료 견적서·거래명세서·공사내역서·부가세 계산기)의 개인정보처리방침입니다. 회원가입과 서버 저장이 없고, 입력한 모든 내용은 이용자 기기의 브라우저 저장 공간에만 남습니다. 광고(Google AdSense) 쿠키와 맞춤형 광고 설정 안내를 포함합니다.">
+<meta name="author" content="사장랩">
+<link rel="canonical" href="https://sajanglab.github.io/privacy.html">
+<link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --bg:#F1F3F7; --card:#FFFFFF; --ink:#0F1B2D; --ink2:#344054; --muted:#6B7789;
+  --line:#E6E9F0; --line2:#D8DEE8; --navy:#12294A; --navy2:#1B3A67; --blue:#2B5FE0;
+  --blue-soft:#EDF2FE; --r:16px; --shadow:0 1px 2px rgba(16,24,40,.05), 0 1px 3px rgba(16,24,40,.05);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.head{
+  padding:calc(14px + env(safe-area-inset-top)) 18px 18px;
+  background:linear-gradient(135deg,#0E1B2E 0%,#173154 62%,#1D3E6B 100%);color:#fff;
+}
+.head .bar{display:flex;align-items:center;gap:10px;max-width:760px;margin:0 auto}
+.head .mark{
+  width:34px;height:34px;border-radius:10px;flex:none;display:grid;place-items:center;
+  font-size:15px;font-weight:700;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.28);
+}
+.head .brand{font-size:14.5px;font-weight:700;letter-spacing:-.2px}
+.head .brand span{display:block;font-size:11px;font-weight:500;color:#A9BCD8;letter-spacing:0}
+.head .back{margin-left:auto;font-size:12px;font-weight:600;color:#DCE6F5;border:1px solid rgba(255,255,255,.24);border-radius:9px;padding:7px 11px;background:rgba(255,255,255,.07);white-space:nowrap}
+.head .back:hover{text-decoration:none;background:rgba(255,255,255,.16)}
+main{max-width:760px;margin:0 auto;padding:16px 14px 34px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:20px 18px 22px}
+h1{font-size:20px;font-weight:800;letter-spacing:-.4px}
+.meta{margin-top:6px;font-size:12px;color:var(--muted)}
+.summary{
+  margin-top:14px;padding:14px 15px;border-radius:13px;background:var(--blue-soft);border:1px solid #DCE6FB;
+}
+.summary ul{list-style:none;display:grid;gap:6px}
+.summary li{position:relative;padding-left:16px;font-size:13px;color:#25406B;line-height:1.65;word-break:keep-all}
+.summary li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+nav.toc{margin-top:16px;padding:12px 14px;border:1px solid var(--line);border-radius:13px;background:#F8FAFD}
+nav.toc b{display:block;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.02em;margin-bottom:7px}
+nav.toc ol{margin-left:16px;display:grid;gap:4px}
+nav.toc li{font-size:12.5px;color:var(--ink2)}
+h2{font-size:15px;font-weight:800;letter-spacing:-.2px;margin-top:26px;padding-top:16px;border-top:1px solid var(--line);scroll-margin-top:14px}
+h2:first-of-type{border-top:0;padding-top:0;margin-top:22px}
+h2 .no{color:var(--blue);margin-right:6px}
+p{margin-top:8px;font-size:13px;color:#3C4A5E;line-height:1.8;word-break:keep-all}
+ul.plain{margin:8px 0 0 16px;display:grid;gap:5px}
+ul.plain li{font-size:13px;color:#3C4A5E;line-height:1.75;word-break:keep-all}
+.box{margin-top:10px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#F8FAFD}
+.box p{margin-top:0;font-size:12.5px;color:#4B5768}
+.box p + p{margin-top:6px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:#EEF1F6;border-radius:5px;padding:1px 5px;color:#22304A}
+.contact{margin-top:10px;padding:14px 15px;border:1px dashed var(--line2);border-radius:12px;background:#fff}
+.contact b{display:block;font-size:13px;color:var(--ink)}
+.contact p{margin-top:5px;font-size:12.5px;color:#4B5768}
+.foot{max-width:760px;margin:0 auto;padding:0 14px 30px;text-align:center;font-size:11.5px;line-height:1.9;color:#98A2B3}
+.foot a{color:#6B7789;text-decoration:underline;text-underline-offset:2px}
+@media (max-width:460px){
+  .head .brand span{display:none}
+}
+@media (max-width:420px){
+  .card{padding:18px 15px 20px}
+  h1{font-size:18.5px}
+  .head .back{font-size:11.5px;padding:6px 9px}
+}
+</style>
+</head>
+<body>
+
+<header class="head">
+  <div class="bar">
+    <div class="mark">사</div>
+    <div class="brand">사장랩<span>무료 견적서·거래명세서·공사내역서·부가세 계산기</span></div>
+    <a class="back" href="./">앱으로 돌아가기</a>
+  </div>
+</header>
+
+<main>
+  <article class="card">
+    <h1>개인정보처리방침</h1>
+    <p class="meta">시행일 2026년 11월 16일 · 버전 1.0</p>
+
+    <div class="summary">
+      <ul>
+        <li><b>회원가입과 로그인이 없습니다.</b> 계정을 만들지 않고 바로 사용합니다.</li>
+        <li><b>서버에 저장하지 않습니다.</b> 사업자·거래처·견적 내역은 이용자 기기의 브라우저 저장 공간(<code>localStorage</code>)에만 남습니다.</li>
+        <li><b>광고는 Google AdSense로 게재됩니다.</b> 광고 사업자의 쿠키가 사용될 수 있고, 맞춤형 광고는 설정에서 끌 수 있습니다.</li>
+      </ul>
+    </div>
+
+    <nav class="toc">
+      <b>목차</b>
+      <ol>
+        <li><a href="#s1">수집하지 않는 정보</a></li>
+        <li><a href="#s2">입력한 정보의 저장 위치</a></li>
+        <li><a href="#s3">쿠키와 광고(Google AdSense)</a></li>
+        <li><a href="#s4">외부 서비스로 전달되는 정보</a></li>
+        <li><a href="#s5">보관 기간과 삭제</a></li>
+        <li><a href="#s6">이용자의 선택과 권리</a></li>
+        <li><a href="#s7">아동의 개인정보</a></li>
+        <li><a href="#s8">방침의 변경</a></li>
+        <li><a href="#s9">문의처</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="s1"><span class="no">1.</span>수집하지 않는 정보</h2>
+    <p>사장랩은 견적서·거래명세서·공사내역서를 만들고 부가세를 계산하는 웹 앱으로, 다음 정보를 <b>수집하거나 보관하지 않습니다</b>.</p>
+    <ul class="plain">
+      <li>이름·전화번호·이메일·주소 등 이용자 개인 식별 정보</li>
+      <li>사업자등록번호·계좌번호·도장 이미지 등 앱에 입력한 사업자 정보</li>
+      <li>거래처 정보와 견적·거래 내역, 작성 중인 문서</li>
+      <li>회원 아이디·비밀번호 등 로그인 정보(로그인 기능 자체가 없습니다)</li>
+    </ul>
+    <p>앱은 위와 같은 값을 서버로 전송하는 기능을 갖지 않습니다. 입력한 내용은 문서를 화면에 그리고 이미지로 저장하는 과정에서만 브라우저 안에서 사용됩니다.</p>
+
+    <h2 id="s2"><span class="no">2.</span>입력한 정보의 저장 위치</h2>
+    <p>이용자가 입력한 값은 그 기기 브라우저의 <b>로컬 저장 공간(localStorage)</b>에만 저장됩니다. 다른 사람의 기기나 사장랩 운영자의 서버로는 전달되지 않으며, 운영자도 그 내용을 열람할 수 없습니다.</p>
+    <div class="box">
+      <p><b>저장되는 항목</b> — 내 사업자 정보(상호·사업자번호·대표자·업태·종목·연락처·주소·이메일·계좌·도장 이미지), 저장한 문서 목록, 마지막으로 작성하던 문서.</p>
+      <p><b>저장 기간</b> — 이용자가 삭제할 때까지 기기에 남습니다. 브라우저의 사이트 데이터 삭제, 시크릿 창 종료, 앱의 [저장된 모든 데이터 지우기]로 언제든 지울 수 있습니다. 기기를 바꾸면 자동으로 옮겨지지 않으므로, 필요하면 앱의 [전체 백업]으로 파일을 받아 두고 새 기기에서 [복원]하세요.</p>
+    </div>
+
+    <h2 id="s3"><span class="no">3.</span>쿠키와 광고(Google AdSense)</h2>
+    <p>사장랩은 무료로 제공되며, 운영을 위해 화면 일부에 광고가 표시될 수 있습니다. 광고는 <b>Google AdSense</b>를 통해 게재되며, Google을 비롯한 제3자 광고 사업자는 이용자의 이전 방문 기록에 기반한 맞춤형 광고를 제공하기 위해 <b>쿠키</b>를 사용할 수 있습니다.</p>
+    <ul class="plain">
+      <li>Google은 광고 게재에 쿠키를 사용하며, 이를 통해 이 사이트나 다른 사이트 방문 기록에 기반한 광고가 표시될 수 있습니다.</li>
+      <li>Google의 광고 쿠키 사용으로 이용자는 맞춤형 광고를 받게 됩니다. 맞춤형 광고를 원하지 않으면 <a href="https://adssettings.google.com/" target="_blank" rel="noopener">Google 광고 설정(adssettings.google.com)</a>에서 맞춤형 광고를 끌 수 있습니다.</li>
+      <li>Google이 파트너 사이트의 데이터를 어떻게 사용하는지는 <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google의 파트너 사이트 데이터 사용 안내</a>에서 확인할 수 있습니다.</li>
+      <li>제3자 광고 사업자의 쿠키는 <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">aboutads.info</a> 또는 <a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener">youronlinechoices.eu</a>에서 관리할 수 있습니다.</li>
+      <li>브라우저 설정에서 쿠키를 차단하거나 삭제할 수 있습니다. 다만 쿠키를 모두 막으면 광고가 이용자와 무관한 내용으로 표시될 수 있습니다.</li>
+    </ul>
+    <p>사장랩 운영자는 광고를 통해 개별 이용자를 식별할 수 있는 정보를 제공받지 않으며, 광고 사업자가 수집한 정보의 처리는 각 사업자의 개인정보처리방침을 따릅니다.</p>
+
+    <h2 id="s4"><span class="no">4.</span>외부 서비스로 전달되는 정보</h2>
+    <p>앱과 이 페이지는 화면 표시와 광고 게재를 위해 다음 외부 서비스를 불러옵니다. 이때 접속 환경에 따라 <b>IP 주소, 브라우저 종류와 버전, 접속 시각</b> 같은 기술 정보가 해당 서비스에 전달될 수 있습니다. 이는 인터넷 통신에서 일반적으로 발생하는 정보이며, 사장랩이 별도로 수집·저장하는 정보가 아닙니다.</p>
+    <ul class="plain">
+      <li>글꼴 제공: jsDelivr CDN(Pretendard 글꼴)</li>
+      <li>광고 게재: Google AdSense(Google LLC 및 그 파트너)</li>
+    </ul>
+    <p>사업자·거래처·견적 내용과 같은 앱 입력값은 위 서비스로 전송되지 않습니다.</p>
+
+    <h2 id="s5"><span class="no">5.</span>보관 기간과 삭제</h2>
+    <p>사장랩은 이용자의 정보를 서버에 보관하지 않으므로 운영자가 파기할 정보가 없습니다. 기기에 저장된 값은 이용자가 직접 지웁니다.</p>
+    <ul class="plain">
+      <li>앱 도움말의 <b>[저장된 모든 데이터 지우기]</b>를 누르면 이 브라우저에 저장된 사업자·문서·작성 중인 내용이 모두 삭제됩니다.</li>
+      <li>브라우저 설정에서 이 사이트의 쿠키와 사이트 데이터를 삭제해도 같은 효과가 있습니다.</li>
+      <li>삭제한 내용은 되돌릴 수 없으므로, 필요한 문서는 [전체 백업]으로 먼저 받아 두세요.</li>
+    </ul>
+
+    <h2 id="s6"><span class="no">6.</span>이용자의 선택과 권리</h2>
+    <p>이용자는 언제든지 ① 앱에 입력한 정보를 직접 수정하거나 삭제할 수 있고, ② 맞춤형 광고를 끄거나 쿠키를 차단할 수 있으며, ③ 앱 사용을 중단하는 즉시 더 이상 정보가 쌓이지 않습니다. 수집·이용에 대한 동의를 요구하지 않는 서비스이므로, 별도의 동의 철회 절차는 없습니다.</p>
+
+    <h2 id="s7"><span class="no">7.</span>아동의 개인정보</h2>
+    <p>사장랩은 사업자를 위한 업무용 도구로, 만 14세 미만 아동을 대상으로 하지 않으며 아동의 개인정보를 알면서 수집하지 않습니다. 앱은 회원가입을 받지 않고 입력값을 서버로 보내지 않습니다.</p>
+
+    <h2 id="s8"><span class="no">8.</span>방침의 변경</h2>
+    <p>법령이나 서비스 내용(광고 사업자 변경, 기능 추가 등)이 바뀌면 이 페이지를 통해 안내합니다. 중요한 변경이 있을 때에는 이 페이지 상단의 시행일과 버전을 함께 갱신합니다.</p>
+
+    <h2 id="s9"><span class="no">9.</span>문의처</h2>
+    <div class="contact">
+      <b>개인정보 관련 문의</b>
+      <p>서비스 운영자 — 사장랩 개인정보 관련 문의·열람·삭제 요청은 <a href="mailto:sajanglab2026@gmail.com">sajanglab2026@gmail.com</a> 으로 보내 주세요.</p>
+      <p>앱 사용법·오류 신고도 같은 메일(<a href="mailto:sajanglab2026@gmail.com">sajanglab2026@gmail.com</a>)로 받습니다. 문의에 개인정보나 계좌번호를 함께 보내지 마세요.</p>
+    </div>
+  </article>
+</main>
+
+<footer class="foot">
+  <b>사장랩</b> · 무료 견적서·거래명세서·공사내역서·부가세 계산기<br>
+  모든 입력값은 내 브라우저에만 저장됩니다 · 서버 전송 없음<br>
+  문의: <a href="mailto:sajanglab2026@gmail.com">sajanglab2026@gmail.com</a><br>
+  <a href="./">앱으로 돌아가기</a>
+</footer>
+
+</body>
+</html>
