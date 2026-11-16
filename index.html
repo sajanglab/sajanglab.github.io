@@ -561,7 +561,7 @@ body[data-view="home"] .bottombar{display:none !important}
 .t-vat{background:#F0EEFE;color:#5B4BD6}
 .t-margin{background:#E9F7EC;color:#1E7C3A}
 .t-labor{background:#FEEFEA;color:#B84C2A}
-.t-biz{background:#E8EEF9;color:#1B3A67}
+.t-tax{background:#E8F1FE;color:#1D5FBF}
 .t-docs{background:#EFF1F5;color:#4B5768}
 
 /* 보조 줄 */
@@ -641,10 +641,9 @@ body[data-view="home"] #btnVat{display:none}
   .brand h1{font-size:15px}
 }
 .brand > div{min-width:0}
-.brand{overflow:hidden}
+.brand{overflow:hidden;cursor:pointer}
 @media (min-width:980px){
   .home{padding:22px 26px 10px}
-  body[data-view="home"] .tabbar{display:none}
   .subbar{padding:16px 26px 0}
   .menu-tile{min-height:104px}
   .menu-tile b{font-size:12.5px}
@@ -652,6 +651,145 @@ body[data-view="home"] #btnVat{display:none}
   .menu-tile .mi{width:36px;height:36px}
   .menu-tile .mi svg{width:19px;height:19px}
 }
+/* ================= 키즈노트형: 하단 4버튼 · 패널 화면 ================= */
+.panel{display:none;padding:14px 16px 4px}
+body[data-view="tax"] .panel[data-panel="tax"],
+body[data-view="guide"] .panel[data-panel="guide"],
+body[data-view="inquiry"] .panel[data-panel="inquiry"],
+body[data-view="myinfo"] .panel[data-panel="myinfo"],
+body[data-view="appadmin"] .panel[data-panel="appadmin"]{display:block}
+.panel-inner{max-width:820px;margin:0 auto}
+body.panelview .workspace,
+body.panelview .viewswitch,
+body.panelview .subbar,
+body.panelview .bottombar{display:none !important}
+body.panelview #btnVat{display:none}
+body[data-view="home"] .tabbar,
+body[data-view="tax"] .tabbar,
+body[data-view="guide"] .tabbar,
+body[data-view="inquiry"] .tabbar,
+body[data-view="myinfo"] .tabbar,
+body[data-view="appadmin"] .tabbar{display:flex}
+@media (min-width:980px){
+  .panel{padding:22px 26px 10px}
+  .tabbar{left:50%;right:auto;bottom:14px;transform:translateX(-50%);width:min(520px,calc(100% - 40px));border:1px solid var(--line);border-radius:18px;padding:7px 8px;box-shadow:0 10px 30px rgba(16,24,40,.16)}
+  body{padding-bottom:96px}
+}
+
+/* 패널 공통 머리 */
+.pn-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:2px 0 11px}
+.pn-back{display:inline-flex;align-items:center;gap:3px;height:32px;padding:0 11px 0 8px;background:#fff;border:1px solid var(--line2);border-radius:10px;font-size:12px;font-weight:700;color:var(--navy)}
+.pn-back:active{background:#F1F4F9}
+.pn-back svg{width:14px;height:14px}
+.pn-tag{font-size:10.5px;font-weight:800;letter-spacing:.04em;color:#8A94A6;text-transform:uppercase}
+.pn-title{font-size:20px;font-weight:800;letter-spacing:-.6px;color:var(--ink);line-height:1.25}
+.pn-sub{margin-top:6px;font-size:12.5px;line-height:1.65;color:var(--muted);word-break:keep-all}
+.panel .card{margin-top:12px}
+.panel .card-head h2{font-size:14px}
+
+/* 월 선택 · 연도 */
+.month-strip{display:flex;gap:6px;overflow-x:auto;margin:12px -16px 0;padding:2px 16px 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.month-strip::-webkit-scrollbar{display:none}
+.month-strip button{
+  flex:none;min-width:46px;height:38px;border-radius:11px;background:#fff;border:1px solid var(--line);
+  display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
+  font-size:12.5px;font-weight:700;color:#5A6779;letter-spacing:-.3px;
+}
+.month-strip button i{display:block;width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.45}
+.month-strip button.active{background:var(--navy);border-color:var(--navy);color:#fff;box-shadow:0 4px 12px rgba(18,41,74,.22)}
+.month-strip button.active i{opacity:.8}
+.month-strip button.now:not(.active){color:var(--navy);border-color:#BFCEE8;background:#F4F8FE}
+.tax-bar{display:flex;align-items:center;gap:8px;margin-top:12px}
+.tax-year{display:flex;align-items:center;gap:2px;background:#fff;border:1px solid var(--line);border-radius:11px;padding:2px}
+.tax-year button{width:26px;height:28px;border-radius:8px;color:#5A6779;font-size:15px;line-height:1}
+.tax-year button:active{background:#F1F4F9}
+.tax-year b{font-size:12.5px;font-weight:800;letter-spacing:-.3px;min-width:56px;text-align:center}
+.tax-now{height:32px;padding:0 10px;border-radius:9px;background:#fff;border:1px solid var(--line);font-size:11.5px;font-weight:700;color:var(--navy)}
+.tax-now:active{background:#F1F4F9}
+.tax-count{margin-left:auto;font-size:11.5px;font-weight:700;color:var(--muted);white-space:nowrap}
+
+/* 일정 목록 */
+.tax-list{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.tax-item{display:flex;gap:10px;align-items:flex-start;padding:12px 12px 12px 13px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+.tax-item.done{background:#FAFBFD}
+.tax-item.done .tt{color:#98A2B3;text-decoration:line-through}
+.tax-item.done .tax-day b{color:#B6BECC}
+.tax-day{flex:none;width:42px;text-align:center;border-right:1px dashed var(--line2);padding-right:8px}
+.tax-day b{display:block;font-size:16px;font-weight:800;letter-spacing:-.5px;color:var(--navy);line-height:1.2}
+.tax-day span{display:block;font-size:9.5px;font-weight:700;color:var(--muted);letter-spacing:.02em}
+.tax-main{flex:1;min-width:0}
+.tax-main .tt{font-size:13.5px;font-weight:700;letter-spacing:-.3px;color:var(--ink);line-height:1.35;word-break:keep-all}
+.tax-main .tm{margin-top:4px;font-size:11.5px;line-height:1.6;color:#6B7789;word-break:keep-all}
+.tax-main .tm .when{display:block;font-weight:700;color:#8A94A6;margin-top:3px;font-size:10.5px}
+.tax-cat{display:inline-flex;align-items:center;height:18px;padding:0 6px;border-radius:6px;font-size:10px;font-weight:800;letter-spacing:-.2px;margin-right:7px;vertical-align:1px}
+.c-tax{background:#EEF2FE;color:#2B5FE0}
+.c-vat{background:#FEF3E2;color:#B26A00}
+.c-income{background:#FDECEC;color:#B03A31}
+.c-insure{background:#E9F6EF;color:#0E7A5F}
+.c-admin{background:#F1EEFE;color:#5B4BD6}
+.c-etc{background:#EFF1F5;color:#4B5768}
+.tax-acts{flex:none;display:flex;gap:4px;align-self:center}
+.tax-acts button{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:#F4F6FA;border:1px solid var(--line);color:#7A8597}
+.tax-acts button svg{width:15px;height:15px}
+.tax-acts button:active{background:#E8EDF6}
+.tax-acts button.chk.on{background:#0E7A5F;border-color:#0E7A5F;color:#fff}
+.tax-acts button.del{color:#C0392B}
+.tax-add{width:100%;margin-top:12px;height:46px;border-radius:13px;border:1px dashed var(--line2);background:#fff;font-size:13px;font-weight:800;color:var(--navy);letter-spacing:-.2px}
+.tax-add:active{background:#F5F8FD}
+.tax-form{margin-top:10px;padding:13px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:9px}
+.tax-form label{display:block;font-size:11.5px;font-weight:700;color:var(--ink2);margin-bottom:4px}
+.tax-form input,.tax-form select,.tax-form textarea{width:100%;border:1px solid var(--line2);border-radius:10px;padding:10px 11px;font-size:14px;background:#fff;color:var(--ink)}
+.tax-form textarea{resize:vertical;line-height:1.55}
+.tax-form .row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tax-form .acts{display:flex;gap:8px;margin-top:2px}
+.tax-form .acts .btn{flex:1;height:42px}
+.tax-note{margin:14px 0 8px;padding:11px 12px;background:#F8FAFD;border:1px solid #E9EEF6;border-radius:11px;font-size:11.5px;line-height:1.7;color:#5A6779;word-break:keep-all}
+
+/* 이용안내 */
+.g-step{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line)}
+.g-step:first-child{border-top:0;padding-top:2px}
+.g-step .n{flex:none;width:22px;height:22px;border-radius:7px;background:var(--blue-soft);color:var(--blue);font-size:11px;font-weight:800;display:grid;place-items:center}
+.g-step .tx > b{display:block;font-size:13px;font-weight:700;letter-spacing:-.2px;color:var(--ink)}
+.g-step .tx p b{display:inline;font-size:inherit;font-weight:700;color:var(--navy);letter-spacing:0}
+.g-step .tx p{margin-top:3px;font-size:12px;line-height:1.65;color:#5A6779;word-break:keep-all}
+.os-tabs{display:flex;gap:6px;margin-bottom:11px}
+.os-tabs button{flex:1;height:36px;border-radius:10px;background:#F1F4F9;border:1px solid var(--line);font-size:12.5px;font-weight:700;color:#5A6779}
+.os-tabs button.active{background:#fff;color:var(--navy);border-color:var(--line2);box-shadow:var(--shadow)}
+.faq{border-top:1px solid var(--line);padding:9px 0 2px}
+.faq:first-of-type{border-top:0;padding-top:0}
+.faq summary{cursor:pointer;font-size:12.5px;font-weight:700;color:var(--navy);letter-spacing:-.2px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:'Q. ';color:var(--blue);font-weight:800}
+.faq p{margin-top:6px;font-size:12px;line-height:1.7;color:#5A6779;word-break:keep-all}
+.row-link{display:inline-flex;align-items:center;gap:4px;margin-top:10px;height:34px;padding:0 12px;border:1px solid var(--line2);border-radius:10px;background:#fff;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none}
+.row-link:active{background:#F1F4F9}
+
+/* 1:1 문의 */
+.mail-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;height:52px;border-radius:14px;background:var(--navy);color:#fff;font-size:14.5px;font-weight:800;letter-spacing:-.2px;box-shadow:0 8px 20px rgba(18,41,74,.22);margin-top:14px}
+.mail-cta:active{background:#0E1F38}
+.mail-cta svg{width:19px;height:19px}
+.mail-sub{margin-top:8px;text-align:center;font-size:11.5px;color:var(--muted);word-break:break-all}
+.mail-tpl{white-space:pre-wrap;font-family:inherit;font-size:11.5px;line-height:1.7;color:#4B5768;background:#F8FAFD;border:1px solid #E9EEF6;border-radius:11px;padding:11px 12px;margin:10px 0 0}
+.soon{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:7px;background:#EEF1F6;color:#6B7789;font-size:10.5px;font-weight:800;letter-spacing:-.2px}
+
+/* 내 정보 */
+.mi-stamp{display:flex;align-items:center;gap:12px;padding:11px;border:1px solid var(--line);border-radius:12px;background:#F8FAFD}
+.mi-stamp .pv{width:62px;height:62px;border-radius:10px;background:#fff;border:1px dashed var(--line2);display:grid;place-items:center;overflow:hidden;flex:none;font-size:10.5px;color:#B6BECC;text-align:center}
+.mi-stamp .pv img{width:100%;height:100%;object-fit:contain}
+.mi-stamp .txt{flex:1;min-width:0;font-size:11.5px;line-height:1.6;color:var(--muted);word-break:keep-all}
+.mi-stamp .acts{display:flex;flex-direction:column;gap:6px;flex:none}
+.row2{display:flex;gap:8px;margin-top:4px}
+.row2 .btn{flex:1;height:44px}
+
+/* 앱 관리 */
+.stat-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:12.5px;color:#5A6779}
+.stat-row:first-of-type{border-top:0;padding-top:0}
+.stat-row .v{font-weight:700;color:var(--ink2);text-align:right;word-break:break-all}
+.stat-row .v.ok{color:var(--ok)}
+.stat-row .v.warn{color:#B26A00}
+.seg2{display:flex;gap:5px;padding:4px;background:#EEF1F6;border-radius:12px}
+.seg2 button{flex:1;height:40px;border-radius:9px;font-size:12px;font-weight:700;color:#5A6779;letter-spacing:-.2px}
+.seg2 button.active{background:#fff;color:var(--navy);box-shadow:0 1px 3px rgba(16,24,40,.14)}
 </style>
 </head>
 <body data-view="home">
@@ -722,9 +860,9 @@ body[data-view="home"] #btnVat{display:none}
           <span class="mi t-labor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.2" r="3.6"/><path d="M5.2 20c1.2-3.5 3.9-5.3 6.8-5.3s5.6 1.8 6.8 5.3"/></svg></span>
           <b>3.3%</b><span class="sub">인건비</span>
         </button>
-        <button type="button" class="menu-tile" data-menu="biz" aria-label="내 사업자 관리">
-          <span class="mi t-biz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M3.4 9l1.6-5h14l1.6 5"/><path d="M9.6 20v-5h4.8v5"/></svg></span>
-          <b>내 사업자</b><span class="sub">정보관리</span>
+        <button type="button" class="menu-tile" data-menu="tax" aria-label="세무·일정표">
+          <span class="mi t-tax"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.5h17"/><path d="M8 3.2v3.4M16 3.2v3.4"/><path d="M8.4 13.6l1.9 1.9 3.4-3.5"/></svg></span>
+          <b>세무·일정표</b><span class="sub">신고·납부</span>
         </button>
         <button type="button" class="menu-tile" data-menu="docs" aria-label="저장한 문서함">
           <span class="mi t-docs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5A1.5 1.5 0 0 1 5.5 6h3.7l2 2h7.3A1.5 1.5 0 0 1 20 9.5v8A1.5 1.5 0 0 1 18.5 19h-13A1.5 1.5 0 0 1 4 17.5z"/></svg></span>
@@ -744,7 +882,7 @@ body[data-view="home"] #btnVat{display:none}
     </div>
 
     <div class="home-note">
-      <b>처음이세요?</b> 위 <b>내 사업자</b>에 상호·사업자번호·연락처·계좌를 한 번 저장해 두면, <b>견적서</b>에서 금액만 채워도 견적서·거래명세서·공사내역서 세 가지 양식이 그대로 나옵니다. 회원가입·설치 없이 무료이고, 입력값은 이 브라우저에만 저장됩니다.
+      <b>처음이세요?</b> 하단 <b>내 정보</b>에 상호·사업자번호·연락처·계좌를 한 번 저장해 두면, <b>견적서</b>에서 금액만 채워도 견적서·거래명세서·공사내역서 세 가지 양식이 그대로 나옵니다. 회원가입·설치 없이 무료이고, 입력값은 이 브라우저에만 저장됩니다.
     </div>
 
 <section class="about">
@@ -779,6 +917,252 @@ body[data-view="home"] #btnVat{display:none}
 
     <p class="site-foot"><b>사장랩</b> · 무료 견적서·거래명세서·공사내역서·부가세 계산기<br>모든 입력값은 내 브라우저에만 저장됩니다 · 서버 전송 없음<br><a href="./privacy.html">개인정보처리방침</a> · 문의·건의: <a href="mailto:sajanglab2026@gmail.com">sajanglab2026@gmail.com</a></p>
 
+  </div>
+</section>
+
+<!-- ============================== 세무·일정표 ============================== -->
+<section class="panel" data-panel="tax" id="taxView">
+  <div class="panel-inner">
+    <div class="pn-top">
+      <button type="button" class="pn-back" data-goto-home><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5.5L8.5 12 15 18.5"/></svg>메뉴</button>
+      <span class="pn-tag">세무 캘린더</span>
+    </div>
+    <h2 class="pn-title">세무·일정표</h2>
+    <p class="pn-sub">매달 챙겨야 할 신고·납부 일정을 달마다 모았습니다. 직접 추가한 내 일정은 이 브라우저에만 저장됩니다.</p>
+
+    <div class="month-strip" id="monthStrip" role="tablist" aria-label="월 선택"></div>
+
+    <div class="tax-bar">
+      <div class="tax-year">
+        <button type="button" id="taxYearPrev" aria-label="지난해">‹</button>
+        <b id="taxYearLabel">2026년</b>
+        <button type="button" id="taxYearNext" aria-label="다음해">›</button>
+      </div>
+      <button type="button" class="tax-now" id="taxThisMonth">이번 달</button>
+      <span class="tax-count" id="taxCount"></span>
+    </div>
+
+    <div class="tax-list" id="taxList"></div>
+
+    <button type="button" class="tax-add" id="taxAddBtn">+ 내 일정 추가</button>
+
+    <form class="tax-form" id="taxForm" hidden>
+      <div class="row">
+        <div><label for="taxDate">날짜</label><input type="date" id="taxDate"></div>
+        <div><label for="taxCat">분류</label>
+          <select id="taxCat">
+            <option value="tax">세금</option>
+            <option value="vat">부가세</option>
+            <option value="income">소득세</option>
+            <option value="insure">4대보험</option>
+            <option value="admin">행정</option>
+            <option value="etc">기타</option>
+          </select>
+        </div>
+      </div>
+      <div><label for="taxTitle">제목</label><input type="text" id="taxTitle" maxlength="60" placeholder="예) 홈택스 부가세 신고" autocomplete="off"></div>
+      <div><label for="taxMemo">메모 (선택)</label><textarea id="taxMemo" rows="2" maxlength="200" placeholder="예) 매입 세금계산서 정리해서 신고"></textarea></div>
+      <div class="acts">
+        <button type="button" class="btn" id="taxCancel">취소</button>
+        <button type="submit" class="btn primary">저장</button>
+      </div>
+    </form>
+
+    <p class="tax-note">법정 기한은 국세청 세무일정 기준의 일반적인 날짜입니다. 기한이 토요일·일요일·공휴일이면 다음 평일까지이고, 업종·과세유형(일반·간이·면세)·직원 유무에 따라 달라질 수 있습니다. 신고 전 홈택스 세무일정을 한 번 더 확인하세요.</p>
+  </div>
+</section>
+
+<!-- ============================== 이용안내 ============================== -->
+<section class="panel" data-panel="guide" id="guideView">
+  <div class="panel-inner">
+    <div class="pn-top">
+      <button type="button" class="pn-back" data-goto-home><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5.5L8.5 12 15 18.5"/></svg>메뉴</button>
+      <span class="pn-tag">사용법</span>
+    </div>
+    <h2 class="pn-title">이용안내</h2>
+    <p class="pn-sub">회원가입도, 설치도, 결제도 없이 브라우저에서 바로 쓰는 무료 문서 앱입니다.</p>
+
+    <div class="card">
+      <div class="card-head"><h2>이렇게 쓰면 됩니다</h2></div>
+      <div class="g-step"><span class="n">1</span><div class="tx"><b>내 정보에 사업자 정보 저장</b><p><b>내 정보</b> 탭에서 상호·사업자번호·주소·업태·종목·도장을 한 번만 넣어 두면, 다음 문서부터 자동으로 찍힙니다.</p></div></div>
+      <div class="g-step"><span class="n">2</span><div class="tx"><b>메뉴에서 문서 고르기</b><p>견적서·거래명세서·공사내역서 중 하나를 누르면 입력 화면이 열립니다. 양식만 바뀌고 입력한 내역은 그대로 이어집니다.</p></div></div>
+      <div class="g-step"><span class="n">3</span><div class="tx"><b>거래처·품목·금액 입력</b><p>부가세는 별도·포함·일반 중에서 고릅니다. 합계와 한글 금액은 자동으로 계산됩니다.</p></div></div>
+      <div class="g-step"><span class="n">4</span><div class="tx"><b>PNG·PDF로 저장하거나 메일로</b><p>미리보기에서 <b>PNG 저장</b>은 카톡 전송용, <b>PDF·인쇄</b>는 인쇄 대화상자에서 PDF로 저장합니다. 거래처 메일을 넣어 두면 메일 앱이 열리며 내용이 채워집니다.</p></div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>홈 화면에 추가해서 앱처럼</h2></div>
+      <div class="os-tabs" id="osTabs">
+        <button type="button" class="active" data-os="ios">아이폰</button>
+        <button type="button" data-os="android">안드로이드</button>
+      </div>
+      <div id="osBody"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>사장랩 공식 네이버 카페</h2></div>
+      <p class="pn-sub">사용법 질문, 세무·장부 노하우, 사장님들끼리 정보를 나누는 공식 카페입니다.</p>
+      <a class="row-link" href="https://cafe.naver.com/sajanglab2026" target="_blank" rel="noopener noreferrer" style="width:100%;justify-content:center;height:44px;margin-top:10px">공식 카페 바로가기 ›</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>자주 묻는 질문</h2></div>
+      <details class="faq"><summary>정말 무료인가요?</summary><p>네. 회원가입·결제 없이 모든 기능을 쓸 수 있습니다. 서비스 운영을 위해 화면 일부에 광고가 표시될 수 있습니다.</p></details>
+      <details class="faq"><summary>입력한 내용이 어디로 가나요?</summary><p>사업자 정보·문서·일정까지 모두 <b>내 브라우저 저장 공간</b>에만 남고 서버로 전송되지 않습니다. 계정도 로그인도 없습니다.</p></details>
+      <details class="faq"><summary>기기를 바꾸면 문서가 옮겨지나요?</summary><p>자동으로 옮겨지지 않습니다. 저장한 문서함에서 <b>전체 백업</b>으로 파일을 받아 새 기기에서 <b>복원</b>해 주세요.</p></details>
+      <details class="faq"><summary>세무 신고를 대신 해 주나요?</summary><p>아니요. 사장랩은 챙길 날짜와 내 일정을 정리해 주는 도구입니다. 신고·납부는 홈택스나 세무사님을 통해 진행해 주세요.</p></details>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>개인정보와 약속</h2></div>
+      <p class="pn-sub">사장랩은 사업자 정보를 서버에 보관하지 않습니다. 광고(Google AdSense)·폰트 등 외부 서비스 이용에 대한 내용은 개인정보처리방침에 적어 두었습니다.</p>
+      <a class="row-link" href="./privacy.html">개인정보처리방침 전문 보기 ›</a>
+      <button type="button" class="row-link" id="guideMore" style="margin-left:6px">자세한 도움말 ›</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 1:1 문의 ============================== -->
+<section class="panel" data-panel="inquiry" id="inquiryView">
+  <div class="panel-inner">
+    <div class="pn-top">
+      <button type="button" class="pn-back" data-goto-home><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5.5L8.5 12 15 18.5"/></svg>메뉴</button>
+      <span class="pn-tag">문의</span>
+    </div>
+    <h2 class="pn-title">1:1 문의</h2>
+    <p class="pn-sub">오류·사용법·기능 건의를 메일로 보내 주세요. 확인하는 대로 답장드립니다.</p>
+
+    <a class="mail-cta" id="inquiryMail" href="mailto:sajanglab2026@gmail.com">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.6 7.2l8.4 5.9 8.4-5.9"/></svg>
+      메일로 문의하기
+    </a>
+    <p class="mail-sub">sajanglab2026@gmail.com</p>
+
+    <div class="card">
+      <div class="card-head"><h2>문의 양식 복사</h2></div>
+      <p class="pn-sub">아래 양식을 복사해 메일에 붙여 넣으면 확인이 빠릅니다.</p>
+      <pre class="mail-tpl" id="mailTpl">[사장랩 문의]
+· 문의 종류: (오류 / 사용법 / 기능 건의 / 기타)
+· 쓰는 기기: (아이폰 / 안드로이드 / PC)
+· 브라우저: (사파리 / 크롬 / 기타)
+· 쓰던 화면: (예: 견적서 작성 → PNG 저장)
+
+■ 문의 내용
+
+
+■ 화면 캡처
+(가능하면 사진을 함께 첨부해 주세요)</pre>
+      <button type="button" class="btn" id="inquiryCopy" style="margin-top:10px;width:100%;height:44px">문의 양식 복사</button>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>사장랩 공식 네이버 카페</h2><span class="soon" style="background:#E9F6EF;color:#0E7A5F">공식</span></div>
+      <p class="pn-sub">사장님끼리 묻고 답하는 공식 카페입니다. 가입해서 질문과 노하우를 나누고, 새 소식도 받아 보세요.</p>
+      <a class="row-link" href="https://cafe.naver.com/sajanglab2026" target="_blank" rel="noopener noreferrer" style="width:100%;justify-content:center;height:44px;margin-top:10px">사장랩 공식 카페 바로가기 ›</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>문의 전에 확인해 보세요</h2></div>
+      <div class="g-step"><span class="n">?</span><div class="tx"><b>화면이 안 열리거나 버튼이 안 눌릴 때</b><p>브라우저를 새로고침하고, 사파리·크롬 최신 버전인지 확인해 주세요. 홈 화면에 추가한 앱은 앱을 지웠다 다시 추가하면 최신 버전으로 열립니다.</p></div></div>
+      <div class="g-step"><span class="n">?</span><div class="tx"><b>문서가 사라졌을 때</b><p>브라우저의 사이트 데이터를 지우거나 시크릿 창을 닫으면 저장된 값이 함께 사라집니다. 문서함의 <b>전체 백업</b>을 습관처럼 받아 두세요.</p></div></div>
+      <button type="button" class="row-link" id="inquiryGuide" style="margin-top:10px">이용안내 보기 ›</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 내 정보 ============================== -->
+<section class="panel" data-panel="myinfo" id="myinfoView">
+  <div class="panel-inner">
+    <div class="pn-top">
+      <button type="button" class="pn-back" data-goto-home><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5.5L8.5 12 15 18.5"/></svg>메뉴</button>
+      <span class="pn-tag">내 사업자</span>
+    </div>
+    <h2 class="pn-title">내 정보</h2>
+    <p class="pn-sub">여기 저장한 정보가 견적서·거래명세서·공사내역서에 그대로 찍힙니다. 입력값은 이 브라우저에만 저장됩니다.</p>
+
+    <div class="card">
+      <div class="card-head"><h2>내 사업자 정보</h2><button type="button" class="mini-btn ghost" id="miBizList">사업자 관리</button></div>
+      <div class="field"><label for="miName">상호</label><input type="text" id="miName" autocomplete="off" placeholder="예) ○○상사"></div>
+      <div class="grid2">
+        <div class="field"><label for="miCeo">대표자</label><input type="text" id="miCeo" autocomplete="off" placeholder="예) 홍길동"></div>
+        <div class="field"><label for="miBizno">사업자등록번호</label><input type="text" id="miBizno" inputmode="numeric" autocomplete="off" placeholder="000-00-00000"></div>
+      </div>
+      <div class="field"><label for="miAddr">주소</label><input type="text" id="miAddr" autocomplete="off" placeholder="사업장 주소"></div>
+      <div class="grid2">
+        <div class="field"><label for="miUptae">업태</label><input type="text" id="miUptae" autocomplete="off" placeholder="예) 서비스"></div>
+        <div class="field"><label for="miJongmok">종목</label><input type="text" id="miJongmok" autocomplete="off" placeholder="예) 실내건축"></div>
+      </div>
+      <div class="field"><label for="miEmail">이메일</label><input type="email" id="miEmail" inputmode="email" autocomplete="off" placeholder="회신받을 메일 주소"></div>
+      <div class="field"><label for="miTel">연락처 <span class="sub">문서에 표시</span></label><input type="tel" id="miTel" inputmode="tel" autocomplete="off" placeholder="010-0000-0000"></div>
+      <div class="mi-stamp">
+        <div class="pv" id="miStampPrev">도장</div>
+        <div class="txt">직인(도장) 이미지 — 배경이 투명한 PNG가 가장 깔끔합니다. 저장해 두면 문서에 자동으로 날인됩니다.</div>
+        <div class="acts">
+          <button type="button" class="mini-btn" id="miStampUp">올리기</button>
+          <button type="button" class="mini-btn ghost" id="miStampDel">지우기</button>
+        </div>
+      </div>
+      <input type="file" id="miStampFile" accept="image/*" hidden>
+      <button type="button" class="btn primary" id="miSave" style="width:100%;height:46px;margin-top:4px">저장</button>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>예시 · 초기화</h2></div>
+      <p class="pn-sub">처음 써 보실 때는 예시 값으로 화면을 확인해 보세요. 예시는 100% 가상의 값이고, 저장을 눌러야 문서에 적용됩니다.</p>
+      <div class="row2">
+        <button type="button" class="btn" id="miDemo">예시 채우기</button>
+        <button type="button" class="btn" id="miReset" style="color:#C0392B;border-color:#F6DFDC">데이터 초기화</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>저장 위치</h2></div>
+      <p class="pn-sub">사업자 정보·도장·문서·일정은 모두 이 기기 브라우저의 저장 공간에만 남습니다. 서버로 전송되지 않고, 다른 기기와 자동으로 동기화되지 않습니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 앱 관리 ============================== -->
+<section class="panel" data-panel="appadmin" id="appadminView">
+  <div class="panel-inner">
+    <div class="pn-top">
+      <button type="button" class="pn-back" data-goto-home><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5.5L8.5 12 15 18.5"/></svg>메뉴</button>
+      <span class="pn-tag">앱 설정</span>
+    </div>
+    <h2 class="pn-title">앱 관리</h2>
+    <p class="pn-sub">오프라인 저장 상태와 기본 설정, 버전 정보를 확인할 수 있습니다.</p>
+
+    <div class="card">
+      <div class="card-head"><h2>오프라인 캐시 상태</h2><button type="button" class="mini-btn ghost" id="appRefresh">새로고침</button></div>
+      <div class="stat-row"><span>서비스 워커</span><b class="v" id="swState">확인 중…</b></div>
+      <div class="stat-row"><span>저장된 앱 파일</span><b class="v" id="swCache">확인 중…</b></div>
+      <div class="stat-row"><span>네트워크</span><b class="v" id="netState">—</b></div>
+      <div class="stat-row"><span>마지막 확인</span><b class="v" id="swChecked">—</b></div>
+      <p class="pn-sub" style="margin-top:10px">앱을 한 번 열어 두면 인터넷이 없어도 견적서 화면과 계산기가 열립니다. 새 버전을 올리면 다음에 열 때 자동으로 갱신됩니다.</p>
+      <button type="button" class="row-link" id="appInstallGuide" style="margin-top:10px">홈 화면 추가 방법 보기 ›</button>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>기본 부가세 모드</h2></div>
+      <p class="pn-sub">새 문서를 열 때 처음 선택되어 있을 계산 방식입니다. 지금 쓰는 문서는 그대로 유지됩니다.</p>
+      <div class="seg2" id="vatDefault" style="margin-top:10px">
+        <button type="button" data-vatdef="excl">부가세 별도</button>
+        <button type="button" data-vatdef="incl">부가세 포함</button>
+        <button type="button" data-vatdef="none">일반·면세</button>
+      </div>
+      <p class="pn-sub" id="vatDefaultNote" style="margin-top:9px">현재: 부가세 별도</p>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>앱 정보</h2></div>
+      <div class="stat-row"><span>버전</span><b class="v">v2.0.0</b></div>
+      <div class="stat-row"><span>업데이트</span><b class="v">2026-11-16</b></div>
+      <div class="stat-row"><span>캐시 버전</span><b class="v">sajanglab-v4</b></div>
+      <div class="stat-row"><span>데이터 저장</span><b class="v">이 브라우저에만</b></div>
+      <p class="pn-sub" style="margin-top:10px">사장랩은 서버에 아무것도 보관하지 않습니다. 기기를 바꾸면 저장한 문서함의 [전체 백업]으로 옮겨 주세요.</p>
+    </div>
+
+    <p class="site-foot"><b>사장랩</b> · 무료 견적서·거래명세서·공사내역서·부가세 계산기<br>모든 입력값은 내 브라우저에만 저장됩니다 · 서버 전송 없음<br><a href="./privacy.html">개인정보처리방침</a> · 문의: <a href="mailto:sajanglab2026@gmail.com">sajanglab2026@gmail.com</a></p>
   </div>
 </section>
 
@@ -987,21 +1371,21 @@ body[data-view="home"] #btnVat{display:none}
 </div>
 
 <nav class="tabbar" id="tabBar" aria-label="주요 메뉴">
-  <button type="button" data-tab="home" class="active" aria-label="홈">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.6 10.4L12 3.5l8.4 6.9V20a1 1 0 0 1-1 1h-4.6v-6H10v6H5a1 1 0 0 1-1-1z"/></svg>
-    <span>홈</span>
+  <button type="button" data-tab="guide" aria-label="이용안내">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H4z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H14a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h6z"/></svg>
+    <span>이용안내</span>
   </button>
-  <button type="button" data-tab="write" aria-label="문서작성">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4l10-10a2.5 2.5 0 0 0-3.5-3.5L4.5 16.5z"/><path d="M13.5 7L17 10.5"/></svg>
-    <span>문서작성</span>
+  <button type="button" data-tab="inquiry" aria-label="1:1 문의">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7A2.5 2.5 0 0 1 17.5 16H10l-4.6 3.4V16H6.5A2.5 2.5 0 0 1 4 13.5z"/><path d="M8.6 10.2h6.8"/></svg>
+    <span>1:1 문의</span>
   </button>
-  <button type="button" data-tab="calc" aria-label="부가세·계산">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="3" width="15" height="18" rx="2.4"/><path d="M8 7.5h8"/><path d="M8.6 12h.9M14.5 12h.9M8.6 16.4h.9M14.5 16.4h.9"/></svg>
-    <span>부가세·계산</span>
+  <button type="button" data-tab="myinfo" aria-label="내 정보">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M3.4 7l1.6-4h14l1.6 4"/><path d="M9.6 20v-5.2h4.8V20"/></svg>
+    <span>내 정보</span>
   </button>
-  <button type="button" data-tab="docs" aria-label="문서함">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5A1.5 1.5 0 0 1 5.5 6h3.7l2 2h7.3A1.5 1.5 0 0 1 20 9.5v8A1.5 1.5 0 0 1 18.5 19h-13A1.5 1.5 0 0 1 4 17.5z"/></svg>
-    <span>문서함</span>
+  <button type="button" data-tab="appadmin" aria-label="앱 관리">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.1"/><path d="M12 3.6v2.2M12 18.2v2.2M4.8 12H3M21 12h-1.8M6.9 6.9L5.4 5.4M18.6 18.6l-1.5-1.5M17.1 6.9l1.5-1.5M5.4 18.6l1.5-1.5"/></svg>
+    <span>앱 관리</span>
   </button>
 </nav>
 
@@ -1290,7 +1674,7 @@ body[data-view="home"] #btnVat{display:none}
 'use strict';
 
 const APP = 'qfw.v1';
-const K = { biz: APP + '.biz', draft: APP + '.draft', docs: APP + '.docs', ui: APP + '.ui' };
+const K = { biz: APP + '.biz', draft: APP + '.draft', docs: APP + '.docs', ui: APP + '.ui', tax: APP + '.tax' };
 
 /* ---------------- 안전한 저장소 (file:// · 저장공간 차단 대비) ---------------- */
 const MEM = {};
@@ -1314,6 +1698,16 @@ const store = {
     delete MEM[key];
   }
 };
+
+/* ---------------- 앱 환경설정(기본 부가세 모드 등) ---------------- */
+function uiPrefs(){
+  const saved = store.get(K.ui, null);
+  return (saved && typeof saved === 'object' && !Array.isArray(saved)) ? saved : {};
+}
+function defaultVatMode(){
+  const v = uiPrefs().vatDefault;
+  return (v === 'incl' || v === 'none') ? v : 'excl';
+}
 
 /* ---------------- 문서 종류 ---------------- */
 const TYPES = {
@@ -1501,7 +1895,7 @@ function newState(type, bizId){
     title: '', period: '',
     client: { name:'', email:'', tel:'', addr:'', site:'', ceo:'', bizno:'' },
     items: [blankItem(), blankItem()],
-    vat: 'excl',
+    vat: defaultVatMode(),
     acct: { bank:'', number:'', holder:'' },
     note: '',
     noteAuto: true,
@@ -2933,15 +3327,20 @@ function closeModal(el){ el.classList.remove('open'); if(!$$('.modal.open').leng
 function closeAllModals(){ $$('.modal.open').forEach(m=>m.classList.remove('open')); document.body.style.overflow = ''; }
 
 /* ---------------- 보기 전환 ---------------- */
+const VIEW_LIST = ['home', 'edit', 'preview', 'tax', 'guide', 'inquiry', 'myinfo', 'appadmin'];
+const TAB_VIEWS = ['guide', 'inquiry', 'myinfo', 'appadmin'];
 function setView(v){
-  if(v !== 'home' && v !== 'edit' && v !== 'preview') v = 'home';
+  if(VIEW_LIST.indexOf(v) < 0) v = 'home';
   document.body.setAttribute('data-view', v);
+  document.body.classList.toggle('panelview', v !== 'home' && v !== 'edit' && v !== 'preview');
   $$('#viewSwitch button').forEach(b=>b.classList.toggle('active', b.dataset.view === v));
   $$('#tabBar [data-tab]').forEach(b=>{
-    const k = b.getAttribute('data-tab');
-    b.classList.toggle('active', v === 'home' ? k === 'home' : k === 'write');
+    b.classList.toggle('active', TAB_VIEWS.indexOf(v) >= 0 && b.getAttribute('data-tab') === v);
   });
   if(v === 'preview') renderPreview();
+  if(v === 'tax') renderTax();
+  if(v === 'myinfo') fillMyInfo();
+  if(v === 'appadmin') renderAppAdmin();
   renderHomeBanner();
   window.scrollTo({ top:0, behavior:'smooth' });
 }
@@ -3332,9 +3731,9 @@ function bindEvents(){
   $('#btnReset').addEventListener('click', ()=>{
     confirmDialog('모든 데이터 지우기', '사업자 정보 · 도장 · 저장한 문서가 이 브라우저에서 모두 사라집니다. 백업하지 않았다면 되돌릴 수 없습니다.', '모두 지우기').then(ok=>{
       if(!ok) return;
-      store.del(K.biz); store.del(K.docs); store.del(K.draft); store.del(K.ui);
-      DOCS = []; BIZ = loadBiz(); S = newState('quote'); syncAcctToDoc(); S.docNo = nextDocNo('quote', S.date);
-      closeAllModals(); renderForm(); PLAN = null; renderPreview(); toast('초기화했습니다');
+      store.del(K.biz); store.del(K.docs); store.del(K.draft); store.del(K.ui); store.del(K.tax);
+      DOCS = []; BIZ = loadBiz(); TAXS = loadTax(); S = newState('quote'); syncAcctToDoc(); S.docNo = nextDocNo('quote', S.date);
+      closeAllModals(); renderForm(); PLAN = null; renderPreview(); renderHomeBanner(); renderTax(); fillMyInfo(); toast('초기화했습니다');
     });
   });
 
@@ -3466,7 +3865,7 @@ function renderHomeBanner(){
     ? ([meta, extra].filter(Boolean).join(' · ') || '사업자 정보를 채워 두면 문서에 자동으로 찍힙니다.')
     : '상호·사업자번호·연락처만 넣어 두면 견적서·거래명세서·공사내역서에 자동으로 찍힙니다. 입력한 내용은 이 브라우저에만 저장되고 어디로도 전송되지 않습니다.';
   $('#heroKicker').textContent = filled ? '지금 쓰는 내 사업자' : '내 사업자';
-  $('#heroCta').textContent = filled ? '내 사업자 정보 수정' : '내 사업자 저장';
+  $('#heroCta').textContent = filled ? '내 정보 수정' : '내 정보 입력';
   const mg = $('#heroManage');
   if(mg) mg.hidden = !filled;
   updateHomeDocCount();
@@ -3583,6 +3982,426 @@ function copyPlain(txt, msg){
   }
 }
 
+/* =====================================================================
+   키즈노트형 패널 — 세무·일정표 · 이용안내 · 1:1 문의 · 내 정보 · 앱 관리
+   ===================================================================== */
+const APP_VERSION = 'v2.0.0';
+
+/* ---------------- 세무·일정표 데이터 ---------------- */
+const TAX_CATS = {
+  tax:   { label:'세금',    cls:'c-tax' },
+  vat:   { label:'부가세',  cls:'c-vat' },
+  income:{ label:'소득세',  cls:'c-income' },
+  insure:{ label:'4대보험', cls:'c-insure' },
+  admin: { label:'행정',    cls:'c-admin' },
+  etc:   { label:'기타',    cls:'c-etc' }
+};
+/* 매달 공통으로 챙기는 일정 (day:'last' = 그 달 말일) */
+const TAX_MONTHLY = [
+  { day:10,     title:'원천세 신고·납부',      cat:'tax',    memo:'직원 급여·3.3% 프리랜서 대가에서 뗀 소득세·지방소득세 (전월분)' },
+  { day:10,     title:'4대보험 납부',          cat:'insure', memo:'국민연금·건강보험·고용보험·산재보험 (전월분)' },
+  { day:'last', title:'간이지급명세서 제출',   cat:'admin',  memo:'일용근로소득·사업소득(3.3%) 지급분 — 지급한 달의 다음 달 말일까지' }
+];
+/* 달마다 다른 법정 일정 */
+const TAX_YEARLY = {
+  1:  [ { day:25, title:'부가세 확정신고·납부 (2기)',            cat:'vat',    memo:'일반과세자 7~12월분, 간이과세자는 1년분. 반기별 납부 승인자는 1/10에 7~12월분 원천세' } ],
+  2:  [ { day:10, title:'면세사업자 사업장현황신고',             cat:'admin',  memo:'부가세 면세사업자(학원·병의원·숙박 등) 대상' } ],
+  3:  [ { day:10, title:'연말정산·지급명세서 제출',               cat:'tax',    memo:'근로·사업소득 지급명세서 제출, 2월분 원천세와 함께' } ],
+  4:  [ { day:25, title:'부가세 예정고지 납부 (1기)',            cat:'vat',    memo:'개인 일반과세자는 신고 없이 고지서로. 고지세액 50만원 미만이면 고지 없음' } ],
+  5:  [ { day:31, title:'종합소득세 확정신고·납부',              cat:'income', memo:'개인지방소득세도 같은 기한. 기한이 주말·공휴일이면 다음 평일까지' } ],
+  6:  [ { day:30, title:'성실신고확인 대상 종합소득세 신고',     cat:'income', memo:'성실신고확인서를 붙여 신고하는 사업자의 기한' } ],
+  7:  [ { day:25, title:'부가세 확정신고·납부 (1기)',            cat:'vat',    memo:'일반과세자 1~6월분. 간이과세자는 세금계산서 발급분·예정부과 고지분' } ],
+  10: [ { day:25, title:'부가세 예정고지 납부 (2기)',            cat:'vat',    memo:'개인 일반과세자 고지서 납부. 사업 부진 시 예정신고로 대체 가능' } ],
+  11: [ { day:30, title:'종합소득세 중간예납 납부',              cat:'income', memo:'중간예납기준액의 1/2. 50만원 미만이면 고지 없음 — 상반기 실적 추계액 신고 가능' } ]
+};
+let TAXS = loadTax();
+function loadTax(){
+  const now = new Date();
+  const st = { month: now.getMonth()+1, year: now.getFullYear(), items: [], doneDefault: {} };
+  const saved = store.get(K.tax, null);
+  if(saved && typeof saved === 'object'){
+    if(Array.isArray(saved.items)) st.items = saved.items.filter(it=>it && it.id && it.date);
+    if(saved.doneDefault && typeof saved.doneDefault === 'object') st.doneDefault = saved.doneDefault;
+    if(Number(saved.month) >= 1 && Number(saved.month) <= 12) st.month = Number(saved.month);
+    if(Number(saved.year) >= 2000 && Number(saved.year) <= 2100) st.year = Number(saved.year);
+  }
+  return st;
+}
+function saveTax(){ store.set(K.tax, TAXS); }
+function taxDefaults(month, year){
+  const lastDay = new Date(year, month, 0).getDate();
+  const out = [];
+  TAX_MONTHLY.forEach((d, i)=>{
+    out.push({ id:'m' + month + '_' + i, day:(d.day === 'last' ? lastDay : d.day), title:d.title, cat:d.cat, memo:d.memo, fixed:true });
+  });
+  (TAX_YEARLY[month] || []).forEach((d, i)=>{
+    out.push({ id:'y' + month + '_' + i, day:d.day, title:d.title, cat:d.cat, memo:d.memo, fixed:true });
+  });
+  return out;
+}
+function renderMonthStrip(){
+  const host = $('#monthStrip');
+  if(!host) return;
+  const nowM = new Date().getMonth() + 1;
+  let html = '';
+  for(let m = 1; m <= 12; m++){
+    const active = TAXS.month === m;
+    const isNow = nowM === m;
+    html += '<button type="button" role="tab" aria-selected="' + (active ? 'true' : 'false') + '" data-month="' + m + '" class="' + (active ? 'active ' : '') + (isNow ? 'now' : '') + '">' + m + '월' + (isNow ? '<i></i>' : '') + '</button>';
+  }
+  host.innerHTML = html;
+  /* 이번 달·선택한 달이 화면 밖으로 밀리지 않게 가로 위치만 맞춘다(페이지 스크롤은 건드리지 않음) */
+  const act = host.querySelector('button.active');
+  if(act && host.clientWidth){
+    const target = act.offsetLeft - (host.clientWidth - act.offsetWidth) / 2;
+    host.scrollLeft = Math.max(0, target);
+  }
+}
+function renderTax(){
+  const list = $('#taxList');
+  if(!list) return;
+  renderMonthStrip();
+  const yearLabel = $('#taxYearLabel');
+  if(yearLabel) yearLabel.textContent = TAXS.year + '년';
+  const rows = [];
+  taxDefaults(TAXS.month, TAXS.year).forEach(d=>{
+    const key = TAXS.year + '|' + d.id;
+    rows.push({ day:d.day, kind:0, done:!!TAXS.doneDefault[key], key:key, title:d.title, cat:d.cat, memo:d.memo });
+  });
+  TAXS.items.forEach(it=>{
+    const m = String(it.date || '').match(/^\d{4}-(\d{2})-\d{2}$/);
+    if(!m || Number(m[1]) !== TAXS.month) return;
+    rows.push({ day:Number(String(it.date).slice(8, 10)) || 1, kind:1, done:!!it.done, item:it,
+                title:it.title, cat:it.cat, memo:it.memo, when:it.date });
+  });
+  rows.sort((a, b)=> a.day - b.day || a.kind - b.kind);
+  let doneCount = 0;
+  rows.forEach(r=>{ if(r.done) doneCount++; });
+  list.innerHTML = rows.map(r=>{
+    const c = TAX_CATS[r.cat] || TAX_CATS.etc;
+    const when = (r.kind === 1 && String(r.when).slice(0, 4) !== String(TAXS.year))
+      ? '<span class="when">' + esc(fmtDateKo(r.when)) + '</span>' : '';
+    const mineTag = r.kind === 1 ? '<span class="tax-cat" style="background:#EEF3FB;color:#5A6779">내 일정</span>' : '';
+    const toggleKey = r.kind === 0 ? r.key : 'i:' + r.item.id;
+    return '<div class="tax-item' + (r.done ? ' done' : '') + '">' +
+      '<div class="tax-day"><b>' + r.day + '</b><span>일</span></div>' +
+      '<div class="tax-main">' +
+        '<div class="tt">' + esc(r.title) + mineTag + '</div>' +
+        '<div class="tm"><span class="tax-cat ' + c.cls + '">' + c.label + '</span>' + esc(r.memo || '') + when + '</div>' +
+      '</div>' +
+      '<div class="tax-acts">' +
+        '<button type="button" class="chk' + (r.done ? ' on' : '') + '" data-taxdone="' + esc(toggleKey) + '" aria-label="' + (r.done ? '완료 취소' : '완료 표시') + '" aria-pressed="' + (r.done ? 'true' : 'false') + '">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>' +
+        '</button>' +
+        (r.kind === 1
+          ? '<button type="button" class="del" data-taxdel="' + esc(r.item.id) + '" aria-label="일정 삭제"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V4.6h6V7M6.5 7l1 13h9l1-13"/></svg></button>'
+          : '') +
+      '</div></div>';
+  }).join('');
+  const cnt = $('#taxCount');
+  if(cnt) cnt.textContent = rows.length + '개 일정' + (doneCount ? ' · 완료 ' + doneCount : '');
+}
+function toggleTaxDone(key){
+  if(key.indexOf('i:') === 0){
+    const it = TAXS.items.find(x=>x.id === key.slice(2));
+    if(!it) return;
+    it.done = !it.done;
+  } else {
+    if(TAXS.doneDefault[key]) delete TAXS.doneDefault[key];
+    else TAXS.doneDefault[key] = true;
+  }
+  saveTax();
+  renderTax();
+}
+function openTaxForm(){
+  const f = $('#taxForm');
+  if(!f) return;
+  f.hidden = false;
+  const now = new Date();
+  const sameMonth = (now.getFullYear() === TAXS.year && now.getMonth()+1 === TAXS.month);
+  const d = $('#taxDate');
+  if(d) d.value = TAXS.year + '-' + pad2(TAXS.month) + '-' + pad2(sameMonth ? now.getDate() : 1);
+  const t = $('#taxTitle'); if(t) t.value = '';
+  const m = $('#taxMemo'); if(m) m.value = '';
+  const c = $('#taxCat'); if(c) c.value = 'tax';
+  setTimeout(()=>{ try{ if(t) t.focus(); }catch(e){} }, 60);
+  if(f.scrollIntoView) f.scrollIntoView({ behavior:'smooth', block:'center' });
+}
+function closeTaxForm(){ const f = $('#taxForm'); if(f) f.hidden = true; }
+function saveTaxItem(){
+  const date = (($('#taxDate') || {}).value || '').trim();
+  const title = (($('#taxTitle') || {}).value || '').trim();
+  const cat = (($('#taxCat') || {}).value) || 'etc';
+  const memo = (($('#taxMemo') || {}).value || '').trim();
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(date)){ toast('날짜를 선택해 주세요'); return; }
+  if(!title){ toast('일정 제목을 입력해 주세요'); const t = $('#taxTitle'); if(t) t.focus(); return; }
+  TAXS.items.push({ id:'t' + Date.now().toString(36) + Math.random().toString(36).slice(2, 4), date:date, title:title.slice(0, 60), cat:cat, memo:memo.slice(0, 200), done:false });
+  TAXS.year = Number(date.slice(0, 4));
+  TAXS.month = Number(date.slice(5, 7));
+  saveTax();
+  closeTaxForm();
+  renderTax();
+  toast('일정을 추가했습니다');
+}
+function deleteTaxItem(id){
+  TAXS.items = TAXS.items.filter(x=>x.id !== id);
+  saveTax();
+  renderTax();
+  toast('일정을 삭제했습니다');
+}
+function openTax(){ renderTax(); setView('tax'); window.scrollTo(0, 0); }
+
+/* ---------------- 이용안내 (홈 화면 추가) ---------------- */
+const PWA_STEPS = {
+  ios: [
+    ['사파리로 사장랩 열기', '아이폰은 사파리에서 열어야 홈 화면 추가 메뉴가 보입니다.'],
+    ['공유 버튼 누르기', '화면 아래(기기에 따라 위)의 공유 아이콘을 누릅니다.'],
+    ['홈 화면에 추가 선택', '목록을 조금 내리면 [홈 화면에 추가]가 있습니다.'],
+    ['추가 누르기', '홈 화면에 사장랩 아이콘이 생기고 앱처럼 전체 화면으로 열립니다.']
+  ],
+  android: [
+    ['크롬으로 사장랩 열기', '안드로이드는 크롬에서 열면 설치 안내가 가장 잘 나옵니다.'],
+    ['오른쪽 위 ⋮ 메뉴 누르기', '주소창 옆 점 세 개 메뉴를 누릅니다.'],
+    ['앱 설치 또는 홈 화면에 추가', '[앱 설치]가 보이면 누르고, 없으면 [홈 화면에 추가]를 누릅니다.'],
+    ['설치 누르기', '홈 화면과 앱 목록에 사장랩이 생깁니다.']
+  ]
+};
+function renderOsGuide(os){
+  const host = $('#osBody');
+  if(!host) return;
+  const steps = PWA_STEPS[os] || PWA_STEPS.ios;
+  host.innerHTML = steps.map((s, i)=>'<div class="g-step"><span class="n">' + (i+1) + '</span><div class="tx"><b>' + esc(s[0]) + '</b><p>' + esc(s[1]) + '</p></div></div>').join('');
+}
+
+/* ---------------- 내 정보 ---------------- */
+function fillMyInfo(){
+  const b = getBiz(S.bizId) || {};
+  const put = (sel, v)=>{ const el = $(sel); if(el && document.activeElement !== el) el.value = v || ''; };
+  put('#miName', b.name); put('#miCeo', b.ceo); put('#miBizno', b.bizno);
+  put('#miAddr', b.addr); put('#miUptae', b.uptae); put('#miJongmok', b.jongmok);
+  put('#miEmail', b.email); put('#miTel', b.tel);
+  renderMiStamp();
+}
+function renderMiStamp(){
+  const host = $('#miStampPrev');
+  if(!host) return;
+  const b = getBiz(S.bizId) || {};
+  host.innerHTML = b.stamp ? '<img src="' + b.stamp + '" alt="직인">' : '도장';
+}
+function saveMyInfo(){
+  const name = (($('#miName') || {}).value || '').trim();
+  if(!name){ toast('상호를 입력해 주세요'); const el = $('#miName'); if(el) el.focus(); return; }
+  const b = getBiz(S.bizId);
+  b.name = name;
+  if(b.label !== '예시 사업자(테스트용)') b.label = name;
+  b.legalName = name;
+  b.ceo = (($('#miCeo') || {}).value || '').trim();
+  b.bizno = (($('#miBizno') || {}).value || '').trim();
+  b.addr = (($('#miAddr') || {}).value || '').trim();
+  b.uptae = (($('#miUptae') || {}).value || '').trim();
+  b.jongmok = (($('#miJongmok') || {}).value || '').trim();
+  b.email = (($('#miEmail') || {}).value || '').trim();
+  b.tel = (($('#miTel') || {}).value || '').trim();
+  saveBiz();
+  renderForm(); PLAN = null; renderPreview(); renderHomeBanner(); scheduleDraft();
+  toast('내 정보를 저장했습니다');
+}
+function fillMyInfoDemo(){
+  const put = (sel, v)=>{ const el = $(sel); if(el) el.value = v; };
+  put('#miName', DEMO_BIZ.name); put('#miCeo', DEMO_BIZ.ceo); put('#miBizno', DEMO_BIZ.bizno);
+  put('#miAddr', DEMO_BIZ.addr); put('#miUptae', DEMO_BIZ.uptae); put('#miJongmok', DEMO_BIZ.jongmok);
+  put('#miEmail', DEMO_BIZ.email); put('#miTel', DEMO_BIZ.tel);
+  toast('예시 값을 채웠습니다 — 저장을 누르면 적용됩니다');
+}
+function resetAllData(){
+  confirmDialog('모든 데이터 지우기', '사업자 정보 · 도장 · 저장한 문서 · 내 일정이 이 브라우저에서 모두 사라집니다. 백업하지 않았다면 되돌릴 수 없습니다.', '모두 지우기').then(ok=>{
+    if(!ok) return;
+    store.del(K.biz); store.del(K.docs); store.del(K.draft); store.del(K.ui); store.del(K.tax);
+    DOCS = []; BIZ = loadBiz(); TAXS = loadTax();
+    S = newState('quote'); syncAcctToDoc(); S.docNo = nextDocNo('quote', S.date);
+    renderForm(); PLAN = null; renderPreview(); renderHomeBanner();
+    fillMyInfo(); renderTax(); renderVatDefault(); closeAllModals();
+    toast('초기화했습니다');
+  });
+}
+
+/* ---------------- 앱 관리 ---------------- */
+function renderVatDefault(){
+  const mode = defaultVatMode();
+  $$('#vatDefault [data-vatdef]').forEach(b=>b.classList.toggle('active', b.getAttribute('data-vatdef') === mode));
+  const note = $('#vatDefaultNote');
+  if(note) note.textContent = '현재: ' + ({ excl:'부가세 별도', incl:'부가세 포함', none:'일반·면세' }[mode] || '부가세 별도') + ' — 새 문서부터 적용됩니다';
+}
+async function renderAppAdmin(){
+  renderVatDefault();
+  const net = $('#netState');
+  if(net){
+    net.textContent = navigator.onLine ? '온라인' : '오프라인';
+    net.className = 'v ' + (navigator.onLine ? 'ok' : 'warn');
+  }
+  const checked = $('#swChecked');
+  if(checked) checked.textContent = new Date().toLocaleTimeString('ko-KR', { hour:'2-digit', minute:'2-digit' });
+  const sw = $('#swState'), ca = $('#swCache');
+  if(!sw || !ca) return;
+  if(!('serviceWorker' in navigator)){
+    sw.textContent = '미지원 브라우저'; sw.className = 'v warn';
+    ca.textContent = '—'; ca.className = 'v';
+    return;
+  }
+  try{
+    const regs = await navigator.serviceWorker.getRegistrations();
+    const active = regs.filter(r=>r.active);
+    sw.textContent = active.length ? '등록됨 · 오프라인 사용 가능' : (regs.length ? '설치 중…' : '등록 안 됨');
+    sw.className = 'v ' + (active.length ? 'ok' : 'warn');
+  }catch(e){
+    sw.textContent = '확인 실패'; sw.className = 'v warn';
+  }
+  let names = [];
+  try{ names = await caches.keys(); }catch(e){}
+  const mine = names.filter(n=>String(n).indexOf('sajanglab') === 0);
+  if(!mine.length){
+    ca.textContent = '없음'; ca.className = 'v warn';
+    return;
+  }
+  let files = 0;
+  try{ const c = await caches.open(mine[mine.length-1]); files = (await c.keys()).length; }catch(e){}
+  ca.textContent = mine[mine.length-1] + ' · 파일 ' + files + '개';
+  ca.className = 'v ok';
+}
+
+/* ---------------- 패널 열기 ---------------- */
+const PANEL_VIEWS = ['tax', 'guide', 'inquiry', 'myinfo', 'appadmin'];
+function openPanel(name){
+  if(PANEL_VIEWS.indexOf(name) < 0) name = 'guide';
+  setView(name);
+  window.scrollTo(0, 0);
+}
+
+/* ---------------- 패널 이벤트 (1회 연결) ---------------- */
+function initPanels(){
+  renderOsGuide('ios');
+  renderVatDefault();
+
+  /* 하단 4버튼 */
+  const tab = $('#tabBar');
+  if(tab) tab.addEventListener('click', e=>{
+    const b = e.target.closest('[data-tab]');
+    if(!b) return;
+    openPanel(b.getAttribute('data-tab'));
+  });
+
+  /* 어디서든 메뉴로 */
+  document.body.addEventListener('click', e=>{
+    const h = e.target.closest('[data-goto-home]');
+    if(h){ openHome(); return; }
+    const g = e.target.closest('#inquiryGuide, #appInstallGuide');
+    if(g){ openPanel('guide'); }
+  });
+
+  /* 세무·일정표 */
+  const strip = $('#monthStrip');
+  if(strip) strip.addEventListener('click', e=>{
+    const b = e.target.closest('[data-month]');
+    if(!b) return;
+    TAXS.month = Number(b.getAttribute('data-month'));
+    saveTax(); renderTax();
+    const act = strip.querySelector('.active');
+    if(act && act.scrollIntoView) act.scrollIntoView({ inline:'center', block:'nearest', behavior:'smooth' });
+  });
+  const yp = $('#taxYearPrev');
+  if(yp) yp.addEventListener('click', ()=>{ TAXS.year--; saveTax(); renderTax(); });
+  const yn = $('#taxYearNext');
+  if(yn) yn.addEventListener('click', ()=>{ TAXS.year++; saveTax(); renderTax(); });
+  const tn = $('#taxThisMonth');
+  if(tn) tn.addEventListener('click', ()=>{
+    const n = new Date();
+    TAXS.year = n.getFullYear(); TAXS.month = n.getMonth()+1;
+    saveTax(); renderTax(); toast('이번 달로 이동했습니다');
+  });
+  const addB = $('#taxAddBtn');
+  if(addB) addB.addEventListener('click', openTaxForm);
+  const cancelB = $('#taxCancel');
+  if(cancelB) cancelB.addEventListener('click', closeTaxForm);
+  const tform = $('#taxForm');
+  if(tform) tform.addEventListener('submit', e=>{ e.preventDefault(); saveTaxItem(); });
+  const tlist = $('#taxList');
+  if(tlist) tlist.addEventListener('click', e=>{
+    const dn = e.target.closest('[data-taxdone]');
+    if(dn){ toggleTaxDone(dn.getAttribute('data-taxdone')); return; }
+    const del = e.target.closest('[data-taxdel]');
+    if(del) deleteTaxItem(del.getAttribute('data-taxdel'));
+  });
+
+  /* 이용안내 */
+  const osTabs = $('#osTabs');
+  if(osTabs) osTabs.addEventListener('click', e=>{
+    const b = e.target.closest('[data-os]');
+    if(!b) return;
+    $$('#osTabs [data-os]').forEach(x=>x.classList.toggle('active', x === b));
+    renderOsGuide(b.getAttribute('data-os'));
+  });
+  const gm = $('#guideMore');
+  if(gm) gm.addEventListener('click', openHelpBox);
+
+  /* 1:1 문의 */
+  const mail = $('#inquiryMail');
+  if(mail){
+    const subject = encodeURIComponent('[사장랩] 문의합니다');
+    const body = encodeURIComponent('[사장랩 문의]\n· 문의 종류: (오류 / 사용법 / 기능 건의 / 기타)\n· 쓰는 기기: (아이폰 / 안드로이드 / PC)\n· 브라우저: (사파리 / 크롬 / 기타)\n· 쓰던 화면: \n\n■ 문의 내용\n\n\n■ 화면 캡처\n(가능하면 사진을 함께 첨부해 주세요)');
+    mail.setAttribute('href', 'mailto:sajanglab2026@gmail.com?subject=' + subject + '&body=' + body);
+  }
+  const cp = $('#inquiryCopy');
+  if(cp) cp.addEventListener('click', ()=>{
+    const el = $('#mailTpl');
+    copyPlain(el ? el.textContent : '', '문의 양식을 복사했습니다');
+  });
+
+  /* 내 정보 */
+  const miSave = $('#miSave');
+  if(miSave) miSave.addEventListener('click', saveMyInfo);
+  const miDemo = $('#miDemo');
+  if(miDemo) miDemo.addEventListener('click', fillMyInfoDemo);
+  const miReset = $('#miReset');
+  if(miReset) miReset.addEventListener('click', resetAllData);
+  const miBiz = $('#miBizList');
+  if(miBiz) miBiz.addEventListener('click', ()=>openBizModal(S.bizId));
+  const miUp = $('#miStampUp');
+  if(miUp) miUp.addEventListener('click', ()=>{ const f = $('#miStampFile'); if(f) f.click(); });
+  const miFile = $('#miStampFile');
+  if(miFile) miFile.addEventListener('change', e=>{
+    const f = e.target.files && e.target.files[0];
+    e.target.value = '';
+    if(!f) return;
+    readImageFile(f, data=>{
+      const b = getBiz(S.bizId);
+      b.stamp = data;
+      saveBiz(); renderMiStamp(); PLAN = null; renderPreview();
+      toast('직인 이미지를 저장했습니다');
+    });
+  });
+  const miDel = $('#miStampDel');
+  if(miDel) miDel.addEventListener('click', ()=>{
+    const b = getBiz(S.bizId);
+    b.stamp = '';
+    saveBiz(); renderMiStamp(); PLAN = null; renderPreview();
+    toast('직인 이미지를 지웠습니다');
+  });
+
+  /* 앱 관리 */
+  const refresh = $('#appRefresh');
+  if(refresh) refresh.addEventListener('click', renderAppAdmin);
+  const seg = $('#vatDefault');
+  if(seg) seg.addEventListener('click', e=>{
+    const b = e.target.closest('[data-vatdef]');
+    if(!b) return;
+    store.set(K.ui, Object.assign(uiPrefs(), { vatDefault: b.getAttribute('data-vatdef') }));
+    renderVatDefault();
+    toast('기본 부가세 모드를 저장했습니다');
+  });
+  window.addEventListener('online', ()=>{ if(document.body.getAttribute('data-view') === 'appadmin') renderAppAdmin(); });
+  window.addEventListener('offline', ()=>{ if(document.body.getAttribute('data-view') === 'appadmin') renderAppAdmin(); });
+}
+
 /* ---------------- 홈 이벤트 (1회 연결) ---------------- */
 function initHome(){
   renderHomeBanner();
@@ -3596,26 +4415,19 @@ function initHome(){
     else if(m === 'vat') openVatCalc();
     else if(m === 'margin') openMargin();
     else if(m === 'labor') openWithhold();
-    else if(m === 'biz') openBizModal(S.bizId);
+    else if(m === 'tax') openTax();
+    else if(m === 'biz') openPanel('myinfo');
     else if(m === 'docs') openDocsBox();
   });
 
-  const tab = $('#tabBar');
-  if(tab) tab.addEventListener('click', e=>{
-    const b = e.target.closest('[data-tab]');
-    if(!b) return;
-    const k = b.getAttribute('data-tab');
-    if(k === 'home') openHome();
-    else if(k === 'write') openWrite(S.type);
-    else if(k === 'calc') openCalcHub();
-    else if(k === 'docs') openDocsBox();
-  });
+  const brand = document.querySelector('.appbar .brand');
+  if(brand) brand.addEventListener('click', openHome);
 
-  const cta = $('#heroCta'); if(cta) cta.addEventListener('click', ()=>openBizModal(S.bizId));
-  const hm = $('#heroManage'); if(hm) hm.addEventListener('click', ()=>openBizModal(S.bizId));
+  const cta = $('#heroCta'); if(cta) cta.addEventListener('click', ()=>openPanel('myinfo'));
+  const hm = $('#heroManage'); if(hm) hm.addEventListener('click', ()=>openPanel('myinfo'));
   const back = $('#btnHomeBack'); if(back) back.addEventListener('click', openHome);
   const rec = $('#homeRecent'); if(rec) rec.addEventListener('click', openDocsBox);
-  const help = $('#homeHelp'); if(help) help.addEventListener('click', openHelpBox);
+  const help = $('#homeHelp'); if(help) help.addEventListener('click', ()=>openPanel('guide'));
 
   /* 계산기 모음 → 개별 계산기 */
   const hub = $('#modalCalc');
@@ -3712,6 +4524,7 @@ function init(){
   renderForm();
   renderPreview();
   initHome();
+  initPanels();
   /* 홈화면 바로가기(?doc=quote|invoice|detail)는 곷바로 작성 화면으로 */
   if(wantType && TYPES[wantType]) openWrite(wantType);
   if(document.fonts && document.fonts.ready){
