@@ -4722,7 +4722,7 @@ const CL = {
     return {
       id: payload.sub,
       nick: m.nickname || m.name || '사장님',
-      avatar: m.avatar_url || m.picture || '',
+      avatar: String(m.avatar_url || m.picture || '').replace(/^http:\/\//, 'https://'),  /* 카카오 기본 이미지는 http라 https로 올린다(혼합 콘텐츠 방지) */
       email: payload.email || ''
     };
   },
@@ -4967,7 +4967,7 @@ const CL = {
         '</div>';
     }else{
       const av = s.user.avatar
-        ? '<img src="' + CL.esc(s.user.avatar) + '" alt="" loading="lazy" referrerpolicy="no-referrer">'
+        ? '<img src="' + CL.esc(s.user.avatar) + '" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">'
         : '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 3.2c-5 0-9 3.1-9 7 0 2.5 1.6 4.7 4.1 6l-1 3.6 4-2.4c.6.1 1.2.2 1.9.2 5 0 9-3.1 9-7s-4-7.4-9-7.4z"/></svg>';
       home.innerHTML =
         '<div class="hl-on">' +
