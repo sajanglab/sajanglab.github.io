@@ -580,6 +580,21 @@ body[data-view="home"] .bottombar{display:none !important}
 }
 .home-note b{color:var(--navy)}
 
+/* 공유하기 버튼 (홈·이용안내 공통) */
+.share-btn{
+  width:100%;display:flex;align-items:center;gap:10px;padding:10px 13px;text-align:left;
+  background:linear-gradient(135deg,#12294A 0%,#1D3E6B 58%,#2B5FE0 100%);color:#fff;
+  border-radius:14px;box-shadow:0 6px 16px rgba(18,41,74,.20);
+}
+.share-btn:active{filter:brightness(.95)}
+.share-btn .sh-ico{width:30px;height:30px;border-radius:10px;background:rgba(255,255,255,.17);display:grid;place-items:center;flex:none}
+.share-btn .sh-ico svg{width:17px;height:17px;stroke-width:2}
+.share-btn .sh-txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.share-btn .sh-txt b{font-size:13px;font-weight:800;letter-spacing:-.3px;color:#fff}
+.share-btn .sh-txt span{font-size:11px;color:#C8D8F3;letter-spacing:-.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.share-btn .sh-go{font-size:17px;color:#A7BDE0;flex:none;line-height:1}
+.home-share{margin-top:9px}
+
 /* 상단 ← 홈으로 (문서작성 화면) */
 .subbar{display:flex;align-items:center;gap:9px;padding:10px 16px 0}
 .subbar .back{
@@ -606,6 +621,18 @@ body[data-view="home"] .tabbar{display:flex}
 .tabbar button svg{width:21px;height:21px;stroke-width:1.9}
 .tabbar button.active{color:var(--navy);background:#EEF3FB}
 .tabbar button.active svg{stroke-width:2.3}
+.tabbar button span{white-space:nowrap}
+/* 가운데 홈 버튼 — 집 아이콘을 남색 배지로 살짝 강조 */
+.tabbar button.tab-home{position:relative}
+.tabbar button.tab-home .hb{
+  width:29px;height:29px;margin:-4px 0;border-radius:11px;display:grid;place-items:center;flex:none;
+  background:linear-gradient(145deg,#1B3A67 0%,#2B5FE0 100%);color:#fff;
+  box-shadow:0 3px 9px rgba(43,95,224,.28);
+}
+.tabbar button.tab-home .hb svg{width:16px;height:16px;stroke-width:2.1}
+.tabbar button.tab-home > span:last-child{font-weight:800;color:var(--navy)}
+.tabbar button.tab-home.active{background:#EEF3FB}
+.tabbar button.tab-home.active .hb{background:linear-gradient(145deg,#0E1B2E 0%,#12294A 100%);box-shadow:0 3px 9px rgba(18,41,74,.30)}
 
 /* 계산기 모음 · 계산기 폼 */
 .calc-hint{font-size:11px;font-weight:600;color:var(--muted);margin:-2px 0 -3px}
@@ -634,6 +661,8 @@ body[data-view="home"] #btnVat{display:none}
 @media (max-width:400px){
   .chip-btn{padding:0;width:38px;justify-content:center}
   .chip-btn span{display:none}
+  .tabbar{gap:0;padding-left:5px;padding-right:5px}
+  .tabbar button{font-size:10px;letter-spacing:-.45px}
 }
 @media (max-width:430px){
   .appbar{gap:8px;padding-left:14px;padding-right:14px}
@@ -881,6 +910,14 @@ body[data-view="appadmin"] .tabbar{display:flex}
       </button>
     </div>
 
+    <div class="home-share">
+      <button type="button" class="share-btn" id="btnShareHome" aria-label="사장랩 공유하기 · 카톡으로 지인에게 추천">
+        <span class="sh-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="17.5" cy="5.8" r="2.7"/><circle cx="6.2" cy="12" r="2.7"/><circle cx="17.5" cy="18.2" r="2.7"/><path d="M8.6 10.7l6.5-3.6M8.6 13.3l6.5 3.6"/></svg></span>
+        <span class="sh-txt"><b>사장랩 공유하기</b><span>카톡·문자로 사장님께 추천하기</span></span>
+        <span class="sh-go">›</span>
+      </button>
+    </div>
+
     <div class="home-note">
       <b>처음이세요?</b> 하단 <b>내 정보</b>에 상호·사업자번호·연락처·계좌를 한 번 저장해 두면, <b>견적서</b>에서 금액만 채워도 견적서·거래명세서·공사내역서 세 가지 양식이 그대로 나옵니다. 회원가입·설치 없이 무료이고, 입력값은 이 브라우저에만 저장됩니다.
     </div>
@@ -1003,6 +1040,16 @@ body[data-view="appadmin"] .tabbar{display:flex}
       <div class="card-head"><h2>사장랩 공식 네이버 카페</h2></div>
       <p class="pn-sub">사용법 질문, 세무·장부 노하우, 사장님들끼리 정보를 나누는 공식 카페입니다.</p>
       <a class="row-link" href="https://cafe.naver.com/sajanglab2026" target="_blank" rel="noopener noreferrer" style="width:100%;justify-content:center;height:44px;margin-top:10px">공식 카페 바로가기 ›</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>사장님께 사장랩 알려주기</h2></div>
+      <p class="pn-sub">옆 사장님·거래처에 카톡으로 보내 주세요. 회원가입·결제가 없는 무료 앱이라 부담 없이 추천할 수 있습니다.</p>
+      <button type="button" class="share-btn" id="btnShareGuide" style="margin-top:10px" aria-label="사장랩 공유하기 · 카톡으로 지인에게 추천">
+        <span class="sh-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="17.5" cy="5.8" r="2.7"/><circle cx="6.2" cy="12" r="2.7"/><circle cx="17.5" cy="18.2" r="2.7"/><path d="M8.6 10.7l6.5-3.6M8.6 13.3l6.5 3.6"/></svg></span>
+        <span class="sh-txt"><b>사장랩 공유하기</b><span>카톡·문자로 사장님께 추천하기</span></span>
+        <span class="sh-go">›</span>
+      </button>
     </div>
 
     <div class="card">
@@ -1157,7 +1204,7 @@ body[data-view="appadmin"] .tabbar{display:flex}
       <div class="card-head"><h2>앱 정보</h2></div>
       <div class="stat-row"><span>버전</span><b class="v">v2.0.0</b></div>
       <div class="stat-row"><span>업데이트</span><b class="v">2026-11-16</b></div>
-      <div class="stat-row"><span>캐시 버전</span><b class="v">sajanglab-v4</b></div>
+      <div class="stat-row"><span>캐시 버전</span><b class="v">sajanglab-v5</b></div>
       <div class="stat-row"><span>데이터 저장</span><b class="v">이 브라우저에만</b></div>
       <p class="pn-sub" style="margin-top:10px">사장랩은 서버에 아무것도 보관하지 않습니다. 기기를 바꾸면 저장한 문서함의 [전체 백업]으로 옮겨 주세요.</p>
     </div>
@@ -1378,6 +1425,10 @@ body[data-view="appadmin"] .tabbar{display:flex}
   <button type="button" data-tab="inquiry" aria-label="1:1 문의">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7A2.5 2.5 0 0 1 17.5 16H10l-4.6 3.4V16H6.5A2.5 2.5 0 0 1 4 13.5z"/><path d="M8.6 10.2h6.8"/></svg>
     <span>1:1 문의</span>
+  </button>
+  <button type="button" data-tab="home" class="tab-home" aria-label="홈">
+    <span class="hb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.6 10.9 12 3.8l8.4 7.1"/><path d="M6.1 9.7V19a1.1 1.1 0 0 0 1.1 1.1h2.9v-4.7h3.8v4.7h2.9A1.1 1.1 0 0 0 17.9 19V9.7"/></svg></span>
+    <span>홈</span>
   </button>
   <button type="button" data-tab="myinfo" aria-label="내 정보">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M3.4 7l1.6-4h14l1.6 4"/><path d="M9.6 20v-5.2h4.8V20"/></svg>
@@ -2891,6 +2942,47 @@ function vatCopyResult(){
   }
 }
 
+/* ---------------- 공유하기 (카톡·지인 추천) ---------------- */
+const SHARE_INFO = {
+  title: '사장랩 - 무료 견적서·세무 일정 앱',
+  text: '회원가입 없이 바로 쓰는 무료 견적서·거래명세서·부가세 계산기! 사장님께 추천해요 🐥',
+  url: 'https://sajanglab.github.io/'
+};
+function copyToClipboard(txt){
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    return navigator.clipboard.writeText(txt).then(()=>true).catch(()=>copyFallback(txt));
+  }
+  return Promise.resolve(copyFallback(txt));
+}
+function copyFallback(txt){
+  try{
+    const ta = document.createElement('textarea');
+    ta.value = txt; ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed'; ta.style.top = '-1000px'; ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select(); ta.setSelectionRange(0, ta.value.length);
+    const ok = document.execCommand('copy');
+    ta.remove();
+    return !!ok;
+  }catch(e){ return false; }
+}
+function shareApp(){
+  const data = SHARE_INFO;
+  if(navigator.share){
+    return navigator.share(data).then(()=>true).catch(err=>{
+      if(err && (err.name === 'AbortError' || err.name === 'NotAllowedError')) return true; // 사용자가 닫음
+      return copyToClipboard(data.text + ' ' + data.url).then(ok=>{
+        toast(ok ? '사장랩 주소가 복사됐어요! 카톡에 붙여넣기 해 주세요' : '공유를 열 수 없어요 · 주소는 ' + data.url);
+        return true;
+      });
+    });
+  }
+  return copyToClipboard(data.text + ' ' + data.url).then(ok=>{
+    toast(ok ? '사장랩 주소가 복사됐어요! 카톡에 붙여넣기 해 주세요' : '공유를 열 수 없어요 · 주소는 ' + data.url);
+    return ok;
+  });
+}
+
 /* ---------------- toast ---------------- */
 function toast(msg){
   const wrap = $('#toastWrap');
@@ -3328,7 +3420,7 @@ function closeAllModals(){ $$('.modal.open').forEach(m=>m.classList.remove('open
 
 /* ---------------- 보기 전환 ---------------- */
 const VIEW_LIST = ['home', 'edit', 'preview', 'tax', 'guide', 'inquiry', 'myinfo', 'appadmin'];
-const TAB_VIEWS = ['guide', 'inquiry', 'myinfo', 'appadmin'];
+const TAB_VIEWS = ['home', 'guide', 'inquiry', 'myinfo', 'appadmin'];
 function setView(v){
   if(VIEW_LIST.indexOf(v) < 0) v = 'home';
   document.body.setAttribute('data-view', v);
@@ -4282,16 +4374,20 @@ function initPanels(){
   renderOsGuide('ios');
   renderVatDefault();
 
-  /* 하단 4버튼 */
+  /* 하단 5버튼 (가운데 홈) */
   const tab = $('#tabBar');
   if(tab) tab.addEventListener('click', e=>{
     const b = e.target.closest('[data-tab]');
     if(!b) return;
-    openPanel(b.getAttribute('data-tab'));
+    const name = b.getAttribute('data-tab');
+    if(name === 'home'){ openHome(); return; }
+    openPanel(name);
   });
 
   /* 어디서든 메뉴로 */
   document.body.addEventListener('click', e=>{
+    const sh = e.target.closest('#btnShareHome, #btnShareGuide, [data-share-app]');
+    if(sh){ shareApp(); return; }
     const h = e.target.closest('[data-goto-home]');
     if(h){ openHome(); return; }
     const g = e.target.closest('#inquiryGuide, #appInstallGuide');
@@ -4525,6 +4621,9 @@ function init(){
   renderPreview();
   initHome();
   initPanels();
+  /* 첫 화면(홈)의 하단바 활성 탭을 맞춰 둔다 */
+  const curView = document.body.getAttribute('data-view') || 'home';
+  $$('#tabBar [data-tab]').forEach(b=>b.classList.toggle('active', b.getAttribute('data-tab') === curView));
   /* 홈화면 바로가기(?doc=quote|invoice|detail)는 곷바로 작성 화면으로 */
   if(wantType && TYPES[wantType]) openWrite(wantType);
   if(document.fonts && document.fonts.ready){
