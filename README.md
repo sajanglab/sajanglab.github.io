@@ -122,8 +122,37 @@ Playwright(Chromium) 기준 — 공개용 **123/123 통과** (`work/_free_verify
 - PWA: manifest·아이콘 3종·서비스워커 캐시(privacy.html 포함)·오프라인 재열기
 - 개인·사업자 정보 0건: `bash work/_free_verify/audit_privacy.sh` → 41개 금지 항목 0건
 
+## 클라우드 백업 (선택 · 카카오 로그인)
+
+로그인은 **선택 기능**입니다. 로그인하지 않으면 지금처럼 모든 값이 브라우저(localStorage)에만 남고, 로그인했을 때만 사업자·문서·세무일정이 본인 계정으로 백업되어 기기를 바꿔도 이어집니다.
+
+**구성**
+
+| 항목 | 값 |
+| --- | --- |
+| 인증 | Supabase Auth, provider `kakao` (카카오 로그인) |
+| 저장 | Supabase Postgres `public.sajanglab_user_data` (1인 1행, `jsonb` 컬럼) |
+| 접근 제어 | RLS — `auth.uid() = user_id` 인 행만 select/insert/update/delete |
+| 클라이언트 키 | **anon public key만** `index.html`의 `CLOUD.anon`에 있음. `service_role` 키는 사용하지 않음 |
+| 회원가입 | 없음. 카카오 로그인 시 첫 행이 자동 생성됨 |
+
+**설정 순서**
+
+1. Supabase 프로젝트 생성(Free, Seoul 리전) → SQL Editor에서 `sajanglab_user_data` 테이블·RLS 생성.
+2. 카카오 디벨로퍼스에 앱 등록 → 플랫폼 Web 도메인 `https://sajanglab.github.io`, 카카오 로그인 활성화,
+   Redirect URI `https://<project-ref>.supabase.co/auth/v1/callback`, 동의항목 `닉네임`·`프로필 사진`.
+3. Supabase → Authentication → Providers → Kakao 에 REST API 키(Client ID)와 Client Secret 입력.
+4. Supabase → Authentication → URL Configuration 의 Site URL·Redirect URLs 에 `https://sajanglab.github.io/` 등록.
+5. `index.html`의 `const CLOUD = { url, anon }` 값 채우고 `sw.js` 캐시 버전을 올려 배포.
+
+**동작**
+
+- 로그인 직후 `localStorage` ↔ 클라우드 병합: 사업자·문서·세무일정은 id 기준 합집합(같은 id는 최신 `updatedAt` 우선), 설정은 최신 기기 우선.
+- 이후 자료가 바뀔 때마다 1.5초 디바운스로 자동 업로드.
+- `내 정보` 패널에서 로그아웃 / 지금 동기화 / 클라우드 사본 지우기를 제공하며, 로그아웃해도 기기 자료는 그대로 남습니다.
+
 ## 알아둘 점
 
-- 데이터는 브라우저 단위로 저장됩니다. 브라우저 저장공간을 지우면 사라지니 가끔 [전체 백업]으로 JSON을 받아 두세요.
+- 데이터는 기본적으로 브라우저 단위로 저장됩니다. 브라우저 저장공간을 지우면 사라지니 가끔 [전체 백업]으로 JSON을 받아 두세요. (카카오 로그인으로 클라우드 백업을 켜 두면 계정에 남습니다.)
 - 인쇄는 여백 **없음**, 배율 **100%**가 가장 깔끔합니다.
 - 폰트는 CDN에서 받아오므로 오프라인 첫 실행에서는 시스템 폰트로 표시될 수 있습니다(문서 출력에는 영향 없음).
