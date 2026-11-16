@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.sajanglab.twa",
+        "sha256_cert_fingerprints": ["50:E9:F7:6D:2C:33:86:31:33:56:DA:AD:ED:1E:98:9C:05:E3:FC:67:9D:22:07:BF:30:BE:A0:A6:51:33:82:3A"]
+      }
+    }]
