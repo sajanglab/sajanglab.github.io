@@ -2,7 +2,7 @@
    · 앱 파일만 캐시합니다. 입력값은 기본적으로 브라우저 localStorage에만 저장되고,
      카카오 로그인으로 클라우드 백업을 켠 경우에만 본인 계정 저장소로 전송됩니다.
    · 새 버전을 올리면 아래 버전 문자열만 올리면 됩니다. */
-const VERSION = 'sajanglab-v6';
+const VERSION = 'sajanglab-v7';
 const SHELL = [
   './',
   './index.html',
